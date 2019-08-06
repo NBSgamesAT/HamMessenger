@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BC0455A22F9B98700EABFD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0455922F9B98700EABFD9 /* AppDelegate.swift */; };
+		8BC0455C22F9B98700EABFD9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0455B22F9B98700EABFD9 /* MasterViewController.swift */; };
+		8BC0455E22F9B98700EABFD9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0455D22F9B98700EABFD9 /* DetailViewController.swift */; };
+		8BC0456122F9B98700EABFD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0455F22F9B98700EABFD9 /* Main.storyboard */; };
+		8BC0456322F9B98800EABFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0456222F9B98800EABFD9 /* Assets.xcassets */; };
+		8BC0456622F9B98800EABFD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0456422F9B98800EABFD9 /* LaunchScreen.storyboard */; };
+		8BC0457122F9B98800EABFD9 /* HamMessangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0457022F9B98800EABFD9 /* HamMessangerTests.swift */; };
+		8BC0457C22F9B98800EABFD9 /* HamMessangerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0457B22F9B98800EABFD9 /* HamMessangerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8BC0456D22F9B98800EABFD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC0454E22F9B98700EABFD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC0455522F9B98700EABFD9;
+			remoteInfo = HamMessanger;
+		};
+		8BC0457822F9B98800EABFD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC0454E22F9B98700EABFD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC0455522F9B98700EABFD9;
+			remoteInfo = HamMessanger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8BC0455622F9B98700EABFD9 /* HamMessanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamMessanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC0455922F9B98700EABFD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8BC0455B22F9B98700EABFD9 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		8BC0455D22F9B98700EABFD9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8BC0456022F9B98700EABFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8BC0456222F9B98800EABFD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BC0456522F9B98800EABFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BC0456722F9B98800EABFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BC0456C22F9B98800EABFD9 /* HamMessangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamMessangerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC0457022F9B98800EABFD9 /* HamMessangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessangerTests.swift; sourceTree = "<group>"; };
+		8BC0457222F9B98800EABFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BC0457722F9B98800EABFD9 /* HamMessangerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamMessangerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC0457B22F9B98800EABFD9 /* HamMessangerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessangerUITests.swift; sourceTree = "<group>"; };
+		8BC0457D22F9B98800EABFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BC0455322F9B98700EABFD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC0456922F9B98800EABFD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC0457422F9B98800EABFD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BC0454D22F9B98700EABFD9 = {
+			isa = PBXGroup;
+			children = (
+				8BC0455822F9B98700EABFD9 /* HamMessanger */,
+				8BC0456F22F9B98800EABFD9 /* HamMessangerTests */,
+				8BC0457A22F9B98800EABFD9 /* HamMessangerUITests */,
+				8BC0455722F9B98700EABFD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BC0455722F9B98700EABFD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BC0455622F9B98700EABFD9 /* HamMessanger.app */,
+				8BC0456C22F9B98800EABFD9 /* HamMessangerTests.xctest */,
+				8BC0457722F9B98800EABFD9 /* HamMessangerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BC0455822F9B98700EABFD9 /* HamMessanger */ = {
+			isa = PBXGroup;
+			children = (
+				8BC0455922F9B98700EABFD9 /* AppDelegate.swift */,
+				8BC0455B22F9B98700EABFD9 /* MasterViewController.swift */,
+				8BC0455D22F9B98700EABFD9 /* DetailViewController.swift */,
+				8BC0455F22F9B98700EABFD9 /* Main.storyboard */,
+				8BC0456222F9B98800EABFD9 /* Assets.xcassets */,
+				8BC0456422F9B98800EABFD9 /* LaunchScreen.storyboard */,
+				8BC0456722F9B98800EABFD9 /* Info.plist */,
+			);
+			path = HamMessanger;
+			sourceTree = "<group>";
+		};
+		8BC0456F22F9B98800EABFD9 /* HamMessangerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BC0457022F9B98800EABFD9 /* HamMessangerTests.swift */,
+				8BC0457222F9B98800EABFD9 /* Info.plist */,
+			);
+			path = HamMessangerTests;
+			sourceTree = "<group>";
+		};
+		8BC0457A22F9B98800EABFD9 /* HamMessangerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8BC0457B22F9B98800EABFD9 /* HamMessangerUITests.swift */,
+				8BC0457D22F9B98800EABFD9 /* Info.plist */,
+			);
+			path = HamMessangerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BC0455522F9B98700EABFD9 /* HamMessanger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC0458022F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessanger" */;
+			buildPhases = (
+				8BC0455222F9B98700EABFD9 /* Sources */,
+				8BC0455322F9B98700EABFD9 /* Frameworks */,
+				8BC0455422F9B98700EABFD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HamMessanger;
+			productName = HamMessanger;
+			productReference = 8BC0455622F9B98700EABFD9 /* HamMessanger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8BC0456B22F9B98800EABFD9 /* HamMessangerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC0458322F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessangerTests" */;
+			buildPhases = (
+				8BC0456822F9B98800EABFD9 /* Sources */,
+				8BC0456922F9B98800EABFD9 /* Frameworks */,
+				8BC0456A22F9B98800EABFD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BC0456E22F9B98800EABFD9 /* PBXTargetDependency */,
+			);
+			name = HamMessangerTests;
+			productName = HamMessangerTests;
+			productReference = 8BC0456C22F9B98800EABFD9 /* HamMessangerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8BC0457622F9B98800EABFD9 /* HamMessangerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC0458622F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessangerUITests" */;
+			buildPhases = (
+				8BC0457322F9B98800EABFD9 /* Sources */,
+				8BC0457422F9B98800EABFD9 /* Frameworks */,
+				8BC0457522F9B98800EABFD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BC0457922F9B98800EABFD9 /* PBXTargetDependency */,
+			);
+			name = HamMessangerUITests;
+			productName = HamMessangerUITests;
+			productReference = 8BC0457722F9B98800EABFD9 /* HamMessangerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BC0454E22F9B98700EABFD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = NBSgamesAT;
+				TargetAttributes = {
+					8BC0455522F9B98700EABFD9 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					8BC0456B22F9B98800EABFD9 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 8BC0455522F9B98700EABFD9;
+					};
+					8BC0457622F9B98800EABFD9 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 8BC0455522F9B98700EABFD9;
+					};
+				};
+			};
+			buildConfigurationList = 8BC0455122F9B98700EABFD9 /* Build configuration list for PBXProject "HamMessanger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8BC0454D22F9B98700EABFD9;
+			productRefGroup = 8BC0455722F9B98700EABFD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BC0455522F9B98700EABFD9 /* HamMessanger */,
+				8BC0456B22F9B98800EABFD9 /* HamMessangerTests */,
+				8BC0457622F9B98800EABFD9 /* HamMessangerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BC0455422F9B98700EABFD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC0456622F9B98800EABFD9 /* LaunchScreen.storyboard in Resources */,
+				8BC0456322F9B98800EABFD9 /* Assets.xcassets in Resources */,
+				8BC0456122F9B98700EABFD9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC0456A22F9B98800EABFD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC0457522F9B98800EABFD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BC0455222F9B98700EABFD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC0455E22F9B98700EABFD9 /* DetailViewController.swift in Sources */,
+				8BC0455C22F9B98700EABFD9 /* MasterViewController.swift in Sources */,
+				8BC0455A22F9B98700EABFD9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC0456822F9B98800EABFD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC0457122F9B98800EABFD9 /* HamMessangerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC0457322F9B98800EABFD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC0457C22F9B98800EABFD9 /* HamMessangerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BC0456E22F9B98800EABFD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC0455522F9B98700EABFD9 /* HamMessanger */;
+			targetProxy = 8BC0456D22F9B98800EABFD9 /* PBXContainerItemProxy */;
+		};
+		8BC0457922F9B98800EABFD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC0455522F9B98700EABFD9 /* HamMessanger */;
+			targetProxy = 8BC0457822F9B98800EABFD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8BC0455F22F9B98700EABFD9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BC0456022F9B98700EABFD9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8BC0456422F9B98800EABFD9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BC0456522F9B98800EABFD9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8BC0457E22F9B98800EABFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8BC0457F22F9B98800EABFD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BC0458122F9B98800EABFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D46R59592N;
+				INFOPLIST_FILE = HamMessanger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessanger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8BC0458222F9B98800EABFD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D46R59592N;
+				INFOPLIST_FILE = HamMessanger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessanger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8BC0458422F9B98800EABFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D46R59592N;
+				INFOPLIST_FILE = HamMessangerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessangerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HamMessanger.app/HamMessanger";
+			};
+			name = Debug;
+		};
+		8BC0458522F9B98800EABFD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D46R59592N;
+				INFOPLIST_FILE = HamMessangerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessangerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HamMessanger.app/HamMessanger";
+			};
+			name = Release;
+		};
+		8BC0458722F9B98800EABFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D46R59592N;
+				INFOPLIST_FILE = HamMessangerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessangerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HamMessanger;
+			};
+			name = Debug;
+		};
+		8BC0458822F9B98800EABFD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D46R59592N;
+				INFOPLIST_FILE = HamMessangerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessangerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HamMessanger;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BC0455122F9B98700EABFD9 /* Build configuration list for PBXProject "HamMessanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC0457E22F9B98800EABFD9 /* Debug */,
+				8BC0457F22F9B98800EABFD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC0458022F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC0458122F9B98800EABFD9 /* Debug */,
+				8BC0458222F9B98800EABFD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC0458322F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessangerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC0458422F9B98800EABFD9 /* Debug */,
+				8BC0458522F9B98800EABFD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC0458622F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessangerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC0458722F9B98800EABFD9 /* Debug */,
+				8BC0458822F9B98800EABFD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BC0454E22F9B98700EABFD9 /* Project object */;
+}
