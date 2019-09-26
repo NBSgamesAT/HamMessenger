@@ -7,14 +7,23 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
+  
+  @IBOutlet weak var Label: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = UIColor(named: "mainBackground")
+    Label.textColor = UIColor(named: "textColour")
     // Do any additional setup after loading the view.
   }
   
+  @IBAction func LogInOut(_ sender: Any) {
+    HamMessage.login()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { // Change `2.0` to the desired number of seconds.
+      HamMessage.logout()
+    }
+  }
   
 }
 
