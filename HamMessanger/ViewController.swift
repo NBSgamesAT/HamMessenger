@@ -10,19 +10,26 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet weak var Label: UILabel!
+  @IBOutlet weak var messages: UITextField!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor(named: "mainBackground")
     Label.textColor = UIColor(named: "textColour")
+    messages.textColor = UIColor(named: "textColour")
     // Do any additional setup after loading the view.
   }
   
   @IBAction func LogInOut(_ sender: Any) {
     HamMessage.login()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { // Change `2.0` to the desired number of seconds.
-      HamMessage.logout()
-    }
+  }
+  @IBAction func send(_ sender: Any) {
+    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "ALL", payloadType: 6, payload: messages.text!);
+    TCPStuff.sendMessage(message: message)
+  }
+  @IBAction func logout(_ sender: Any) {
+    HamMessage.logout()
   }
   
 }

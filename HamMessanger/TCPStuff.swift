@@ -125,8 +125,8 @@ class TCPStuff {
     var byteOffset = Int(message.sourceLength);
     if(message.sourceLength != 0){
       var source: [UInt8] = []
-      for count in 14 ... message.sourceLength + 14{
-        source.append(byteReceived[Int(count)])
+      for count in 14 ... Int(message.sourceLength) + 14{
+        source.append(byteReceived[count])
       }
       message.source = String(bytes: source, encoding: .utf8)!
     }
@@ -251,7 +251,8 @@ class TCPStuff {
     case .success:
       switch client.send(data: data) {
       case .success:
-        let tcpManager = TCPStuff();
+        print("Success")
+        /*let tcpManager = TCPStuff();
         guard var data2 = client.read(1024*10, timeout: 2) else { print("Whoops"); client.close(); return }
         while(!tcpManager.addPart(bytes: data2)){
           guard let data3 = client.read(1024*10, timeout: 2) else { print("Whoops"); client.close(); return }
@@ -268,7 +269,7 @@ class TCPStuff {
           print("Message Length: " + String(message!.payloadLength))
           print("Message: " + message!.payloadString)
         }
-        client.close()
+        client.close()*/
       case .failure(let error):
         print(error)
         print("Failure")
