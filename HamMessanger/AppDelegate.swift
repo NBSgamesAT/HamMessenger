@@ -9,18 +9,27 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, TCPEventHandler{
+  func onReceive(_ message: HamMessage){
+    print("Source: " + message.source);
+    print("Contact: " + String(message.contact));
+    print("MSGlen: " + String(message.payloadLength))
+    print("Message: " + message.payloadString)
+  }
+  
   
   var window: UIWindow?
-
+  
+  static var con: TCPController?;
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    openConnection();
     return true
   }
   
   func applicationWillResignActive(_ application: UIApplication) {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    
+    AppDelegate.con?.stopListener();
   }
   
   func applicationDidEnterBackground(_ application: UIApplication) {
@@ -33,13 +42,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func applicationDidBecomeActive(_ application: UIApplication) {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    openConnection();
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    closeConnection();
   }
   
+  func openConnection(){
+    if(AppDelegate.con == nil || AppDelegate.con!.giveUp){
+      AppDelegate.con = TCPController("44.143.0.1", port: 9124, eventHandler: self)
+      AppDelegate.con?.activateListener();
+    }
+  }
+  func closeConnection(){
+    if(AppDelegate.con != nil && !AppDelegate.con!.giveUp){
+      AppDelegate.con?.stopListener();
+    }
+  }
   
 }
 

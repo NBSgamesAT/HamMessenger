@@ -117,28 +117,28 @@ class HamMessage {
     self.payloadText = ""
   }
   
-  private func printShit (input: [UInt8]){
+  /*private func printShit (input: [UInt8]){
     for byte in input {
       //print(String(byte, radix: 16))
     }
-  }
+  }*/
   
   
   
   let message: String = "Hallo, Wolfgang... Wie geht es dir"
   let call: String = "OE1NBS"
-  public static func login(){
+  public static func login() -> HamMessage{
     //var msg: Message = Message(source: "OE1NBS", contactType: UInt8(8), contact: "OE1KBC", payloadType: UInt8(2), payload: "Hallo OE1KBC, wie geht es dir zur Zeit?")
     let payload = "OE1NBS/iOS" + "\t" + "Wien" + "\t" + "44.0.0.0" + "\t" + "JN88EG" + "\t" + "iOS1.0";
     let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload)
-    TCPStuff.sendMessage(message: message)
+    return message;
   }
   
-  public static func logout(){
+  public static func logout() -> HamMessage{
     //var msg: Message = Message(source: "OE1NBS", contactType: UInt8(8), contact: "OE1KBC", payloadType: UInt8(2), payload: "Hallo OE1KBC, wie geht es dir zur Zeit?")
     let payload = "OE1NBS/iOS" + "\t" + "Wien" + "\t" + "44.0.0.0" + "\t" + "JN88EG" + "\t" + "CLOSE";
     let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload)
-    TCPStuff.sendMessage(message: message)
+    return message;
   }
   
   public func canBeSent() -> Bool {

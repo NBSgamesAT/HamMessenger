@@ -9,6 +9,12 @@
 import Foundation
 import SwiftSocket
 
+extension Collection where Indices.Iterator.Element == Index {
+  subscript (safe index: Index) -> Iterator.Element?  {
+    return indices.contains(index) ? self[index] : nil;
+  }
+}
+
 class TCPStuff {
   
   //RESEIVING PART ----------------------------------------------------------------------------
@@ -19,7 +25,6 @@ class TCPStuff {
   
   var bytesGot: [UInt8] = []
   var gotCompleteMessage: Bool = false
-  var readingStep = 0
   
   /**
    NBS: clearBytes --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,82 +103,112 @@ class TCPStuff {
     if(!gotCompleteMessage){
       return nil
     }
-    let byteReceived = deescape(bytesGot)
-    let message = HamMessage();
-    var hamVersion: Int16 = 0;
-    hamVersion = Int16(byteReceived[0]);
-    hamVersion = hamVersion | Int16(byteReceived[1]) << 8
-    if(hamVersion != 2){
-      print("Version Number NOT matching!");
-    }
-    var seqCounter: UInt64 = 0;
-    seqCounter = seqCounter | UInt64(byteReceived[2])
-    seqCounter = seqCounter | UInt64(byteReceived[3]) << 8
-    seqCounter = seqCounter | UInt64(byteReceived[4]) << 16
-    seqCounter = seqCounter | UInt64(byteReceived[5]) << 24
-    seqCounter = seqCounter | UInt64(byteReceived[6]) << 32
-    seqCounter = seqCounter | UInt64(byteReceived[7]) << 40
-    seqCounter = seqCounter | UInt64(byteReceived[8]) << 48
-    seqCounter = seqCounter | UInt64(byteReceived[9]) << 56
-    message.seqCounter = seqCounter;
-    
-    message.ttl = byteReceived[10]
-    message.flags = byteReceived[11];
-    
-    message.sourceLength = Int16(byteReceived[12]) << 8
-    message.sourceLength = message.sourceLength | Int16(byteReceived[13])
-    var byteOffset = Int(message.sourceLength);
-    if(message.sourceLength != 0){
-      var source: [UInt8] = []
-      for count in 14 ... Int(message.sourceLength) + 14{
-        source.append(byteReceived[count])
+    var byteReceived = deescape(bytesGot)
+    do{
+      let message = HamMessage();
+      var hamVersion: Int16 = 0;
+      hamVersion = try Int16(getUint8FromArray(&byteReceived, index: 0));
+      hamVersion = try hamVersion | Int16(getUint8FromArray(&byteReceived, index: 1)) << 8
+      if(hamVersion != 2){
+        print("Version Number NOT matching!");
+        return nil;
       }
-      message.source = String(bytes: source, encoding: .utf8)!
-    }
-    
-    message.contactType = byteReceived[14 + byteOffset];
-    
-    message.contactLength = Int16(byteReceived[15 + byteOffset]) << 8;
-    message.contactLength = message.contactLength | Int16(byteReceived[16 + byteOffset])
-    print("Heeey " + String(message.contactLength))
-    
-    if(message.contactLength != 0){
-      var source: [UInt8] = []
-      for count in 17 + byteOffset ... Int(message.contactLength) + 17 + byteOffset{
-        source.append(byteReceived[Int(count)])
+      var seqCounter: UInt64 = 0;
+      seqCounter = try seqCounter | UInt64(getUint8FromArray(&byteReceived, index: 2))
+      seqCounter = try seqCounter | UInt64(getUint8FromArray(&byteReceived, index: 3)) << 8
+      seqCounter = try seqCounter | UInt64(getUint8FromArray(&byteReceived, index: 4)) << 16
+      seqCounter = try seqCounter | UInt64(getUint8FromArray(&byteReceived, index: 5)) << 24
+      seqCounter = try seqCounter | UInt64(getUint8FromArray(&byteReceived, index: 6)) << 32
+      seqCounter = try seqCounter | UInt64(getUint8FromArray(&byteReceived, index: 7)) << 40
+      seqCounter = try seqCounter | UInt64(getUint8FromArray(&byteReceived, index: 8)) << 48
+      seqCounter = try seqCounter | UInt64(getUint8FromArray(&byteReceived, index: 9)) << 56
+      message.seqCounter = seqCounter;
+      
+      message.ttl = try getUint8FromArray(&byteReceived, index: 10)
+      message.flags = try getUint8FromArray(&byteReceived, index: 11)
+      
+      message.sourceLength = try Int16(getUint8FromArray(&byteReceived, index: 12)) << 8
+      message.sourceLength = try message.sourceLength | Int16(getUint8FromArray(&byteReceived, index: 13))
+      var byteOffset = Int(message.sourceLength);
+      if(message.sourceLength > 0){
+        var source: [UInt8] = []
+        for count in 14 ... Int(message.sourceLength) + 13{
+          try source.append(getUint8FromArray(&byteReceived, index: count));
+          print(source);
+        }
+        message.source = String(bytes: source, encoding: .utf8)!
       }
-      byteOffset = byteOffset + Int(message.contactLength);
-      message.contact = String(bytes: source, encoding: .utf8)!
-    }
-    
-    message.pathLength = UInt16(byteReceived[17 + byteOffset]);
-    message.pathLength = UInt16(byteReceived[18 + byteOffset]) << 8;
-    
-    if(message.pathLength != 0){
-      var source: [UInt8] = []
-      for count in 19 + byteOffset ... Int(message.pathLength) + 19 + byteOffset{
-        source.append(byteReceived[Int(count)])
+      
+      message.contactType = try getUint8FromArray(&byteReceived, index: 14 + byteOffset);
+      
+      message.contactLength = try Int16(getUint8FromArray(&byteReceived, index: 15 + byteOffset)) << 8;
+      message.contactLength = try message.contactLength | Int16(getUint8FromArray(&byteReceived, index: 16 + byteOffset))
+      
+      if(message.contactLength > 0){
+        var source: [UInt8] = []
+        for count in 17 + byteOffset ... Int(message.contactLength) + 16 + byteOffset{
+          try source.append(getUint8FromArray(&byteReceived, index: count))
+        }
+        byteOffset = byteOffset + Int(message.contactLength);
+        message.contact = String(bytes: source, encoding: .utf8)!
       }
-      byteOffset = byteOffset + Int(message.pathLength);
-      message.path = source;
-    }
-    
-    message.payloadLength = Int32(byteReceived[19 + byteOffset])
-    message.payloadLength = Int32(byteReceived[20 + byteOffset]) << 8;
-    message.payloadLength = Int32(byteReceived[21 + byteOffset]) << 16;
-    message.payloadLength = Int32(byteReceived[22 + byteOffset]) << 32;
-    
-    if(message.payloadLength != 0){
-      var source: [UInt8] = []
-      for count in 23 + byteOffset ... Int(message.payloadLength) + 23 + byteOffset{
-        source.append(byteReceived[Int(count)])
+      
+      message.pathLength = try UInt16(getUint8FromArray(&byteReceived, index: 17 + byteOffset));
+      message.pathLength = try message.pathLength | UInt16(getUint8FromArray(&byteReceived, index: 18 + byteOffset)) << 8;
+      
+      if(message.pathLength > 0){
+        var source: [UInt8] = []
+        for count in 19 + byteOffset ... Int(message.pathLength) + 18 + byteOffset{
+          try source.append(getUint8FromArray(&byteReceived, index: count))
+        }
+        byteOffset = byteOffset + Int(message.pathLength);
+        message.path = source;
       }
-      byteOffset = byteOffset + Int(message.payloadLength);
-      message.payload = source;
-      message.payloadString = String(bytes: source, encoding: .utf8)!
+      
+      message.payloadType = try getUint8FromArray(&byteReceived, index: 19 + byteOffset)
+      
+      message.payloadLength = try Int32(getUint8FromArray(&byteReceived, index: 20 + byteOffset))
+      message.payloadLength = try message.payloadLength | Int32(getUint8FromArray(&byteReceived, index: 21 + byteOffset)) << 8;
+      message.payloadLength = try message.payloadLength | Int32(getUint8FromArray(&byteReceived, index: 22 + byteOffset)) << 16;
+      message.payloadLength = try message.payloadLength | Int32(getUint8FromArray(&byteReceived, index: 23 + byteOffset)) << 32;
+      
+      print(message.payloadLength);
+      
+      if(message.payloadLength > 0){
+        var source: [UInt8] = []
+        for count in 24 + byteOffset ... Int(message.payloadLength) + 23 + byteOffset{
+          try source.append(getUint8FromArray(&byteReceived, index: count))
+          try print( String(bytes: [getUint8FromArray(&byteReceived, index: count)], encoding: .utf8) ?? "s")
+        }
+        byteOffset = byteOffset + Int(message.payloadLength);
+        message.payload = source;
+        message.payloadString = String(bytes: source, encoding: .utf8)!
+      }
+      
+      return message
     }
-    
-    return message
+    catch NBSErrors.indexOutOfBonds{
+      print("SHOT")
+      print(bytesGot);
+      return nil;
+    }
+    catch {
+      print("I shouldn't be here");
+      return nil;
+    }
+  }
+  
+  /**
+   NBS: Safeget
+   */
+  func getUint8FromArray(_ array: inout [UInt8], index: Int) throws -> UInt8{
+    if(array[safe: index] != nil){
+      return array[index];
+    }
+    else{
+      print("ELELELELE " + String(index));
+      throw NBSErrors.indexOutOfBonds;
+    }
   }
   
   //SENDING PART ------------------------------------------------------------------------------
@@ -182,11 +217,11 @@ class TCPStuff {
    NBS: sendMessage --------------------------------------------------------------------------------------------------------------------------------------------------------
    Generate and Send Message
   */
-  public static func sendMessage(message m: HamMessage){
+  public static func getData(message m: HamMessage) -> [UInt8]?{
     
     if(!m.canBeSent()) {
       print("Invalid Call")
-      return
+      return nil;
     }
     
     var array: [UInt8] = []
@@ -241,43 +276,7 @@ class TCPStuff {
     
     let arrayToSend = escape(input: array)
     
-    print("Done")
-    
-    var data: Data = Data();
-    data.append(contentsOf: arrayToSend)
-    
-    let client = TCPClient(address: "44.143.0.1", port: 9124)
-    switch client.connect(timeout: 1) {
-    case .success:
-      switch client.send(data: data) {
-      case .success:
-        print("Success")
-        /*let tcpManager = TCPStuff();
-        guard var data2 = client.read(1024*10, timeout: 2) else { print("Whoops"); client.close(); return }
-        while(!tcpManager.addPart(bytes: data2)){
-          guard let data3 = client.read(1024*10, timeout: 2) else { print("Whoops"); client.close(); return }
-          data2 = data3;
-        }
-        let message = tcpManager.decodeMessage();
-        
-        if(message != nil){
-          print("Seq: " + String(message!.seqCounter))
-          print("Source Length: " + String(message!.sourceLength))
-          print("Source: " + message!.source)
-          print("Contact Length: " + String(message!.contactLength))
-          print("Contact: " + message!.contact)
-          print("Message Length: " + String(message!.payloadLength))
-          print("Message: " + message!.payloadString)
-        }
-        client.close()*/
-      case .failure(let error):
-        print(error)
-        print("Failure")
-      }
-    case .failure(let error):
-      print(error)
-      print("Failure")
-    }
+    return arrayToSend;
   }
   
   /**
@@ -306,7 +305,6 @@ class TCPStuff {
     finalBytes.append(0xAB)
     return finalBytes
   }
-  
 }
 
 
