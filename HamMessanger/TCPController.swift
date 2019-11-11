@@ -18,6 +18,7 @@ class TCPController{
   public var tcpGetter: TCPClient?;
   public var giveUp: Bool = false;
   public var tcpStuff: TCPStuff;
+  public var ownMessage: [UInt64];
   
   init(_ ip: String, port: Int32, eventHandler: TCPEventHandler){
     self.ip = ip;
@@ -26,6 +27,7 @@ class TCPController{
     self.receiver = Thread();
     self.giveUp = false;
     self.tcpStuff = TCPStuff();
+    self.ownMessage = [];
   }
   
   @objc private func receiverMainThread(){
@@ -51,14 +53,15 @@ class TCPController{
           if(tcpStuff.addPart(bytes: data)){
             let message: HamMessage? = tcpStuff.decodeMessage()
             if(message != nil){
-              eventHandler.onReceive(message!);
+              if(!self.ownMessage.contains(message!.seqCounter)){
+                self.ownMessage.removeAll { (testNumber: UInt64) -> Bool in
+                  return testNumber == message!.seqCounter;
+                }
+                eventHandler.onReceive(message!);
+              }
               tcpStuff.clearBytes();
-              //isComplete = false;
             }
           }
-        }
-        else if(data[0] == 0xaa){
-          print(data);
         }
       }
     case .failure(let error):
@@ -91,7 +94,9 @@ class TCPController{
     //tcpGetter?.send(data: message.getData())
     switch tcpGetter?.send(data: TCPStuff.getData(message: message)!) {
     case .success:
-      print("Successfully sent message");
+      //print("Successfully sent message");
+      ownMessage.append(message.seqCounter)
+      
     case .failure(let error):
       print(error);
     case.none:

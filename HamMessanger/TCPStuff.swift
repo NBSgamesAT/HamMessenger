@@ -80,7 +80,7 @@ class TCPStuff {
       }
       else if(!hasStarted && b == 0xAA){
         hasStarted = true
-        print("started");
+        //print("started");
       }
       else if(hasStarted && b == 0xAB){
         return output
@@ -134,7 +134,6 @@ class TCPStuff {
         var source: [UInt8] = []
         for count in 14 ... Int(message.sourceLength) + 13{
           try source.append(getUint8FromArray(&byteReceived, index: count));
-          print(source);
         }
         message.source = String(bytes: source, encoding: .utf8)!
       }
@@ -172,13 +171,13 @@ class TCPStuff {
       message.payloadLength = try message.payloadLength | Int32(getUint8FromArray(&byteReceived, index: 22 + byteOffset)) << 16;
       message.payloadLength = try message.payloadLength | Int32(getUint8FromArray(&byteReceived, index: 23 + byteOffset)) << 32;
       
-      print(message.payloadLength);
+      //print(message.payloadLength);
       
       if(message.payloadLength > 0){
         var source: [UInt8] = []
         for count in 24 + byteOffset ... Int(message.payloadLength) + 23 + byteOffset{
           try source.append(getUint8FromArray(&byteReceived, index: count))
-          try print( String(bytes: [getUint8FromArray(&byteReceived, index: count)], encoding: .utf8) ?? "s")
+          //try print( String(bytes: [getUint8FromArray(&byteReceived, index: count)], encoding: .utf8) ?? "s")
         }
         byteOffset = byteOffset + Int(message.payloadLength);
         message.payload = source;

@@ -9,27 +9,26 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, TCPEventHandler{
-  func onReceive(_ message: HamMessage){
-    print("Source: " + message.source);
-    print("Contact: " + String(message.contact));
-    print("MSGlen: " + String(message.payloadLength))
-    print("Message: " + message.payloadString)
-  }
+class AppDelegate: UIResponder, UIApplicationDelegate{
   
+  static var peopleOnline: [OnlineCall] = [];
   
   var window: UIWindow?
   
   static var con: TCPController?;
+  var tableController: UITableViewController?;
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    openConnection();
+    let tabController = window?.rootViewController as! UITabBarController;
+    tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
+    
+    self.openConnection(tableController: tableController!);
     return true
   }
   
   func applicationWillResignActive(_ application: UIApplication) {
     
-    AppDelegate.con?.stopListener();
+    self.closeConnection();
   }
   
   func applicationDidEnterBackground(_ application: UIApplication) {
@@ -42,16 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TCPEventHandler{
   }
   
   func applicationDidBecomeActive(_ application: UIApplication) {
-    openConnection();
+    self.openConnection(tableController: tableController!);
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
-    closeConnection();
+    self.closeConnection();
   }
   
-  func openConnection(){
+  func openConnection(tableController: UITableViewController){
     if(AppDelegate.con == nil || AppDelegate.con!.giveUp){
-      AppDelegate.con = TCPController("44.143.0.1", port: 9124, eventHandler: self)
+      AppDelegate.con = TCPController("44.143.0.1", port: 9124, eventHandler: OnlineHandler(tableController: tableController))
       AppDelegate.con?.activateListener();
     }
   }

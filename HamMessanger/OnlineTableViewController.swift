@@ -20,23 +20,14 @@ class OnlineTableViewController: UITableViewController {
     // self.navigationItem.rightBarButtonItem = self.editButtonItem
   }
 
-  // MARK: - Table view data source
-  
-  let call1 = OnlineCall(callSign: "OE1WBS", name: "Wolfgang", ip: "44.143.19.1");
-  let call2 = OnlineCall(callSign: "OE1NBS/iOS", name: "Nicolas", ip: "44.143.19.1");
-  let call3 = OnlineCall(callSign: "OE1XAR", name: "Bisamberg", ip: "44.143.9.50");
-    
-  private func createTests() -> [OnlineCall]{
-    let testCalls = [call1, call2, call3];
-    return testCalls;
-  }
+  // MARK: Data is from AppDelegate
 
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return createTests().count;
+    return AppDelegate.peopleOnline.count;
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,7 +35,7 @@ class OnlineTableViewController: UITableViewController {
     guard let actualCell = cell as? OnlineTableViewCell else {
       fatalError("Could not downgrade the cell");
     }
-    let user = createTests()[indexPath.row];
+    let user = AppDelegate.peopleOnline[indexPath.row];
     actualCell.callLabel.text = user.callSign;
     actualCell.nameLabel.text = user.name;
     actualCell.ipLabel.text = user.ip;

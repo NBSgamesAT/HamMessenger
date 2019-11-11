@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32D0A281CAD3AA8CABFA8AFC /* Pods_HamMessangerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A15519E433FB66778A8E44 /* Pods_HamMessangerTests.framework */; };
+		8B19196123799170004B526E /* OnlineHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B19196023799170004B526E /* OnlineHandler.swift */; };
 		8B2097A1237340FB00B305CF /* TCPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2097A0237340FB00B305CF /* TCPController.swift */; };
 		8B2097A32374444A00B305CF /* NBSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2097A22374444A00B305CF /* NBSError.swift */; };
 		8B9AAA7722FEE1EB00E87C01 /* TCPStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAA7622FEE1EB00E87C01 /* TCPStuff.swift */; };
@@ -50,6 +51,7 @@
 		65B5B7BD9D804E10F1AF3542 /* Pods_HamMessanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A15519E433FB66778A8E44 /* Pods_HamMessangerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessangerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8929C74498713782BEF8D128 /* Pods-HamMessanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessanger/Pods-HamMessanger.release.xcconfig"; sourceTree = "<group>"; };
+		8B19196023799170004B526E /* OnlineHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineHandler.swift; sourceTree = "<group>"; };
 		8B2097A0237340FB00B305CF /* TCPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
 		8B2097A22374444A00B305CF /* NBSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBSError.swift; sourceTree = "<group>"; };
 		8B9AAA7622FEE1EB00E87C01 /* TCPStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPStuff.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				8BFD523A236A06D50023B9CF /* OnelineCall.swift */,
 				8B2097A0237340FB00B305CF /* TCPController.swift */,
 				8B2097A22374444A00B305CF /* NBSError.swift */,
+				8B19196023799170004B526E /* OnlineHandler.swift */,
 			);
 			path = HamMessanger;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BFD523B236A06D50023B9CF /* OnelineCall.swift in Sources */,
+				8B19196123799170004B526E /* OnlineHandler.swift in Sources */,
 				8B2097A32374444A00B305CF /* NBSError.swift in Sources */,
 				8B2097A1237340FB00B305CF /* TCPController.swift in Sources */,
 				8B9AAA7722FEE1EB00E87C01 /* TCPStuff.swift in Sources */,
@@ -557,7 +561,8 @@
 			baseConfigurationReference = 07DEFDC15109EFF73C62CB6F /* Pods-HamMessanger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessanger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -567,6 +572,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "NBS main Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -577,7 +583,8 @@
 			baseConfigurationReference = 8929C74498713782BEF8D128 /* Pods-HamMessanger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessanger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -587,6 +594,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "NBS main Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
