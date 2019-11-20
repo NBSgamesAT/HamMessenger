@@ -1,93 +1,111 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "hammessenger40.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "hammessenger60.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "hammessenger58-1.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "hammessenger87.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "hammessenger80.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "hammessenger120-1.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "hammessenger120.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "hammessenger180.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "ipad",
       "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "hammessenger20.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "hammessenger40-1.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "hammessenger29.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "hammessenger58.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "hammessenger40-2.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "hammessenger80-1.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "hammessenger76.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "hammessenger152.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "83.5x83.5",
+      "idiom" : "ipad",
+      "filename" : "hammessenger167.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ios-marketing",
       "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "hammessenger1024.png",
       "scale" : "1x"
     }
   ],

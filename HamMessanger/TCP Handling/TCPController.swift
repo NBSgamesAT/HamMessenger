@@ -36,9 +36,10 @@ class TCPController{
     switch self.tcpGetter!.connect(timeout: 2) {
     case .success:
       print("success");
-      self.onlineTimer = Timer.scheduledTimer(timeInterval: 59.0, target: self, selector: #selector(self.run_timer), userInfo: nil, repeats: true);
-      self.onlineTimer!.fire();
-      print(self.onlineTimer!.fireDate);
+      DispatchQueue.main.async {
+        self.onlineTimer = Timer.scheduledTimer(timeInterval: 59, target: self, selector: #selector(self.run_timer), userInfo: nil, repeats: true);
+        self.run_timer()
+      }
       
       while(!giveUp){
         guard let data = self.tcpGetter!.read(1024*10, timeout: 2) else{
@@ -72,7 +73,7 @@ class TCPController{
   
   @objc private func run_timer(){
     self.sendMessage(HamMessage.login());
-    print("NEXT CALL AT: ");
+    print("NEXT CALL AT: ---------------------------------------------");
     print(self.onlineTimer!.fireDate);
   }
   

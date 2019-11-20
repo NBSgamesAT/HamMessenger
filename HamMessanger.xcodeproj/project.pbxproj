@@ -18,6 +18,9 @@
 		8BC0457122F9B98800EABFD9 /* HamMessangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0457022F9B98800EABFD9 /* HamMessangerTests.swift */; };
 		8BC0457C22F9B98800EABFD9 /* HamMessangerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0457B22F9B98800EABFD9 /* HamMessangerUITests.swift */; };
 		8BC0458A22F9B9D500EABFD9 /* HamMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0458922F9B9D500EABFD9 /* HamMessage.swift */; };
+		8BCC03832385B2E40041A116 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */; };
+		8BCC03852385B3E20041A116 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03842385B3E20041A116 /* MessageTableViewController.swift */; };
+		8BCC03872385B5580041A116 /* ReceivedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03862385B5580041A116 /* ReceivedMessage.swift */; };
 		8BEB79CF2369DFE400883FF4 /* OnlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */; };
 		8BFD5239236A04A90023B9CF /* OnlineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */; };
 		8BFD523B236A06D50023B9CF /* OnelineCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD523A236A06D50023B9CF /* OnelineCall.swift */; };
@@ -54,6 +57,7 @@
 		8B19196023799170004B526E /* OnlineHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineHandler.swift; sourceTree = "<group>"; };
 		8B2097A0237340FB00B305CF /* TCPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
 		8B2097A22374444A00B305CF /* NBSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBSError.swift; sourceTree = "<group>"; };
+		8B34414B237A0F060038F246 /* HamMessanger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HamMessanger.entitlements; sourceTree = "<group>"; };
 		8B9AAA7622FEE1EB00E87C01 /* TCPStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPStuff.swift; sourceTree = "<group>"; };
 		8BC0455622F9B98700EABFD9 /* HamMessanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamMessanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC0455922F9B98700EABFD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,9 @@
 		8BC0457B22F9B98800EABFD9 /* HamMessangerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessangerUITests.swift; sourceTree = "<group>"; };
 		8BC0457D22F9B98800EABFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BC0458922F9B9D500EABFD9 /* HamMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessage.swift; sourceTree = "<group>"; };
+		8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		8BCC03842385B3E20041A116 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		8BCC03862385B5580041A116 /* ReceivedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedMessage.swift; sourceTree = "<group>"; };
 		8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTableViewCell.swift; sourceTree = "<group>"; };
 		8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTableViewController.swift; sourceTree = "<group>"; };
 		8BFD523A236A06D50023B9CF /* OnelineCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnelineCall.swift; sourceTree = "<group>"; };
@@ -138,19 +145,17 @@
 		8BC0455822F9B98700EABFD9 /* HamMessanger */ = {
 			isa = PBXGroup;
 			children = (
+				8BCC03802385B20A0041A116 /* MessageTable */,
+				8BCC037D2385B0340041A116 /* OnlineTable */,
+				8BCC037E2385B0540041A116 /* TCP Handling */,
+				8B34414B237A0F060038F246 /* HamMessanger.entitlements */,
 				8BC0455922F9B98700EABFD9 /* AppDelegate.swift */,
 				8BC0455B22F9B98700EABFD9 /* ViewController.swift */,
 				8BFD95D022FA208A00741B72 /* Main.storyboard */,
-				8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */,
 				8BC0456222F9B98800EABFD9 /* Assets.xcassets */,
 				8BC0456722F9B98800EABFD9 /* Info.plist */,
 				8BC0458922F9B9D500EABFD9 /* HamMessage.swift */,
-				8B9AAA7622FEE1EB00E87C01 /* TCPStuff.swift */,
-				8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */,
-				8BFD523A236A06D50023B9CF /* OnelineCall.swift */,
-				8B2097A0237340FB00B305CF /* TCPController.swift */,
 				8B2097A22374444A00B305CF /* NBSError.swift */,
-				8B19196023799170004B526E /* OnlineHandler.swift */,
 			);
 			path = HamMessanger;
 			sourceTree = "<group>";
@@ -171,6 +176,36 @@
 				8BC0457D22F9B98800EABFD9 /* Info.plist */,
 			);
 			path = HamMessangerUITests;
+			sourceTree = "<group>";
+		};
+		8BCC037D2385B0340041A116 /* OnlineTable */ = {
+			isa = PBXGroup;
+			children = (
+				8BFD523A236A06D50023B9CF /* OnelineCall.swift */,
+				8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */,
+				8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */,
+			);
+			path = OnlineTable;
+			sourceTree = "<group>";
+		};
+		8BCC037E2385B0540041A116 /* TCP Handling */ = {
+			isa = PBXGroup;
+			children = (
+				8B9AAA7622FEE1EB00E87C01 /* TCPStuff.swift */,
+				8B2097A0237340FB00B305CF /* TCPController.swift */,
+				8B19196023799170004B526E /* OnlineHandler.swift */,
+			);
+			path = "TCP Handling";
+			sourceTree = "<group>";
+		};
+		8BCC03802385B20A0041A116 /* MessageTable */ = {
+			isa = PBXGroup;
+			children = (
+				8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */,
+				8BCC03842385B3E20041A116 /* MessageTableViewController.swift */,
+				8BCC03862385B5580041A116 /* ReceivedMessage.swift */,
+			);
+			path = MessageTable;
 			sourceTree = "<group>";
 		};
 		9E85E800C369F1A6ED3ACD8E /* Pods */ = {
@@ -399,11 +434,14 @@
 				8B19196123799170004B526E /* OnlineHandler.swift in Sources */,
 				8B2097A32374444A00B305CF /* NBSError.swift in Sources */,
 				8B2097A1237340FB00B305CF /* TCPController.swift in Sources */,
+				8BCC03832385B2E40041A116 /* MessageTableViewCell.swift in Sources */,
+				8BCC03872385B5580041A116 /* ReceivedMessage.swift in Sources */,
 				8B9AAA7722FEE1EB00E87C01 /* TCPStuff.swift in Sources */,
 				8BEB79CF2369DFE400883FF4 /* OnlineTableViewCell.swift in Sources */,
 				8BC0455C22F9B98700EABFD9 /* ViewController.swift in Sources */,
 				8BC0458A22F9B9D500EABFD9 /* HamMessage.swift in Sources */,
 				8BFD5239236A04A90023B9CF /* OnlineTableViewController.swift in Sources */,
+				8BCC03852385B3E20041A116 /* MessageTableViewController.swift in Sources */,
 				8BC0455A22F9B98700EABFD9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,18 +599,23 @@
 			baseConfigurationReference = 07DEFDC15109EFF73C62CB6F /* Pods-HamMessanger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HamMessanger/HamMessanger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessanger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "NBS main Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "Profile For HamMessanger";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "MacVersion of HamMessanger";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -583,18 +626,23 @@
 			baseConfigurationReference = 8929C74498713782BEF8D128 /* Pods-HamMessanger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HamMessanger/HamMessanger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessanger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "NBS main Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "Profile For HamMessanger";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "MacVersion of HamMessanger";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
