@@ -19,8 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   var tableController: UITableViewController?;
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    #if targetEnvironment(macCatalyst)
+      let board = UIStoryboard.init(name: "Mac", bundle: nil)
+      let controller = board.instantiateInitialViewController()
+      window?.rootViewController = controller;
+      window?.makeKeyAndVisible()
+    #endif
     let tabController = window?.rootViewController as! UITabBarController;
     tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
+    
+    
     
     self.openConnection(tableController: tableController!);
     return true
