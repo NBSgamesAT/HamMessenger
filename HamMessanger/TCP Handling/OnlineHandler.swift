@@ -12,9 +12,11 @@ import UIKit
 class OnlineHandler: TCPEventHandler{
   
   var tableController: UITableViewController;
+  var messageTableView: MessageTableView;
   
-  init(tableController: UITableViewController){
+  init(tableController: UITableViewController, messageTableView: MessageTableView){
     self.tableController = tableController;
+    self.messageTableView = messageTableView;
   }
   
   func onReceive(_ message: HamMessage){
@@ -30,18 +32,20 @@ class OnlineHandler: TCPEventHandler{
       else{
         if(!OnlineHandler.arrayContainInfo(array: &AppDelegate.peopleOnline, call: message.source)){
           DispatchQueue.main.async {
-            (self.tableController.view as! UITableView).beginUpdates();
+            (self.tableController.view as! UITableView).beginUpdates()
             AppDelegate.peopleOnline.append(OnlineCall(callSign: message.source, name: String(info[0]), ip: String(info[2])))
-            (self.tableController.view as! UITableView).insertRows(at: [IndexPath(row: AppDelegate.peopleOnline.count - 1, section: 0)], with: UITableView.RowAnimation.none);
-            (self.tableController.view as! UITableView).endUpdates();
+            (self.tableController.view as! UITableView).insertRows(at: [IndexPath(row: AppDelegate.peopleOnline.count - 1, section: 0)], with: UITableView.RowAnimation.none)
+            (self.tableController.view as! UITableView).endUpdates()
           }
-          
-          
         }
       }
     }
-    else{
-      
+    else if(message.contact != "PC"){
+      DispatchQueue.main.async {
+        self.messageTableView.beginUpdates()
+        self.messageTableView.insertRows(at: [IndexPath(row: MessageTableView.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
+        self.messageTableView.endUpdates()
+      }
     }
   }
   
