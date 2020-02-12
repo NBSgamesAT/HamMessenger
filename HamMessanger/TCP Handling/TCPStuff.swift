@@ -109,7 +109,7 @@ class TCPStuff {
       var hamVersion: Int16 = 0;
       hamVersion = try Int16(getUint8FromArray(&byteReceived, index: 0));
       hamVersion = try hamVersion | Int16(getUint8FromArray(&byteReceived, index: 1)) << 8
-      if(hamVersion != 2){
+      if(hamVersion >= 1 && hamVersion <= 2){
         print("Version Number NOT matching!");
         return nil;
       }
