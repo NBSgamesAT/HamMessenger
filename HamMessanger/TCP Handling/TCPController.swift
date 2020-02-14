@@ -48,7 +48,6 @@ class TCPController{
           continue;
         };
         if(data[0] == 0xAA){
-          print("Found");
           //print(data);
           
           if(tcpStuff.addPart(bytes: data)){

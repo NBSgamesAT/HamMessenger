@@ -8,6 +8,14 @@
 
 import Foundation
 
-class ReceivedMessage{
+class ReceivedMessage {
+  var callSign: String
+  var time: Date
+  var label: String
+  init(callSign: String, time: Date, label: String){
+    self.callSign = callSign
+    self.time = time;
+    self.label = label;
+  }
   
 }

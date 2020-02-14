@@ -109,8 +109,8 @@ class TCPStuff {
       var hamVersion: Int16 = 0;
       hamVersion = try Int16(getUint8FromArray(&byteReceived, index: 0));
       hamVersion = try hamVersion | Int16(getUint8FromArray(&byteReceived, index: 1)) << 8
-      if(hamVersion >= 1 && hamVersion <= 2){
-        print("Version Number NOT matching!");
+      if(hamVersion != 2 && hamVersion != 1){
+        print("Version Number NOT matching! " + String(hamVersion));
         return nil;
       }
       var seqCounter: UInt64 = 0;

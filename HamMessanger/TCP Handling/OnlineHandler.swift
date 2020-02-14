@@ -30,18 +30,23 @@ class OnlineHandler: TCPEventHandler{
       else{
         if(!OnlineHandler.arrayContainInfo(array: &AppDelegate.peopleOnline, call: message.source)){
           DispatchQueue.main.async {
-            (self.tableController.view as! UITableView).beginUpdates();
+            (self.tableController.view as! UITableView).beginUpdates()
             AppDelegate.peopleOnline.append(OnlineCall(callSign: message.source, name: String(info[0]), ip: String(info[2])))
-            (self.tableController.view as! UITableView).insertRows(at: [IndexPath(row: AppDelegate.peopleOnline.count - 1, section: 0)], with: UITableView.RowAnimation.none);
-            (self.tableController.view as! UITableView).endUpdates();
+            (self.tableController.view as! UITableView).insertRows(at: [IndexPath(row: AppDelegate.peopleOnline.count - 1, section: 0)], with: UITableView.RowAnimation.none)
+            (self.tableController.view as! UITableView).endUpdates()
           }
-          
-          
         }
       }
     }
-    else{
-      
+    else if(message.contact != "PC"){
+      print("Well, it's here" + message.message)
+      MessageTableView.messages.append(ReceivedMessage(callSign: message.source, time: Date(), label: message.payloadString
+      ))
+      DispatchQueue.main.async {
+        AppDelegate.messageView?.beginUpdates()
+        AppDelegate.messageView?.insertRows(at: [IndexPath(row: MessageTableView.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
+        AppDelegate.messageView?.endUpdates()
+      }
     }
   }
   

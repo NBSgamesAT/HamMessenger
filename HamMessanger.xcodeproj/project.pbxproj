@@ -21,9 +21,7 @@
 		8BC0458A22F9B9D500EABFD9 /* HamMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0458922F9B9D500EABFD9 /* HamMessage.swift */; };
 		8BCC03832385B2E40041A116 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */; };
 		8BCC03872385B5580041A116 /* ReceivedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03862385B5580041A116 /* ReceivedMessage.swift */; };
-		8BCC03892385B9B30041A116 /* MessageTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03882385B9B30041A116 /* MessageTableDatasource.swift */; };
-		8BCC038B2385BACE0041A116 /* MessageTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC038A2385BACE0041A116 /* MessageTableViewDelegate.swift */; };
-		8BCC038E2385E8380041A116 /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC038D2385E8380041A116 /* MessageTableView.swift */; };
+		8BCC038B2385BACE0041A116 /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC038A2385BACE0041A116 /* MessageTableView.swift */; };
 		8BEB79CF2369DFE400883FF4 /* OnlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */; };
 		8BFD5239236A04A90023B9CF /* OnlineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */; };
 		8BFD523B236A06D50023B9CF /* OnelineCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD523A236A06D50023B9CF /* OnelineCall.swift */; };
@@ -77,9 +75,7 @@
 		8BC0458922F9B9D500EABFD9 /* HamMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessage.swift; sourceTree = "<group>"; };
 		8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		8BCC03862385B5580041A116 /* ReceivedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedMessage.swift; sourceTree = "<group>"; };
-		8BCC03882385B9B30041A116 /* MessageTableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableDatasource.swift; sourceTree = "<group>"; };
-		8BCC038A2385BACE0041A116 /* MessageTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewDelegate.swift; sourceTree = "<group>"; };
-		8BCC038D2385E8380041A116 /* MessageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
+		8BCC038A2385BACE0041A116 /* MessageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
 		8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTableViewCell.swift; sourceTree = "<group>"; };
 		8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTableViewController.swift; sourceTree = "<group>"; };
 		8BFD523A236A06D50023B9CF /* OnelineCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnelineCall.swift; sourceTree = "<group>"; };
@@ -210,9 +206,7 @@
 			children = (
 				8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */,
 				8BCC03862385B5580041A116 /* ReceivedMessage.swift */,
-				8BCC03882385B9B30041A116 /* MessageTableDatasource.swift */,
-				8BCC038A2385BACE0041A116 /* MessageTableViewDelegate.swift */,
-				8BCC038D2385E8380041A116 /* MessageTableView.swift */,
+				8BCC038A2385BACE0041A116 /* MessageTableView.swift */,
 			);
 			path = MessageTable;
 			sourceTree = "<group>";
@@ -442,12 +436,10 @@
 			files = (
 				8BFD523B236A06D50023B9CF /* OnelineCall.swift in Sources */,
 				8B19196123799170004B526E /* OnlineHandler.swift in Sources */,
-				8BCC038E2385E8380041A116 /* MessageTableView.swift in Sources */,
 				8B2097A32374444A00B305CF /* NBSError.swift in Sources */,
-				8BCC03892385B9B30041A116 /* MessageTableDatasource.swift in Sources */,
 				8B2097A1237340FB00B305CF /* TCPController.swift in Sources */,
 				8BCC03832385B2E40041A116 /* MessageTableViewCell.swift in Sources */,
-				8BCC038B2385BACE0041A116 /* MessageTableViewDelegate.swift in Sources */,
+				8BCC038B2385BACE0041A116 /* MessageTableView.swift in Sources */,
 				8BCC03872385B5580041A116 /* ReceivedMessage.swift in Sources */,
 				8B9AAA7722FEE1EB00E87C01 /* TCPStuff.swift in Sources */,
 				8BEB79CF2369DFE400883FF4 /* OnlineTableViewCell.swift in Sources */,
@@ -541,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -596,7 +588,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

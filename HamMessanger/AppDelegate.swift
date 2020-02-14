@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate{
   
   static var peopleOnline: [OnlineCall] = [];
+  static var messageView: UITableView?
   
   var window: UIWindow?
   
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     #endif
     let tabController = window?.rootViewController as! UITabBarController;
     tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
+    
     
     
     
