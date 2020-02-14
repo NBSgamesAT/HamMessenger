@@ -12,11 +12,9 @@ import UIKit
 class OnlineHandler: TCPEventHandler{
   
   var tableController: UITableViewController;
-  var messageTableView: MessageTableView;
   
-  init(tableController: UITableViewController, messageTableView: MessageTableView){
+  init(tableController: UITableViewController){
     self.tableController = tableController;
-    self.messageTableView = messageTableView;
   }
   
   func onReceive(_ message: HamMessage){
@@ -41,10 +39,13 @@ class OnlineHandler: TCPEventHandler{
       }
     }
     else if(message.contact != "PC"){
+      print("Well, it's here" + message.message)
+      MessageTableView.messages.append(ReceivedMessage(callSign: message.source, time: Date(), label: message.payloadString
+      ))
       DispatchQueue.main.async {
-        self.messageTableView.beginUpdates()
-        self.messageTableView.insertRows(at: [IndexPath(row: MessageTableView.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
-        self.messageTableView.endUpdates()
+        AppDelegate.messageView?.beginUpdates()
+        AppDelegate.messageView?.insertRows(at: [IndexPath(row: MessageTableView.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
+        AppDelegate.messageView?.endUpdates()
       }
     }
   }

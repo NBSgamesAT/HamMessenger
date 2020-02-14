@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate{
   
   static var peopleOnline: [OnlineCall] = [];
-  @IBOutlet weak var messageView: UITableView?
+  static var messageView: UITableView?
   
   var window: UIWindow?
   
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   
   func openConnection(tableController: UITableViewController){
     if(AppDelegate.con == nil || AppDelegate.con!.giveUp){
-      AppDelegate.con = TCPController("44.143.0.1", port: 9124, eventHandler: OnlineHandler(tableController: tableController, ))
+      AppDelegate.con = TCPController("44.143.0.1", port: 9124, eventHandler: OnlineHandler(tableController: tableController))
       AppDelegate.con?.activateListener();
     }
   }

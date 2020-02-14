@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ReceivedMessage{
+class ReceivedMessage {
   var callSign: String
   var time: Date
   var label: String
