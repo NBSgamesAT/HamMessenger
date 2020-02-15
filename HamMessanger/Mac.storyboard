@@ -35,7 +35,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Call Sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojx-Rq-Jpg">
-                                                    <rect key="frame" x="20" y="11" width="428" height="33"/>
+                                                    <rect key="frame" x="20" y="11" width="452" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                                     <nil key="textColor"/>
@@ -43,13 +43,13 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJY-ux-i7R">
                                                     <rect key="frame" x="20" y="52" width="760" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHX-lg-7zM">
-                                                    <rect key="frame" x="483" y="11" width="297" height="21"/>
+                                                    <rect key="frame" x="480" y="11" width="300" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ay0-Cg-fj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800.00000000000011" y="768.08035714285711"/>
+            <point key="canvasLocation" x="799.5" y="768"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Zgp-m4-Xh6">
@@ -158,7 +158,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Call Sign" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXE-pG-3xB">
-                                            <rect key="frame" x="17" y="11" width="427" height="44"/>
+                                            <rect key="frame" x="17" y="11" width="293" height="44"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                             <nil key="textColor"/>
@@ -166,15 +166,29 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                             <size key="shadowOffset" width="1" height="-1"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqS-Nh-a2W">
-                                            <rect key="frame" x="481" y="19" width="298" height="29"/>
+                                            <rect key="frame" x="588" y="19" width="191" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-w3-oEW">
-                                            <rect key="frame" x="17" y="62" width="762" height="29"/>
+                                            <rect key="frame" x="17" y="62" width="398" height="29"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ort" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-28-F2F">
+                                            <rect key="frame" x="422" y="68" width="357" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Locator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akk-vr-Vpq">
+                                            <rect key="frame" x="318" y="21" width="262" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -182,8 +196,11 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="Location" destination="a6g-28-F2F" id="ZVi-6i-XYQ"/>
                                     <outlet property="callLabel" destination="IXE-pG-3xB" id="SgK-i5-LhH"/>
                                     <outlet property="ipLabel" destination="NqS-Nh-a2W" id="570-ad-bN0"/>
+                                    <outlet property="location" destination="a6g-28-F2F" id="xHb-8J-Djt"/>
+                                    <outlet property="locator" destination="akk-vr-Vpq" id="qku-5R-a07"/>
                                     <outlet property="nameLabel" destination="MMe-w3-oEW" id="PPd-bZ-e5R"/>
                                 </connections>
                             </tableViewCell>
@@ -199,7 +216,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvT-6v-sIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530.434782608696" y="75.669642857142847"/>
+            <point key="canvasLocation" x="2529.75" y="75"/>
         </scene>
         <!--Online-->
         <scene sceneID="pRR-va-s7e">

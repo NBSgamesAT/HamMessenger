@@ -31,7 +31,12 @@ class OnlineHandler: TCPEventHandler{
         if(!OnlineHandler.arrayContainInfo(array: &AppDelegate.peopleOnline, call: message.source)){
           DispatchQueue.main.async {
             (self.tableController.view as! UITableView).beginUpdates()
+            #if !targetEnvironment(macCatalyst)
             AppDelegate.peopleOnline.append(OnlineCall(callSign: message.source, name: String(info[0]), ip: String(info[2])))
+            #endif
+            #if targetEnvironment(macCatalyst)
+            AppDelegate.peopleOnline.append(OnlineCall(callSign: message.source, name: String(info[0]), ip: String(info[2]), locator: String(info[3]), location: String(info[1])))
+            #endif
             (self.tableController.view as! UITableView).insertRows(at: [IndexPath(row: AppDelegate.peopleOnline.count - 1, section: 0)], with: UITableView.RowAnimation.none)
             (self.tableController.view as! UITableView).endUpdates()
           }

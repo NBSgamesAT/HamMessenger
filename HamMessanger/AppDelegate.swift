@@ -28,16 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     #endif
     let tabController = window?.rootViewController as! UITabBarController;
     tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
-    
-    
-    
-    
     self.openConnection(tableController: tableController!);
     return true
   }
   
   func applicationWillResignActive(_ application: UIApplication) {
-    
     self.closeConnection();
   }
   

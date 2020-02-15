@@ -14,6 +14,11 @@ class OnlineTableViewCell: UITableViewCell {
   @IBOutlet weak var callLabel: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var ipLabel: UILabel!
+  #if targetEnvironment(macCatalyst)
+  @IBOutlet weak var location: UILabel!
+  @IBOutlet weak var locator: UILabel!
+  #endif
+  
   
 
   override func awakeFromNib() {

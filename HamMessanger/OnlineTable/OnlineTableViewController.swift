@@ -39,8 +39,10 @@ class OnlineTableViewController: UITableViewController {
     actualCell.callLabel.text = user.callSign;
     actualCell.nameLabel.text = user.name;
     actualCell.ipLabel.text = user.ip;
-    
-
+    #if targetEnvironment(macCatalyst)
+    actualCell.location.text = user.location;
+    actualCell.locator.text = user.locator;
+    #endif
     return actualCell;
   }
 
