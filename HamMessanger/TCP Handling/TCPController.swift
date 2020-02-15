@@ -20,6 +20,8 @@ class TCPController{
   public var tcpStuff: TCPStuff;
   public var ownMessage: [UInt64];
   
+  private let timeout: Int = 5
+  
   init(_ ip: String, port: Int32, eventHandler: TCPEventHandler){
     self.ip = ip;
     self.port = port;
@@ -33,7 +35,7 @@ class TCPController{
   @objc private func receiverMainThread(){
     //var isComplete = false;
     self.tcpGetter = TCPClient(address: self.ip, port: self.port);
-    switch self.tcpGetter!.connect(timeout: 2) {
+    switch self.tcpGetter!.connect(timeout: timeout) {
     case .success:
       print("success");
       DispatchQueue.main.async {
@@ -42,7 +44,7 @@ class TCPController{
       }
       
       while(!giveUp){
-        guard let data = self.tcpGetter!.read(1024*10, timeout: 2) else{
+        guard let data = self.tcpGetter!.read(1024*10, timeout: timeout) else{
           //isComplete = false;
           tcpStuff.clearBytes();
           continue;
