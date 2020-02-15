@@ -44,8 +44,12 @@ class OnlineHandler: TCPEventHandler{
       }
     }
     else if(message.contact != "PC"){
-      print("Well, it's here" + message.message)
-      MessageTableView.messages.append(ReceivedMessage(callSign: message.source, time: Date(), label: message.payloadString
+      var payload = message.payloadString;
+      if(message.contact == "CQ"){
+        let info = message.payloadString.split(separator: "\t");
+        payload = String(info[5]);
+      }
+      MessageTableView.messages.append(ReceivedMessage(callSign: message.source, time: Date(), label: payload
       ))
       DispatchQueue.main.async {
         AppDelegate.messageView?.beginUpdates()

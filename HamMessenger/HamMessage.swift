@@ -125,8 +125,6 @@ class HamMessage {
   
   
   
-  let message: String = "Hallo, Wolfgang... Wie geht es dir"
-  let call: String = "OE1NBS"
   public static func login() -> HamMessage{
     //var msg: Message = Message(source: "OE1NBS", contactType: UInt8(8), contact: "OE1KBC", payloadType: UInt8(2), payload: "Hallo OE1KBC, wie geht es dir zur Zeit?")
     let payload = "Nicolas" + "\t" + "Wien" + "\t" + "44.0.0.0" + "\t" + "JN88EG" + "\t" + "iOS1.0";

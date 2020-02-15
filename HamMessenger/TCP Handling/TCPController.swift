@@ -20,7 +20,7 @@ class TCPController{
   public var tcpStuff: TCPStuff;
   public var ownMessage: [UInt64];
   
-  private let timeout: Int = 5
+  private let timeout: Int = 2
   
   init(_ ip: String, port: Int32, eventHandler: TCPEventHandler){
     self.ip = ip;
@@ -73,7 +73,7 @@ class TCPController{
   }
   
   @objc private func run_timer(){
-    self.sendMessage(HamMessage.login());
+    self.sendLineStatus(HamMessage.login());
     print("NEXT CALL AT: ---------------------------------------------");
     print(self.onlineTimer!.fireDate);
   }
@@ -86,11 +86,24 @@ class TCPController{
   }
   public func stopListener(){
     self.onlineTimer?.invalidate()
-    self.sendMessage(HamMessage.logout());
+    self.sendLineStatus(HamMessage.logout());
     self.tcpGetter?.close();
     self.giveUp = true;
     self.receiver.cancel();
     print("Stopped");
+  }
+  public func sendLineStatus(_ message: HamMessage){
+    //tcpGetter?.send(data: message.getData())
+    switch tcpGetter?.send(data: TCPStuff.getData(message: message)!) {
+    case .success:
+      //print("Successfully sent message");
+      ownMessage.append(message.seqCounter)
+      
+    case .failure(let error):
+      print(error);
+    case.none:
+      print("Won't be here");
+    }
   }
   public func sendMessage(_ message: HamMessage){
     //tcpGetter?.send(data: message.getData())
@@ -98,6 +111,7 @@ class TCPController{
     case .success:
       //print("Successfully sent message");
       ownMessage.append(message.seqCounter)
+      self.eventHandler.onReceive(message)
       
     case .failure(let error):
       print(error);

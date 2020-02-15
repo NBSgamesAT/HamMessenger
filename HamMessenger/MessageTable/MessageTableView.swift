@@ -12,15 +12,20 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   
   @IBOutlet weak var tableView: UITableView!
   
-  @IBAction func test(_ sender: Any) {
-    MessageTableView.messages.append(ReceivedMessage(callSign: "OE1NBS/test", time: Date(), label: "CQ: Wir jemand mit mir reden?"))
-    DispatchQueue.main.async {
-      self.tableView.beginUpdates()
-      self.tableView.insertRows(at: [IndexPath(row: MessageTableView.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
-      self.tableView.endUpdates()
-    }
+  @IBAction func sendBC(_ sender: Any) {
+    if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
+    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "ALL", payloadType: 0x06, payload: enteredMessage.text!);
+    AppDelegate.con?.sendMessage(message);
+    enteredMessage.text = "";
   }
-  
+  @IBAction func SendCQ(_ sender: Any) {
+    if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
+    let payload = "Nicolas" + "\t" + "Wien" + "\t" + "44.0.0.0" + "\t" + "JN88EG" + "\t" + "iOS1.0\t" + enteredMessage.text!;
+    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload);
+    AppDelegate.con?.sendMessage(message);
+    enteredMessage.text = "";
+  }
+  @IBOutlet weak var enteredMessage: UITextField!
   
   static var messages: [ReceivedMessage] = [];
   
