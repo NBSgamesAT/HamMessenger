@@ -107,6 +107,8 @@
                     <tabBarItem key="tabBarItem" title="Send" image="paperplane" catalog="system" id="Aeu-Q2-pCw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonBC" destination="XmM-Oc-4ve" id="hAA-mQ-E8S"/>
+                        <outlet property="buttonCQ" destination="0lH-bi-G6f" id="Nhf-HK-7eF"/>
                         <outlet property="enteredMessage" destination="XCD-1s-Vcs" id="8cg-ZX-reP"/>
                         <outlet property="tableView" destination="IlB-S3-m0e" id="ZEf-Dq-tVT"/>
                     </connections>

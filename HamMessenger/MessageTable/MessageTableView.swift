@@ -27,9 +27,22 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   }
   @IBOutlet weak var enteredMessage: UITextField!
   
+  @IBAction func resignKeyboard(_ sender: UITapGestureRecognizer) {
+    enteredMessage.resignFirstResponder();
+  }
+  
+  @IBOutlet weak var buttonCQ: UIButton!
+  @IBOutlet weak var buttonBC: UIButton!
+  
+  
+  
   static var messages: [ReceivedMessage] = [];
   
   override func viewDidLoad() {
+    buttonCQ.layer.cornerRadius = 10;
+    buttonCQ.clipsToBounds = true;
+    buttonBC.layer.cornerRadius = 10;
+    buttonBC.clipsToBounds = true;
     super.viewDidLoad();
     self.tableView.dataSource = self;
     self.tableView.delegate = self;

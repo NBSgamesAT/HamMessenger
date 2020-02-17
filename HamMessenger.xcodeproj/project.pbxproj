@@ -138,6 +138,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8B3A570523FADD5A00974148 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8BC0458922F9B9D500EABFD9 /* HamMessage.swift */,
+				8B2097A22374444A00B305CF /* NBSError.swift */,
+				8BCC037E2385B0540041A116 /* TCP Handling */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		8BC0454D22F9B98700EABFD9 = {
 			isa = PBXGroup;
 			children = (
@@ -163,17 +173,15 @@
 		8BC0455822F9B98700EABFD9 /* HamMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				8B3A570523FADD5A00974148 /* Protocol */,
 				8BCC03802385B20A0041A116 /* MessageTable */,
 				8BCC037D2385B0340041A116 /* OnlineTable */,
-				8BCC037E2385B0540041A116 /* TCP Handling */,
 				8B34414B237A0F060038F246 /* HamMessenger.entitlements */,
 				8BC0455922F9B98700EABFD9 /* AppDelegate.swift */,
 				8BC0455B22F9B98700EABFD9 /* ViewController.swift */,
 				8BFD95D022FA208A00741B72 /* iPhone.storyboard */,
 				8BC0456222F9B98800EABFD9 /* Assets.xcassets */,
 				8BC0456722F9B98800EABFD9 /* Info.plist */,
-				8BC0458922F9B9D500EABFD9 /* HamMessage.swift */,
-				8B2097A22374444A00B305CF /* NBSError.swift */,
 				8B1F5D6823F170A3002BA3DA /* Mac.storyboard */,
 			);
 			path = HamMessenger;

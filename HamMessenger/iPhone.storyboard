@@ -12,7 +12,7 @@
         <scene sceneID="OLo-2U-vW4">
             <objects>
                 <viewController id="TD7-iL-xJx" userLabel="Broadcast" customClass="MessageTableView" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
-                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="OYP-On-qH0">
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="OYP-On-qH0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="143"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvG-NV-IjG">
-                                        <rect key="frame" x="8" y="52" width="133" height="41"/>
+                                        <rect key="frame" x="8" y="52" width="132" height="41"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -32,13 +32,13 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJu-EZ-U94">
-                                        <rect key="frame" x="8" y="101" width="398" height="34"/>
+                                        <rect key="frame" x="8" y="101" width="397" height="34"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hON-hh-3Vc">
-                                        <rect key="frame" x="273" y="52" width="133" height="41"/>
+                                        <rect key="frame" x="273" y="52" width="132" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -51,13 +51,18 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="143" id="hn6-9S-EXZ"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vMb-eF-dFA" appends="YES" id="Ga4-4b-xNz"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IlB-S3-m0e">
-                                <rect key="frame" x="0.0" y="151" width="414" height="745"/>
+                                <rect key="frame" x="0.0" y="143" width="414" height="753"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <gestureRecognizers/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tcMessageId" rowHeight="95" id="Rgz-wg-Xgi" customClass="MessageTableViewCell" customModule="HamMessenger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="95"/>
@@ -96,21 +101,36 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="itS-Dx-per" appends="YES" id="7gP-sd-01J"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="IlB-S3-m0e" firstAttribute="top" secondItem="zrB-Br-q2T" secondAttribute="bottom" constant="8" id="3rg-j0-6rr"/>
+                            <constraint firstItem="IlB-S3-m0e" firstAttribute="top" secondItem="zrB-Br-q2T" secondAttribute="bottom" id="3rg-j0-6rr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="70Y-xF-eIg"/>
                     </stackView>
                     <tabBarItem key="tabBarItem" title="Send" image="paperplane" catalog="system" id="Aeu-Q2-pCw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonBC" destination="DvG-NV-IjG" id="ZRp-3e-tAx"/>
+                        <outlet property="buttonCQ" destination="hON-hh-3Vc" id="Nhv-a8-gMh"/>
                         <outlet property="enteredMessage" destination="oJu-EZ-U94" id="wyY-nE-ZR8"/>
                         <outlet property="tableView" destination="IlB-S3-m0e" id="ZEf-Dq-tVT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ay0-Cg-fj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vMb-eF-dFA" userLabel="KillKeyboard">
+                    <connections>
+                        <action selector="resignKeyboard:" destination="TD7-iL-xJx" id="x4r-wG-DwP"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="itS-Dx-per" userLabel="KillKeyboard2">
+                    <connections>
+                        <action selector="resignKeyboard:" destination="TD7-iL-xJx" id="Lse-gX-qDz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="800.00000000000011" y="768.08035714285711"/>
         </scene>
@@ -190,7 +210,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Call Sign" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXE-pG-3xB">
-                                            <rect key="frame" x="19" y="11" width="216" height="44"/>
+                                            <rect key="frame" x="19" y="11" width="215" height="44"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                             <nil key="textColor"/>
@@ -205,7 +225,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-w3-oEW">
-                                            <rect key="frame" x="19" y="63" width="374" height="29"/>
+                                            <rect key="frame" x="19" y="63" width="373" height="29"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <nil key="textColor"/>
