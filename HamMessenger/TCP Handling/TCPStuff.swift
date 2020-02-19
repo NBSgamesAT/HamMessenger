@@ -181,7 +181,7 @@ class TCPStuff {
         }
         byteOffset = byteOffset + Int(message.payloadLength);
         message.payload = source;
-        message.payloadString = String(bytes: source, encoding: .utf8)!
+        message.payloadString = String(bytes: source, encoding: .utf8) ?? ""
       }
       
       return message
