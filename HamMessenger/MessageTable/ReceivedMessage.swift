@@ -12,10 +12,12 @@ class ReceivedMessage {
   var callSign: String
   var time: Date
   var label: String
-  init(callSign: String, time: Date, label: String){
+  var payloadType: PayloadTypes
+  init(callSign: String, time: Date, label: String, payloadType: PayloadTypes){
     self.callSign = callSign
     self.time = time;
     self.label = label;
+    self.payloadType = payloadType;
   }
   
 }

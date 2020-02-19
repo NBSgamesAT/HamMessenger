@@ -61,14 +61,48 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "tcMessageId"/*, for: indexPath*/)
     let addInfo = cell as! MessageTableViewCell;
-    addInfo.callSign.text = MessageTableView.messages[indexPath.row].callSign
+    let message = MessageTableView.messages[indexPath.row];
+    addInfo.callSign.text = message.callSign
     
     let formatter = DateFormatter();
     formatter.timeStyle = .medium
-    addInfo.date.text = formatter.string(from: MessageTableView.messages[indexPath.row].time)
-    addInfo.label.text = MessageTableView.messages[indexPath.row].label
+    addInfo.date.text = formatter.string(from: message.time)
+    addInfo.label.text = message.label
+    
+    addInfo.callSign.textColor = getTextColorForContactType(message.payloadType)
+    addInfo.date.textColor = getTextColorForContactType(message.payloadType)
+    addInfo.label.textColor = getTextColorForContactType(message.payloadType)
+    
+    addInfo.backgroundColor = getBackgroundColorForContactType(message.payloadType)
     
     return addInfo
+  }
+  
+  
+  
+  private func getTextColorForContactType(_ contactType: PayloadTypes) -> UIColor{
+    switch contactType {
+    case PayloadTypes.BC_BROADCAST:
+      print("Broadcast")
+      return UIColor(named: "mBroadcast")!
+    case PayloadTypes.GC_GROUP_CHAT:
+      print("Group")
+      return UIColor(named: "mGroupChat")!
+    case PayloadTypes.PC_PRIVATE_CALL:
+      print("Private")
+      return UIColor(named: "mPrivateCall")!
+    default:
+      print("Default")
+      return UIColor(named: "textColour")!
+    }
+  }
+  private func getBackgroundColorForContactType(_ contactType: PayloadTypes) -> UIColor{
+    switch contactType {
+    case PayloadTypes.CQ:
+      return UIColor(named: "mCQBackground")!
+    default:
+      return UIColor(named: "fieldColour")!
+    }
   }
 }
 
