@@ -134,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="800.00000000000011" y="768.08035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="Zgp-m4-Xh6">
             <objects>
-                <tabBarController id="6UL-bA-79n" customClass="ViewController" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="6UL-bA-79n" userLabel="Main Controller" customClass="ViewController" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l4N-Wc-cu5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -162,19 +162,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjj-CJ-ZTL">
-                                <rect key="frame" x="20" y="44" width="374" height="346"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <string key="text">HAMMessenger Idea and Design by ÖVSV
-
-HAMGO Protokoll Alex OE1VQS
+                                <rect key="frame" x="20" y="44" width="374" height="769"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <mutableString key="text">HAMMessenger Idea and Design by ÖVSV
+ iOS/iPad OS/Mac OS X Client Nicolas OE1NBS HAMGO Protokoll Alex OE1VQS
 .NET Programming Kurt OE1KBC
 ANDROID Client Kurt OE1KBS
-iOS/iPad OS/Mac OS X Client Nicolas OE1NBS
-
 
 (c) by ÖVSV/OE1KBS 2018
-(c) by OE1NBS 2019 
-Special Thanks to ÖVSV for letting me create a version for Apple Devices</string>
+(c) by OE1NBS 2019/2020 
+Special Thanks to ÖVSV for letting me create a version for Apple Devices</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -248,6 +245,9 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                     <tabBarItem key="tabBarItem" title="Online" image="o.square" catalog="system" id="19y-2F-k41"/>
                     <navigationItem key="navigationItem" title="Online" id="uHf-us-RC6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="KTL-LE-hvY" kind="show" identifier="toPrivMessage" id="KTt-Ef-V0A"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvT-6v-sIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,6 +270,22 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVa-NH-yDA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1648" y="76"/>
+        </scene>
+        <!--PrivateMessage-->
+        <scene sceneID="58I-FK-Qbk">
+            <objects>
+                <viewController id="KTL-LE-hvY" userLabel="PrivateMessage" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pz9-Zr-f3J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vPp-RI-t1w"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Private Call" id="gOe-hq-ioY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igK-zr-wfd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3378" y="76"/>
         </scene>
     </scenes>
     <resources>
