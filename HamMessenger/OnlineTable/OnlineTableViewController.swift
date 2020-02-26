@@ -9,7 +9,10 @@
 import UIKit
 
 class OnlineTableViewController: UITableViewController {
-
+  
+  @IBOutlet weak var tableNavItem: UINavigationItem!
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 

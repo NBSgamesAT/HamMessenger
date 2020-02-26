@@ -38,7 +38,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hON-hh-3Vc">
-                                        <rect key="frame" x="273" y="52" width="132" height="41"/>
+                                        <rect key="frame" x="273" y="52" width="131" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -164,14 +164,14 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjj-CJ-ZTL">
                                 <rect key="frame" x="20" y="44" width="374" height="769"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <mutableString key="text">HAMMessenger Idea and Design by ÖVSV
+                                <string key="text">HAMMessenger Idea and Design by ÖVSV
  iOS/iPad OS/Mac OS X Client Nicolas OE1NBS HAMGO Protokoll Alex OE1VQS
 .NET Programming Kurt OE1KBC
 ANDROID Client Kurt OE1KBS
 
 (c) by ÖVSV/OE1KBS 2018
 (c) by OE1NBS 2019/2020 
-Special Thanks to ÖVSV for letting me create a version for Apple Devices</mutableString>
+Special Thanks to ÖVSV for letting me create a version for Apple Devices</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -190,7 +190,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</mutab
             </objects>
             <point key="canvasLocation" x="1647.826086956522" y="768.75"/>
         </scene>
-        <!--Online-->
+        <!--Connecting...-->
         <scene sceneID="Y4F-I4-eLh">
             <objects>
                 <tableViewController id="zey-WP-2WF" customClass="OnlineTableViewController" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -207,7 +207,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</mutab
                                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Call Sign" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXE-pG-3xB">
-                                            <rect key="frame" x="19" y="11" width="215" height="44"/>
+                                            <rect key="frame" x="19" y="11" width="214" height="44"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                             <nil key="textColor"/>
@@ -215,7 +215,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</mutab
                                             <size key="shadowOffset" width="1" height="-1"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqS-Nh-a2W">
-                                            <rect key="frame" x="243" y="19" width="150" height="29"/>
+                                            <rect key="frame" x="243" y="19" width="149" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
@@ -243,9 +243,10 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</mutab
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Online" image="o.square" catalog="system" id="19y-2F-k41"/>
-                    <navigationItem key="navigationItem" title="Online" id="uHf-us-RC6"/>
+                    <navigationItem key="navigationItem" title="Connecting..." id="uHf-us-RC6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tableNavItem" destination="uHf-us-RC6" id="INu-Jw-HMM"/>
                         <segue destination="KTL-LE-hvY" kind="show" identifier="toPrivMessage" id="KTt-Ef-V0A"/>
                     </connections>
                 </tableViewController>

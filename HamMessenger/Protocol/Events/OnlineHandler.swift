@@ -11,10 +11,10 @@ import UIKit
 
 class OnlineHandler: TCPEventHandler{
   
-  var tableController: UITableViewController;
+  var tableController: OnlineTableViewController;
   
   init(tableController: UITableViewController){
-    self.tableController = tableController;
+    self.tableController = tableController as! OnlineTableViewController;
   }
   
   func onReceive(_ message: HamMessage){
@@ -57,6 +57,28 @@ class OnlineHandler: TCPEventHandler{
         AppDelegate.messageView?.endUpdates()
       }
     }
+  }
+  
+  func onConnect() {
+    DispatchQueue.main.async {
+      self.tableController.tableNavItem.title = "Online"
+    }
+  }
+  
+  func onConnecting() {
+    DispatchQueue.main.async {
+      self.tableController.tableNavItem.title = "Connecting..."
+    }
+  }
+  
+  func onConnectionLost() {
+    DispatchQueue.main.async {
+      self.tableController.tableNavItem.title = "Connection Lost"
+    }
+  }
+  
+  func messageDeliveryProblem(_ message: HamMessage) {
+    print("Message with the ID " + String(message.seqCounter) + " couldn't be delivered")
   }
   
   static func arrayContainInfo(array: inout [OnlineCall], call: String) -> Bool {

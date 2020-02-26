@@ -34,10 +34,11 @@ class TCPController{
   
   @objc private func receiverMainThread(){
     //var isComplete = false;
+    self.eventHandler.onConnecting()
     self.tcpGetter = TCPClient(address: self.ip, port: self.port);
     switch self.tcpGetter!.connect(timeout: timeout) {
     case .success:
-      print("success");
+      self.eventHandler.onConnect()
       DispatchQueue.main.async {
         self.onlineTimer = Timer.scheduledTimer(timeInterval: 59, target: self, selector: #selector(self.run_timer), userInfo: nil, repeats: true);
         self.run_timer()
@@ -67,8 +68,8 @@ class TCPController{
         }
       }
     case .failure(let error):
-      print("Given up");
       print(error.localizedDescription);
+      self.eventHandler.onConnectionLost();
     }
   }
   
@@ -114,8 +115,9 @@ class TCPController{
       self.eventHandler.onReceive(message)
       
     case .failure(let error):
+      self.eventHandler.messageDeliveryProblem(message);
       print(error);
-    case.none:
+    case .none:
       print("Won't be here");
     }
   }
@@ -123,4 +125,8 @@ class TCPController{
 
 protocol TCPEventHandler{
   func onReceive(_ message: HamMessage);
+  func onConnect();
+  func onConnecting();
+  func onConnectionLost();
+  func messageDeliveryProblem(_ message: HamMessage);
 }
