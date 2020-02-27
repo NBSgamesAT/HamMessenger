@@ -30,7 +30,6 @@ class HamMessage {
   public var payloadLength: Int32 //Done
   public var payload: [UInt8] //Done
   public var payloadString: String //Done
-  public var payloadText: String //Done
   private var isSendable = true;
   
   init(){
@@ -48,7 +47,6 @@ class HamMessage {
     payloadLength = 0;
     payload = [];
     payloadString = "";
-    payloadText = "";
     isSendable = false;
   }
   
@@ -61,10 +59,10 @@ class HamMessage {
     self.flags = 0x00
     
     self.source = source;
-    self.sourceLength = Int16(self.source.count)
+    self.sourceLength = Int16(self.source.utf8.count)
     
     self.contactType = contactType
-    self.contactLength = Int16(contact.count)
+    self.contactLength = Int16(contact.utf8.count)
     self.contact = contact;
     
     self.pathLength = 0;
@@ -79,10 +77,9 @@ class HamMessage {
     else{
       self.payload = Array(payload.utf8)
       self.payloadString = payload;
-      self.payloadLength = Int32(payload.count)
+      self.payloadLength = Int32(self.payload.count)
       self.payloadType = payloadType
     }
-    self.payloadText = ""
   }
   
   init(seqCounter: UInt64, call source: String, contactType: UInt8, contact: String, payloadType: UInt8, payload: String){
@@ -93,10 +90,10 @@ class HamMessage {
     self.flags = 0x00
     
     self.source = source;
-    self.sourceLength = Int16(self.source.count)
+    self.sourceLength = Int16(source.utf8.count)
     
     self.contactType = contactType
-    self.contactLength = Int16(contact.count)
+    self.contactLength = Int16(contact.utf8.count)
     self.contact = contact;
     
     self.pathLength = 0;
@@ -111,10 +108,9 @@ class HamMessage {
     else{
       self.payload = Array(payload.utf8)
       self.payloadString = payload;
-      self.payloadLength = Int32(payload.count)
+      self.payloadLength = Int32(self.payload.count)
       self.payloadType = payloadType
     }
-    self.payloadText = ""
   }
   
   /*private func printShit (input: [UInt8]){
