@@ -20,15 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   var tableController: UITableViewController?;
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    #if targetEnvironment(macCatalyst)
-      let board = UIStoryboard.init(name: "Mac", bundle: nil)
+    SettingsManager.registerSettingsBundle()
+    if(UserDefaults.standard.bool(forKey: "hasValues")){
+      #if targetEnvironment(macCatalyst)
+        let board = UIStoryboard.init(name: "Mac", bundle: nil)
+        let controller = board.instantiateInitialViewController()
+        window?.rootViewController = controller;
+        window?.makeKeyAndVisible()
+      #endif
+      let tabController = window?.rootViewController as! UITabBarController;
+      tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
+      self.openConnection(tableController: tableController!);
+    }
+    else{
+      let board = UIStoryboard.init(name: "FirstStart", bundle: nil)
       let controller = board.instantiateInitialViewController()
       window?.rootViewController = controller;
       window?.makeKeyAndVisible()
-    #endif
-    let tabController = window?.rootViewController as! UITabBarController;
-    tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
-    self.openConnection(tableController: tableController!);
+    }
+    
     return true
   }
   
@@ -46,7 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   }
   
   func applicationDidBecomeActive(_ application: UIApplication) {
-    self.openConnection(tableController: tableController!);
+    if(tableController != nil) {
+      self.openConnection(tableController: tableController!);
+    }
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
@@ -55,7 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   
   func openConnection(tableController: UITableViewController){
     if(AppDelegate.con == nil || AppDelegate.con!.giveUp){
-      AppDelegate.con = TCPController("44.143.0.1", port: 9124, eventHandler: OnlineHandler(tableController: tableController)) // 44.143.0.1, newradio.eu
+      let url = UserDefaults.standard.value(forKey: "server") as! String
+      AppDelegate.con = TCPController(url, port: 9124, eventHandler: OnlineHandler(tableController: tableController))
       AppDelegate.con?.activateListener();
     }
   }
@@ -65,5 +78,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     }
   }
   
+  static func getAppDelegate() -> AppDelegate{
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    return delegate;
+  }
 }
 

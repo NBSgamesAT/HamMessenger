@@ -119,19 +119,27 @@ class HamMessage {
     }
   }*/
   
-  
+  //var msg: Message = Message(source: "OE1NBS", contactType: UInt8(8), contact: "OE1KBC", payloadType: UInt8(2), payload: "Hallo OE1KBC, wie geht es dir zur Zeit?")
+  public static func createLoginString() -> String{
+    let payload = ProtocolSettings.getName() + "\t" + ProtocolSettings.getLocation() + "\t" + ProtocolSettings.getIP() + "\t" + ProtocolSettings.getLocator() + "\t" + "iOS1.0";
+    return payload
+  }
+  public static func createLogoutString() -> String{
+    let payload = ProtocolSettings.getName() + "\t" + ProtocolSettings.getLocation() + "\t" + ProtocolSettings.getIP() + "\t" + ProtocolSettings.getLocator() + "\t" + "CLOSE";
+    return payload
+  }
+  public static func getInformationSeperator() -> String{
+    return "\t";
+  }
   
   public static func login() -> HamMessage{
-    //var msg: Message = Message(source: "OE1NBS", contactType: UInt8(8), contact: "OE1KBC", payloadType: UInt8(2), payload: "Hallo OE1KBC, wie geht es dir zur Zeit?")
-    let payload = "Nicolas" + "\t" + "Wien" + "\t" + "44.0.0.0" + "\t" + "JN88EG" + "\t" + "iOS1.0";
-    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload)
+    
+    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: HamMessage.createLoginString())
     return message;
   }
   
   public static func logout() -> HamMessage{
-    //var msg: Message = Message(source: "OE1NBS", contactType: UInt8(8), contact: "OE1KBC", payloadType: UInt8(2), payload: "Hallo OE1KBC, wie geht es dir zur Zeit?")
-    let payload = "Nicolas" + "\t" + "Wien" + "\t" + "44.0.0.0" + "\t" + "JN88EG" + "\t" + "CLOSE";
-    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload)
+    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: HamMessage.createLogoutString())
     return message;
   }
   

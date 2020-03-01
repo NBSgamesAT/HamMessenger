@@ -14,13 +14,13 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   
   @IBAction func sendBC(_ sender: Any) {
     if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
-    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "ALL", payloadType: 0x06, payload: enteredMessage.text!);
+    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: 0x06, payload: enteredMessage.text!);
     AppDelegate.con?.sendMessage(message);
     enteredMessage.text = "";
   }
   @IBAction func SendCQ(_ sender: Any) {
     if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
-    let payload = "Nicolas" + "\t" + "Wien" + "\t" + "44.0.0.0" + "\t" + "JN88EG" + "\t" + "iOS1.0\t" + enteredMessage.text!;
+    let payload = HamMessage.createLoginString() + HamMessage.getInformationSeperator() + enteredMessage.text!;
     let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload);
     AppDelegate.con?.sendMessage(message);
     enteredMessage.text = "";
