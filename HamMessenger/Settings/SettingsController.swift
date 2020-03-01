@@ -45,7 +45,6 @@ class SettingsController: UIViewController, UITextFieldDelegate {
   var size: CGFloat = 0;
   func textFieldDidBeginEditing(_ textField: UITextField) {
     size = textField.frame.origin.y;
-    print(size)
   }
   
   @objc func keyboardWillShow(notification: Notification){
@@ -53,7 +52,6 @@ class SettingsController: UIViewController, UITextFieldDelegate {
       return
     }
     
-    print(keyboardEnd.height)
     var moveDown = size - 200;
     if(keyboardEnd.height < moveDown){
       moveDown = keyboardEnd.height

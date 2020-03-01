@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   
   func openConnection(tableController: UITableViewController){
     if(AppDelegate.con == nil || AppDelegate.con!.giveUp){
-      let url = UserDefaults.standard.value(forKey: "server") as! String
+      let url = UserDefaults.standard.value(forKey: "server") as? String ?? "44.143.0.1"
       AppDelegate.con = TCPController(url, port: 9124, eventHandler: OnlineHandler(tableController: tableController))
       AppDelegate.con?.activateListener();
     }
