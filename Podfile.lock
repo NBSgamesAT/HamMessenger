@@ -1,16 +1,22 @@
 PODS:
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
   - SwiftSocket (2.0.2)
 
 DEPENDENCIES:
+  - SQLite.swift (~> 0.12.0)
   - SwiftSocket
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
+    - SQLite.swift
     - SwiftSocket
 
 SPEC CHECKSUMS:
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
 
-PODFILE CHECKSUM: 31bb5c909b7cfbe04dcbf47579be99ac79fdfc78
+PODFILE CHECKSUM: 3492a5b7e419e784ed0c1ee24582a941060c992c
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.9.0
