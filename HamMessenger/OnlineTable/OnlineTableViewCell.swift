@@ -19,8 +19,6 @@ class OnlineTableViewCell: UITableViewCell {
   @IBOutlet weak var locator: UILabel!
   #endif
   
-  
-
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code

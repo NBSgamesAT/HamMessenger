@@ -12,19 +12,8 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   
   @IBOutlet weak var tableView: UITableView!
   
-  @IBAction func sendBC(_ sender: Any) {
-    if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
-    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: 0x06, payload: enteredMessage.text!);
-    AppDelegate.con?.sendMessage(message);
-    enteredMessage.text = "";
-  }
-  @IBAction func SendCQ(_ sender: Any) {
-    if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
-    let payload = HamMessage.createLoginString() + HamMessage.getInformationSeperator() + enteredMessage.text!;
-    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload);
-    AppDelegate.con?.sendMessage(message);
-    enteredMessage.text = "";
-  }
+  @IBOutlet weak var tabBar: UITabBarItem!
+  
   @IBOutlet weak var enteredMessage: UITextField!
   
   @IBAction func resignKeyboard(_ sender: UITapGestureRecognizer) {
@@ -33,8 +22,6 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   
   @IBOutlet weak var buttonCQ: UIButton!
   @IBOutlet weak var buttonBC: UIButton!
-  
-  
   
   static var messages: [ReceivedMessage] = [];
   
@@ -54,8 +41,8 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
     return MessageTableView.messages.count;
   }
   
-  func numberOfSections(in tableView: UITableView) -> Int {
-    AppDelegate.messageView = tableView;
+  public func numberOfSections(in tableView: UITableView) -> Int {
+    //AppDelegate.messageView = tableView;
     return 1
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,6 +65,20 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
     return addInfo
   }
   
+  @IBAction func SendCQ(_ sender: Any) {
+    if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
+    let payload = HamMessage.createLoginString() + HamMessage.getInformationSeperator() + enteredMessage.text!;
+    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload);
+    AppDelegate.con?.sendMessage(message);
+    enteredMessage.text = "";
+  }
+  
+  @IBAction func sendBC(_ sender: Any) {
+    if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
+    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: 0x06, payload: enteredMessage.text!);
+    AppDelegate.con?.sendMessage(message);
+    enteredMessage.text = "";
+  }
   
   
   private func getTextColorForContactType(_ contactType: PayloadTypes) -> UIColor{

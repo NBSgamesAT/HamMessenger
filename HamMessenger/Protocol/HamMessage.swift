@@ -26,7 +26,6 @@ class HamMessage {
   public var pathLength: UInt16 //Done
   public var path: [UInt8] //Done
   public var payloadType: UInt8 //Done
-  //public var payloadTypeString: String //Done
   public var payloadLength: Int32 //Done
   public var payload: [UInt8] //Done
   public var payloadString: String //Done

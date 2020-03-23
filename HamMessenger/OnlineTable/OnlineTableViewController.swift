@@ -12,6 +12,7 @@ class OnlineTableViewController: UITableViewController {
   
   @IBOutlet weak var tableNavItem: UINavigationItem!
   
+  var selectedCall: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,6 +49,20 @@ class OnlineTableViewController: UITableViewController {
     #endif
     return actualCell;
   }
+  
+  
+  public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    selectedCall = AppDelegate.peopleOnline[indexPath.row].callSign
+    self.performSegue(withIdentifier: "toPrivMessage", sender: self)
+  }
+  
+  public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toPrivMessage" {
+      let cont: PrivateMessageController = segue.destination as! PrivateMessageController
+      cont.currentSelectedCall = selectedCall
+    }
+  }
+  
 
   /*
   // Override to support conditional editing of the table view.

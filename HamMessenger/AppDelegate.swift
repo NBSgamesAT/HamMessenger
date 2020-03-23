@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   
   static var peopleOnline: [OnlineCall] = [];
   static var messageView: UITableView?
+  var idb: DBMan?
+  static var privateMessageView: PrivateMessageController?
   
   var window: UIWindow?
   
@@ -21,6 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     SettingsManager.registerSettingsBundle()
+    do{
+      self.idb = try DBMan();
+    }
+    catch {
+      print("NO DATABASE AVAILABLE")
+    }
     if(UserDefaults.standard.bool(forKey: "hasValues")){
       #if targetEnvironment(macCatalyst)
         let board = UIStoryboard.init(name: "Mac", bundle: nil)
