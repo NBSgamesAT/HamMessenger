@@ -173,14 +173,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		8B85951A2427B3E4006FCF34 /* PrivateMessge */ = {
+		8B85951A2427B3E4006FCF34 /* PrivateMessage */ = {
 			isa = PBXGroup;
 			children = (
 				8B85951B2427B4E5006FCF34 /* PrivateMessageController.swift */,
 				8B85951D2427B7E0006FCF34 /* PrivateMessageTableViewCell.swift */,
 				8B85952324281EAE006FCF34 /* PrivateMessage.swift */,
 			);
-			path = PrivateMessge;
+			path = PrivateMessage;
 			sourceTree = "<group>";
 		};
 		8BC0454D22F9B98700EABFD9 = {
@@ -208,7 +208,7 @@
 		8BC0455822F9B98700EABFD9 /* HamMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				8B85951A2427B3E4006FCF34 /* PrivateMessge */,
+				8B85951A2427B3E4006FCF34 /* PrivateMessage */,
 				8B1BBE3524222C7100C3A82F /* SQLite */,
 				8B3A570523FADD5A00974148 /* Protocol */,
 				8BCC03802385B20A0041A116 /* MessageTable */,
