@@ -26,6 +26,9 @@ class OnlineHandler: TCPEventHandler{
         AppDelegate.peopleOnline.removeAll { (callInformation) -> Bool in
           return message.source == callInformation.callSign
         }
+        DispatchQueue.main.async {
+          (self.tableController.view as! UITableView).reloadData()
+        }
       }
       else{
         if(!OnlineHandler.arrayContainInfo(array: &AppDelegate.peopleOnline, call: message.source)){
@@ -38,7 +41,8 @@ class OnlineHandler: TCPEventHandler{
         }
       }
     }
-    else if(true){
+    else if(message.payloadType != PayloadTypes.PC_PRIVATE_CALL.rawValue || message.contact == ProtocolSettings.getCall() || message.source == ProtocolSettings.getCall()){
+      
       var payload = message.payloadString;
       if(message.contact == "CQ"){
         let info = message.payloadString.split(separator: "\t");
