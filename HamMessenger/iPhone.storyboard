@@ -4,6 +4,7 @@
     <dependencies>
         <deployment version="4864" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,40 +60,55 @@
                                     <outletCollection property="gestureRecognizers" destination="vMb-eF-dFA" appends="YES" id="Ga4-4b-xNz"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IlB-S3-m0e">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="600" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IlB-S3-m0e">
                                 <rect key="frame" x="0.0" y="143" width="414" height="753"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tcMessageId" rowHeight="95" id="Rgz-wg-Xgi" customClass="MessageTableViewCell" customModule="HamMessenger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="95"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tcMessageId" id="Rgz-wg-Xgi" customClass="MessageTableViewCell" customModule="HamMessenger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="74.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rgz-wg-Xgi" id="gFn-C4-0CP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Call Sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojx-Rq-Jpg">
-                                                    <rect key="frame" x="20" y="11" width="199" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJY-ux-i7R">
-                                                    <rect key="frame" x="20" y="43" width="374" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelg" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJY-ux-i7R">
+                                                    <rect key="frame" x="20" y="43" width="374" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHX-lg-7zM">
-                                                    <rect key="frame" x="227" y="11" width="167" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHX-lg-7zM">
+                                                    <rect key="frame" x="224" y="11" width="170" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojx-Rq-Jpg">
+                                                    <rect key="frame" x="20" y="11" width="196" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="196" id="9dr-ka-OWE"/>
+                                                        <constraint firstAttribute="height" constant="24" id="MEg-9e-6xo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ojx-Rq-Jpg" firstAttribute="top" secondItem="gFn-C4-0CP" secondAttribute="topMargin" id="73P-dQ-L4L"/>
+                                                <constraint firstItem="lHX-lg-7zM" firstAttribute="leading" secondItem="Ojx-Rq-Jpg" secondAttribute="trailing" constant="8" id="9R7-27-zBU"/>
+                                                <constraint firstItem="PJY-ux-i7R" firstAttribute="trailing" secondItem="gFn-C4-0CP" secondAttribute="trailingMargin" id="UJd-zw-Ytl"/>
+                                                <constraint firstItem="PJY-ux-i7R" firstAttribute="top" secondItem="Ojx-Rq-Jpg" secondAttribute="bottom" constant="8" id="Vig-1d-tq3"/>
+                                                <constraint firstItem="PJY-ux-i7R" firstAttribute="top" secondItem="lHX-lg-7zM" secondAttribute="bottom" constant="8" id="aQA-Mk-axC"/>
+                                                <constraint firstItem="Ojx-Rq-Jpg" firstAttribute="leading" secondItem="gFn-C4-0CP" secondAttribute="leadingMargin" id="biZ-Hw-5Mq"/>
+                                                <constraint firstItem="lHX-lg-7zM" firstAttribute="top" secondItem="gFn-C4-0CP" secondAttribute="topMargin" id="j1B-sI-Kfr"/>
+                                                <constraint firstItem="PJY-ux-i7R" firstAttribute="top" secondItem="Ojx-Rq-Jpg" secondAttribute="bottom" constant="8" id="lBA-g5-afP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PJY-ux-i7R" secondAttribute="bottom" id="luO-9U-FIU"/>
+                                                <constraint firstItem="lHX-lg-7zM" firstAttribute="trailing" secondItem="gFn-C4-0CP" secondAttribute="trailingMargin" id="qY2-gJ-kmc"/>
+                                                <constraint firstItem="PJY-ux-i7R" firstAttribute="leading" secondItem="gFn-C4-0CP" secondAttribute="leadingMargin" id="rWC-ot-6Ap"/>
+                                                <constraint firstItem="lHX-lg-7zM" firstAttribute="leading" secondItem="Ojx-Rq-Jpg" secondAttribute="trailing" constant="8" id="vnQ-a6-nXD"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="callSign" destination="Ojx-Rq-Jpg" id="cnv-Fn-6eV"/>
@@ -282,7 +298,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saC-ub-TVa">
-                                <rect key="frame" x="0.0" y="88" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="712"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
                                 <prototypes>
@@ -303,7 +319,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="chatOtherBackground"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="AF5-FW-kyp" secondAttribute="trailing" constant="8" id="JyW-1H-rS4"/>
                                                         <constraint firstItem="AF5-FW-kyp" firstAttribute="top" secondItem="WB6-Tm-j5y" secondAttribute="top" constant="8" id="K6a-3s-BKo"/>
@@ -321,7 +337,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="chatOwnBackground"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="tkP-0E-dtk" secondAttribute="bottom" constant="8" id="Hf8-Mh-5wD"/>
                                                         <constraint firstItem="tkP-0E-dtk" firstAttribute="top" secondItem="Dw5-LG-cY5" secondAttribute="top" constant="8" id="TVN-J2-RQ7"/>
@@ -372,7 +388,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="mCQBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="hoN-U0-Bcb"/>
                                 </constraints>
@@ -381,7 +397,7 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="saC-ub-TVa" firstAttribute="trailing" secondItem="Jl4-zH-NMr" secondAttribute="trailing" id="CO8-Qy-49J"/>
-                            <constraint firstItem="saC-ub-TVa" firstAttribute="top" secondItem="Jl4-zH-NMr" secondAttribute="top" id="M3y-zR-FMQ"/>
+                            <constraint firstItem="saC-ub-TVa" firstAttribute="top" secondItem="Jl4-zH-NMr" secondAttribute="top" constant="10" id="M3y-zR-FMQ"/>
                             <constraint firstItem="1wl-3I-rKB" firstAttribute="leading" secondItem="Jl4-zH-NMr" secondAttribute="leading" id="cyr-iV-l3V"/>
                             <constraint firstItem="1wl-3I-rKB" firstAttribute="top" secondItem="saC-ub-TVa" secondAttribute="bottom" id="eiI-ec-qrn"/>
                             <constraint firstItem="1wl-3I-rKB" firstAttribute="trailing" secondItem="Jl4-zH-NMr" secondAttribute="trailing" id="fKc-8A-gTZ"/>
@@ -413,5 +429,14 @@ Special Thanks to ÖVSV for letting me create a version for Apple Devices</strin
         <image name="keyboard" catalog="system" width="64" height="34"/>
         <image name="o.square" catalog="system" width="64" height="56"/>
         <image name="paperplane" catalog="system" width="64" height="60"/>
+        <namedColor name="chatOtherBackground">
+            <color red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chatOwnBackground">
+            <color red="0.79607843137254897" green="0.95686274509803926" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mCQBackground">
+            <color red="1" green="1" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

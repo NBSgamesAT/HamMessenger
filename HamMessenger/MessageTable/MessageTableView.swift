@@ -55,6 +55,7 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
     formatter.timeStyle = .medium
     addInfo.date.text = formatter.string(from: message.time)
     addInfo.label.text = message.label
+    addInfo.label.sizeToFit()
     
     addInfo.callSign.textColor = getTextColorForContactType(message.payloadType)
     addInfo.date.textColor = getTextColorForContactType(message.payloadType)
