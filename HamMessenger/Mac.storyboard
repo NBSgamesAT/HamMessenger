@@ -164,14 +164,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjj-CJ-ZTL">
                                 <rect key="frame" x="20" y="20" width="760" height="510"/>
-                                <string key="text">HAMMessanger Ideo and Design by ÖVSV 
+                                <mutableString key="text">HAMMessanger Ideo and Design by ÖVSV 
 iOS/iPad OS/Mac OS X Client Nicolas OE1NBS
 HAMGO Protokoll Alex OE1VQS
 .NET Programming Kurt OE1KBC
-ANDROID Client Kurt OE1KBS 
-(c) by ÖVSV/OE1KBS 2018
+ANDROID Client Kurt OE1KBC 
+(c) by ÖVSV/OE1KBC 2018
 (c) by OE1NBS 2019/2020 
-Special Thanks to ÖVSV for letting me create a version for Apple Devices</string>
+Special thanks to ÖVSV for letting me create a version for Apple Devices</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
