@@ -37,7 +37,7 @@ public class PrivateMessagesDB{
       let messages = try self.db.prepare(messageTable.select(callSign, message, timestamp, isReceived)
            .filter(callSign == callsign)
            .order(timestamp.desc)
-           .limit(15, offset: 15 * offsetMultiplier))
+           .limit(40, offset: 15 * offsetMultiplier))
       var messageList: [PrivateMessage] = []
       for message in messages {
         let privateMessage = PrivateMessage(callsign: message[self.callSign], message: message[self.message], timestamp: message[self.timestamp], isReceived: message[self.isReceived])
@@ -60,6 +60,20 @@ public class PrivateMessagesDB{
     }
     catch {
       print("Failed to add item")
+    }
+  }
+  public func loadCallsWithChatlogs() -> [OnlineCall] {
+    do{
+      let callsList = try self.db.prepare(messageTable.select(distinct: callSign))
+      var calls: [OnlineCall] = []
+      for singleCall in callsList {
+        let call = OnlineCall(callSign: singleCall[self.callSign])
+        calls.append(call)
+      }
+      return calls
+    }
+    catch {
+      return []
     }
   }
   

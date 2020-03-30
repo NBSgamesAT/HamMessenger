@@ -27,32 +27,74 @@ class OnlineTableViewController: UITableViewController {
   // MARK: Data is from AppDelegate
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return 2
   }
+  var offlineCalls: [OnlineCall] = []
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return AppDelegate.peopleOnline.count;
+    if(section == 0){
+      return AppDelegate.peopleOnline.count;
+    }
+    else if(section == 1){
+      var calls = AppDelegate.getAppDelegate().idb?.privateMessage.loadCallsWithChatlogs()
+      calls?.removeAll(where: {onLineCallOut(call: $0)})
+      offlineCalls = calls ?? [];
+      return calls?.count ?? 0
+    }
+    return 0
+  }
+  
+  func onLineCallOut(call: OnlineCall) -> Bool {
+    for online in AppDelegate.peopleOnline {
+      if online.callSign == call.callSign {
+        return true
+      }
+    }
+    return false
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "OnlineTableViewCell", for: indexPath)
-    guard let actualCell = cell as? OnlineTableViewCell else {
-      fatalError("Could not downgrade the cell");
+    
+    
+    if(indexPath.section == 0){
+      let cell = tableView.dequeueReusableCell(withIdentifier: "OnlineTableViewCell", for: indexPath)
+      guard let actualCell = cell as? OnlineTableViewCell else {
+        fatalError("Could not downgrade the cell");
+      }
+      let user = AppDelegate.peopleOnline[indexPath.row];
+      actualCell.callLabel.text = user.callSign;
+      actualCell.nameLabel.text = user.name;
+      actualCell.ipLabel.text = user.ip;
+      #if targetEnvironment(macCatalyst)
+      actualCell.location.text = user.location;
+      actualCell.locator.text = user.locator;
+      #endif
+      actualCell.contentView.sizeToFit()
+      return actualCell;
     }
-    let user = AppDelegate.peopleOnline[indexPath.row];
-    actualCell.callLabel.text = user.callSign;
-    actualCell.nameLabel.text = user.name;
-    actualCell.ipLabel.text = user.ip;
-    #if targetEnvironment(macCatalyst)
-    actualCell.location.text = user.location;
-    actualCell.locator.text = user.locator;
-    #endif
-    return actualCell;
+    else{
+      let cell = tableView.dequeueReusableCell(withIdentifier: "OfflineTableViewCell", for: indexPath)
+      guard let actualCell = cell as? OnlineTableViewCellOffline else {
+        fatalError("Could not downgrade the cell");
+      }
+      let user = offlineCalls[indexPath.row];
+      actualCell.callLabel.text = user.callSign;
+      actualCell.contentView.sizeToFit()
+      return actualCell;
+    }
   }
   
   
-  public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    selectedCall = AppDelegate.peopleOnline[indexPath.row].callSign
+  public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    if indexPath.section == 0{
+      selectedCall = AppDelegate.peopleOnline[indexPath.row].callSign
+    }
+    else if indexPath.section == 1{
+      selectedCall = offlineCalls[indexPath.row].callSign
+    }
+    else{
+      return
+    }
     self.performSegue(withIdentifier: "toPrivMessage", sender: self)
   }
   
