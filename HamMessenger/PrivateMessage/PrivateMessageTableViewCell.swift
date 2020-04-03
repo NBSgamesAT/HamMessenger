@@ -8,12 +8,9 @@
 
 import UIKit
 
-public class PrivateMessageTableViewCell: UITableViewCell {
+public class PrivateMessageTableViewCellOther: UITableViewCell {
  
   @IBOutlet weak var textOtherView: UIView!
   @IBOutlet weak var textOtherLabel: UILabel!
-  
-  @IBOutlet weak var textOwnView: UIView!
-  @IBOutlet weak var textOwnLabel: UILabel!
   
 }

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MessageTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var tableView: UITableView!
   
   @IBOutlet weak var tabBar: UITabBarItem!
   
-  @IBOutlet weak var enteredMessage: UITextField!
+  @IBOutlet weak var enteredMessage: UITextView!
   
   @IBAction func resignKeyboard(_ sender: UITapGestureRecognizer) {
     enteredMessage.resignFirstResponder();
@@ -22,6 +22,7 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   
   @IBOutlet weak var buttonCQ: UIButton!
   @IBOutlet weak var buttonBC: UIButton!
+  @IBOutlet weak var buttonEM: UIButton!
   
   static var messages: [ReceivedMessage] = [];
   
@@ -30,6 +31,13 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
     buttonCQ.clipsToBounds = true;
     buttonBC.layer.cornerRadius = 10;
     buttonBC.clipsToBounds = true;
+    buttonEM.layer.cornerRadius = 10
+    buttonEM.clipsToBounds = true
+    
+    self.enteredMessage.layer.borderWidth = 1
+    self.enteredMessage.layer.borderColor = UIColor.systemGray.cgColor
+    self.enteredMessage.layer.cornerRadius = 10
+    
     super.viewDidLoad();
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -38,7 +46,8 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return MessageTableView.messages.count;
+    return MessageTableViewController
+      .messages.count;
   }
   
   public func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,7 +57,7 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "tcMessageId"/*, for: indexPath*/)
     let addInfo = cell as! MessageTableViewCell;
-    let message = MessageTableView.messages[indexPath.row];
+    let message = MessageTableViewController.messages[indexPath.row];
     addInfo.callSign.text = message.callSign
     
     let formatter = DateFormatter();
@@ -81,6 +90,13 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
     enteredMessage.text = "";
   }
   
+  @IBAction func sendEM(_ sender: Any){
+    if enteredMessage.text == "" || enteredMessage.text == nil {return}
+    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: PayloadTypes.EM_EMERGENCY.rawValue, payload: enteredMessage.text!)
+    AppDelegate.con?.sendMessage(message);
+    enteredMessage.text = ""
+  }
+  
   
   private func getTextColorForContactType(_ contactType: PayloadTypes) -> UIColor{
     switch contactType {
@@ -102,6 +118,8 @@ class MessageTableView: UIViewController, UITableViewDelegate, UITableViewDataSo
     switch contactType {
     case PayloadTypes.CQ:
       return UIColor(named: "mCQBackground")!
+    case PayloadTypes.EM_EMERGENCY:
+      return UIColor(named: "mEMBackground")!
     default:
       return UIColor(named: "fieldColour")!
     }

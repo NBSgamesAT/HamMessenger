@@ -11,6 +11,7 @@
 		8B1F5D6923F170A3002BA3DA /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F5D6823F170A3002BA3DA /* Mac.storyboard */; };
 		8B2097A1237340FB00B305CF /* TCPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2097A0237340FB00B305CF /* TCPController.swift */; };
 		8B2097A32374444A00B305CF /* NBSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2097A22374444A00B305CF /* NBSError.swift */; };
+		8B2C21B424375AD000383701 /* PrivateMessageTableViewCellOwn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C21B324375AD000383701 /* PrivateMessageTableViewCellOwn.swift */; };
 		8B3A570723FAFECC00974148 /* PayloadTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A570623FAFECC00974148 /* PayloadTypes.swift */; };
 		8B637F25243236DE00D3088F /* OnlineTableViewCellOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B637F24243236DE00D3088F /* OnlineTableViewCellOffline.swift */; };
 		8B85951C2427B4E5006FCF34 /* PrivateMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85951B2427B4E5006FCF34 /* PrivateMessageController.swift */; };
@@ -28,7 +29,7 @@
 		8BC0458A22F9B9D500EABFD9 /* HamMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0458922F9B9D500EABFD9 /* HamMessage.swift */; };
 		8BCC03832385B2E40041A116 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */; };
 		8BCC03872385B5580041A116 /* ReceivedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03862385B5580041A116 /* ReceivedMessage.swift */; };
-		8BCC038B2385BACE0041A116 /* MessageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC038A2385BACE0041A116 /* MessageTableView.swift */; };
+		8BCC038B2385BACE0041A116 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC038A2385BACE0041A116 /* MessageTableViewController.swift */; };
 		8BD43A0B240AD41500AA7F49 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BD43A0A240AD41500AA7F49 /* Settings.bundle */; };
 		8BD43A0D240AE0AC00AA7F49 /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD43A0C240AE0AC00AA7F49 /* FirstStart.storyboard */; };
 		8BD43A10240AE5CA00AA7F49 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD43A0F240AE5CA00AA7F49 /* SettingsController.swift */; };
@@ -70,6 +71,7 @@
 		8B1F5D6823F170A3002BA3DA /* Mac.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mac.storyboard; sourceTree = "<group>"; };
 		8B2097A0237340FB00B305CF /* TCPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
 		8B2097A22374444A00B305CF /* NBSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBSError.swift; sourceTree = "<group>"; };
+		8B2C21B324375AD000383701 /* PrivateMessageTableViewCellOwn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateMessageTableViewCellOwn.swift; sourceTree = "<group>"; };
 		8B34414B237A0F060038F246 /* HamMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HamMessenger.entitlements; sourceTree = "<group>"; };
 		8B3A570623FAFECC00974148 /* PayloadTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadTypes.swift; sourceTree = "<group>"; };
 		8B637F24243236DE00D3088F /* OnlineTableViewCellOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTableViewCellOffline.swift; sourceTree = "<group>"; };
@@ -94,7 +96,7 @@
 		8BC0458922F9B9D500EABFD9 /* HamMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessage.swift; sourceTree = "<group>"; };
 		8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		8BCC03862385B5580041A116 /* ReceivedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedMessage.swift; sourceTree = "<group>"; };
-		8BCC038A2385BACE0041A116 /* MessageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableView.swift; sourceTree = "<group>"; };
+		8BCC038A2385BACE0041A116 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		8BD43A0A240AD41500AA7F49 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8BD43A0C240AE0AC00AA7F49 /* FirstStart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstStart.storyboard; sourceTree = "<group>"; };
 		8BD43A0F240AE5CA00AA7F49 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				8B85951B2427B4E5006FCF34 /* PrivateMessageController.swift */,
 				8B85951D2427B7E0006FCF34 /* PrivateMessageTableViewCell.swift */,
+				8B2C21B324375AD000383701 /* PrivateMessageTableViewCellOwn.swift */,
 				8B85952324281EAE006FCF34 /* PrivateMessage.swift */,
 			);
 			path = PrivateMessage;
@@ -273,7 +276,7 @@
 			children = (
 				8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */,
 				8BCC03862385B5580041A116 /* ReceivedMessage.swift */,
-				8BCC038A2385BACE0041A116 /* MessageTableView.swift */,
+				8BCC038A2385BACE0041A116 /* MessageTableViewController.swift */,
 			);
 			path = MessageTable;
 			sourceTree = "<group>";
@@ -524,10 +527,11 @@
 				8B2097A1237340FB00B305CF /* TCPController.swift in Sources */,
 				8B3A570723FAFECC00974148 /* PayloadTypes.swift in Sources */,
 				8BD43A12240B04F700AA7F49 /* SettingsManager.swift in Sources */,
+				8B2C21B424375AD000383701 /* PrivateMessageTableViewCellOwn.swift in Sources */,
 				8BCC03832385B2E40041A116 /* MessageTableViewCell.swift in Sources */,
 				8B8A8D14240BB9CC00E732F6 /* ProtocolSettings.swift in Sources */,
 				8BD43A10240AE5CA00AA7F49 /* SettingsController.swift in Sources */,
-				8BCC038B2385BACE0041A116 /* MessageTableView.swift in Sources */,
+				8BCC038B2385BACE0041A116 /* MessageTableViewController.swift in Sources */,
 				8BCC03872385B5580041A116 /* ReceivedMessage.swift in Sources */,
 				8B85951E2427B7E0006FCF34 /* PrivateMessageTableViewCell.swift in Sources */,
 				8B8595202427F538006FCF34 /* DBMan.swift in Sources */,
@@ -701,6 +705,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
@@ -709,6 +714,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0alpha2;
 				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IosHamMessanger;
@@ -728,6 +734,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
@@ -736,6 +743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0alpha2;
 				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IosHamMessanger;

@@ -46,11 +46,11 @@ class OnlineHandler: TCPEventHandler{
         let info = message.payloadString.split(separator: "\t");
         payload = String(info[5]);
       }
-      MessageTableView.messages.append(ReceivedMessage(callSign: message.source, time: Date(), label: payload, payloadType: PayloadTypes.getTypeById(id: message.payloadType)
+      MessageTableViewController.messages.append(ReceivedMessage(callSign: message.source, time: Date(), label: payload, payloadType: PayloadTypes.getTypeById(id: message.payloadType)
       ))
       DispatchQueue.main.async {
         AppDelegate.messageView?.beginUpdates()
-        AppDelegate.messageView?.insertRows(at: [IndexPath(row: MessageTableView.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
+        AppDelegate.messageView?.insertRows(at: [IndexPath(row: MessageTableViewController.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
         AppDelegate.messageView?.endUpdates()
       }
     }

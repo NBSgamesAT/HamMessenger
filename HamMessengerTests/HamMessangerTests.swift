@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import HamMessanger
+@testable import HamMessenger
 
 class HamMessangerTests: XCTestCase {
 

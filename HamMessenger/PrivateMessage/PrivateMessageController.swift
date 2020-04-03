@@ -9,62 +9,69 @@
 import Foundation
 import UIKit
 
-public class PrivateMessageController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate{
+public class PrivateMessageController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate{
   
   @IBOutlet weak var textFieldView: UIView!
-  @IBOutlet weak var messageEnterField: UITextField!
+  @IBOutlet weak var messageEnterView: UITextView!
   @IBOutlet weak var messageSendButton: UIButton!
   @IBOutlet weak var messageTableView: UITableView!
   @IBOutlet weak var navBar: UINavigationItem!
+  @IBOutlet weak var bottomContraint: NSLayoutConstraint!
   
   var currentSelectedCall: String? = nil
   var messages: [PrivateMessage] = []
+  var offset = 0
+  var stopLoading = false
+  var isLoading = false
   
   public override func viewDidLoad() {
     super.viewDidLoad();
-    messageEnterField.delegate = self
+    messageEnterView.delegate = self
     messageTableView.delegate = self
     messageTableView.dataSource = self
     navBar.title = currentSelectedCall ?? "";
+    offset = 0;
+    
     
     if currentSelectedCall != nil {
-      messages = AppDelegate.getAppDelegate().idb?.privateMessage.loadMessages(callsign: currentSelectedCall!, offsetMultiplier: 0) ?? []
+      messages = AppDelegate.getAppDelegate().idb?.privateMessage.loadMessages(callsign: currentSelectedCall!, offsetMultiplier: 0, reversed: false) ?? []
       messages.reverse()
     }
     
-    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     
     AppDelegate.privateMessageView = self
     
   }
   
   deinit {
-    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
-    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
-    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
   }
   
   @objc func keyboardWillShow(notification: Notification){
     guard let keyboardEnd = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
       return
     }
-    
-    var newHeightTable = self.view.frame.height
-    newHeightTable -= textFieldView.frame.height
-    newHeightTable -= messageTableView.frame.height
-    if notification.name != UIResponder.keyboardDidHideNotification {
-      newHeightTable -= keyboardEnd.height
+    var actaulKeyboard: CGFloat
+    if notification.name == UIResponder.keyboardWillHideNotification {
+      actaulKeyboard = 0;
     }
-    messageTableView.frame.origin.y = newHeightTable
-    
-    var newHeightField = self.view.frame.height
-    newHeightField -= textFieldView.frame.height
-    if notification.name != UIResponder.keyboardDidHideNotification {
-      newHeightField -= keyboardEnd.height
+    else {
+      actaulKeyboard = keyboardEnd.height
     }
-    textFieldView.frame.origin.y = newHeightField
+    
+    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+      self.bottomContraint.constant = actaulKeyboard
+      self.view.layoutIfNeeded()
+    }, completion: {(completed) in
+      
+    });
+    self.view.layoutIfNeeded()
+    
   }
   
   
@@ -77,41 +84,60 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
     return 1
   }
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "privMessageId")! as! PrivateMessageTableViewCell
     let privMessage = messages[indexPath.row]
-    //var size = CGSize()
-    //size.width = maxSize
-    
     if privMessage.isReceived {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "privMessageIdOther")! as! PrivateMessageTableViewCellOther
       cell.textOtherLabel.text = privMessage.message
-      cell.textOtherView.sizeToFit()
-      cell.textOtherLabel.sizeToFit()
       cell.textOtherView.layer.cornerRadius = 10
       cell.textOtherView.clipsToBounds = true
-      cell.textOwnView.isHidden = true
+      return cell
     }
     else{
+      let cell = tableView.dequeueReusableCell(withIdentifier: "privMessageIdOwn")! as! PrivateMessageTableViewCellOwn
       cell.textOwnLabel.text = privMessage.message
-      cell.textOwnView.sizeToFit()
-      cell.textOwnLabel.sizeToFit()
       cell.textOwnView.layer.cornerRadius = 10
       cell.textOwnView.clipsToBounds = true
-      cell.textOtherView.isHidden = true
+      return cell
     }
-    return cell;
   }
   
   @IBAction func onMessageSendPressed(_ sender: Any) {
-    if messageEnterField.text != "" {
-      let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "'" + currentSelectedCall!, payloadType: PayloadTypes.PC_PRIVATE_CALL.rawValue, payload: messageEnterField.text!);
+    if messageEnterView.text != "" {
+      let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "'" + currentSelectedCall!, payloadType: PayloadTypes.PC_PRIVATE_CALL.rawValue, payload: messageEnterView.text!);
       AppDelegate.con?.sendMessage(message);
-      messageEnterField.text = ""
+      messageEnterView.text = ""
     }
   }
   
   @IBAction func removeKeyboard(_ sender: UITapGestureRecognizer) {
-    messageEnterField.resignFirstResponder()
+    messageEnterView.resignFirstResponder()
   }
   
+  /*public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    
+    if self.messageTableView.contentOffset.y < -125 {
+      if stopLoading {
+        return
+      }
+      let moreMessages = AppDelegate.getAppDelegate().idb?.privateMessage.loadMessages(callsign: currentSelectedCall ?? "", offsetMultiplier: offset + 1, reversed: false) ?? []
+      if moreMessages.count > 0 {
+        offset += 1
+        self.messages.insert(contentsOf: moreMessages, at: 0)
+        self.isLoading = true
+        self.messageTableView.beginUpdates()
+        for count in 0 ... moreMessages.count - 1 {
+          
+          self.messageTableView.insertRows(at: [IndexPath.init(row: count, section: 0)], with: .none)
+          //self.messageTableView.contentOffset.
+          
+        }
+        self.messageTableView.endUpdates()
+        self.isLoading = false
+      }
+      else{
+        stopLoading = true
+      }
+    }
+  }*/
   
 }
