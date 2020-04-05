@@ -265,9 +265,12 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                             <action selector="sendEM:" destination="VEJ-Xb-y4b" eventType="touchUpInside" id="teH-dv-hXy"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gL2-L1-VMY">
-                                        <rect key="frame" x="18" y="57" width="762" height="34"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gL2-L1-VMY">
+                                        <rect key="frame" x="20" y="57" width="760" height="34"/>
                                         <color key="backgroundColor" name="chatOtherBackground"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="num-me-ICc"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -283,7 +286,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                     <constraint firstItem="Dyt-4e-SzP" firstAttribute="leading" secondItem="diV-cz-P5M" secondAttribute="leading" constant="20" id="air-Za-dxQ"/>
                                     <constraint firstItem="diV-cz-P5M" firstAttribute="trailing" secondItem="PEW-bb-nrc" secondAttribute="trailing" constant="20" id="bdw-gS-Kyw"/>
                                     <constraint firstItem="diV-cz-P5M" firstAttribute="bottom" secondItem="gL2-L1-VMY" secondAttribute="bottom" constant="8" id="exx-e8-EPy"/>
-                                    <constraint firstItem="gL2-L1-VMY" firstAttribute="leading" secondItem="diV-cz-P5M" secondAttribute="leading" constant="18" id="hEN-Oc-kai"/>
+                                    <constraint firstItem="gL2-L1-VMY" firstAttribute="leading" secondItem="diV-cz-P5M" secondAttribute="leading" constant="20" id="hEN-Oc-kai"/>
                                     <constraint firstItem="icO-7q-t6y" firstAttribute="top" secondItem="diV-cz-P5M" secondAttribute="top" constant="8" id="v8K-n8-K1M"/>
                                     <constraint firstItem="gL2-L1-VMY" firstAttribute="top" secondItem="Dyt-4e-SzP" secondAttribute="bottom" constant="8" id="z6s-iU-qJ7"/>
                                 </constraints>
@@ -365,6 +368,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                         <outlet property="enteredMessage" destination="gL2-L1-VMY" id="2hx-eX-PdL"/>
                         <outlet property="tabBar" destination="t58-DG-1ku" id="4t0-71-Mey"/>
                         <outlet property="tableView" destination="0FM-hD-8Ug" id="i1x-gm-sWq"/>
+                        <outlet property="textViewHeight" destination="num-me-ICc" id="LGX-uD-13m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icu-Fc-j5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -477,7 +481,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                             <action selector="onMessageSendPressed:" destination="AUz-xf-vfn" eventType="touchUpInside" id="7Se-jC-6km"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aKo-Fd-0qN">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aKo-Fd-0qN">
                                         <rect key="frame" x="8" y="8" width="734" height="34"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -530,6 +534,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                         <outlet property="messageTableView" destination="9GN-Nl-L5h" id="qKs-sc-7EC"/>
                         <outlet property="navBar" destination="67Y-Bn-1bH" id="F0c-iJ-28X"/>
                         <outlet property="textFieldView" destination="nKG-SF-rmN" id="fah-kS-oPv"/>
+                        <outlet property="textViewHeight" destination="75e-h3-MxC" id="AdL-zU-JlU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXD-OL-7K1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

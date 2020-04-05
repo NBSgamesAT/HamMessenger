@@ -17,12 +17,14 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
   @IBOutlet weak var messageTableView: UITableView!
   @IBOutlet weak var navBar: UINavigationItem!
   @IBOutlet weak var bottomContraint: NSLayoutConstraint!
+  @IBOutlet weak var textViewHeight: NSLayoutConstraint!
   
   var currentSelectedCall: String? = nil
   var messages: [PrivateMessage] = []
   var offset = 0
   var stopLoading = false
   var isLoading = false
+  var lastSize: CGFloat = 0
   
   public override func viewDidLoad() {
     super.viewDidLoad();
@@ -31,8 +33,7 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
     messageTableView.dataSource = self
     navBar.title = currentSelectedCall ?? "";
     offset = 0;
-    
-    
+    lastSize = textViewHeight.constant
     if currentSelectedCall != nil {
       messages = AppDelegate.getAppDelegate().idb?.privateMessage.loadMessages(callsign: currentSelectedCall!, offsetMultiplier: 0, reversed: false) ?? []
       messages.reverse()
@@ -139,5 +140,21 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
       }
     }
   }*/
+  
+  public func textViewDidChange(_ textView: UITextView) {
+    var textViewSize = textView.contentSize.height
+    print(textViewSize)
+    if textViewSize > 250 {
+      textViewSize = 250
+    }
+    if textViewSize != lastSize {
+      UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+        self.textViewHeight.constant = textViewSize
+        self.view.layoutIfNeeded()
+      }, completion: { (completion) in
+        self.lastSize = textViewSize
+      })
+    }
+  }
   
 }

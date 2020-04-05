@@ -66,9 +66,12 @@
                                             <action selector="sendEM:" destination="TD7-iL-xJx" eventType="touchUpInside" id="254-dL-Adl"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mmO-0E-05A">
-                                        <rect key="frame" x="18" y="101" width="376" height="34"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mmO-0E-05A">
+                                        <rect key="frame" x="20" y="101" width="374" height="34"/>
                                         <color key="backgroundColor" name="chatOtherBackground"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="gmf-LS-k71"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -82,7 +85,7 @@
                                     <constraint firstItem="hON-hh-3Vc" firstAttribute="top" secondItem="ThA-Yo-VdQ" secondAttribute="top" constant="8" id="AJ6-vM-TEt"/>
                                     <constraint firstItem="DvG-NV-IjG" firstAttribute="top" secondItem="ThA-Yo-VdQ" secondAttribute="top" constant="8" id="DP8-8l-Esh"/>
                                     <constraint firstItem="WVU-Dm-XF1" firstAttribute="top" secondItem="ThA-Yo-VdQ" secondAttribute="top" constant="8" id="TtM-7B-LO0"/>
-                                    <constraint firstItem="mmO-0E-05A" firstAttribute="leading" secondItem="ThA-Yo-VdQ" secondAttribute="leading" constant="18" id="WHs-oS-BZV"/>
+                                    <constraint firstItem="mmO-0E-05A" firstAttribute="leading" secondItem="ThA-Yo-VdQ" secondAttribute="leading" constant="20" id="WHs-oS-BZV"/>
                                     <constraint firstItem="mmO-0E-05A" firstAttribute="top" secondItem="DvG-NV-IjG" secondAttribute="bottom" constant="8" id="dC7-OY-TUp"/>
                                     <constraint firstItem="hON-hh-3Vc" firstAttribute="leading" secondItem="DvG-NV-IjG" secondAttribute="trailing" constant="8" id="dsf-Lb-iOG"/>
                                     <constraint firstItem="ThA-Yo-VdQ" firstAttribute="trailing" secondItem="mmO-0E-05A" secondAttribute="trailing" constant="20" id="ppQ-hQ-YXQ"/>
@@ -172,6 +175,7 @@
                         <outlet property="enteredMessage" destination="mmO-0E-05A" id="Zxy-EE-V0R"/>
                         <outlet property="tabBar" destination="Aeu-Q2-pCw" id="86R-pb-a2r"/>
                         <outlet property="tableView" destination="IlB-S3-m0e" id="yu7-p0-rE0"/>
+                        <outlet property="textViewHeight" destination="gmf-LS-k71" id="jap-3M-0KC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ay0-Cg-fj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -368,7 +372,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
             </objects>
             <point key="canvasLocation" x="2670" y="-224"/>
         </scene>
-        <!--Guy-->
+        <!--Call-->
         <scene sceneID="a6r-1a-J5k">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="te2-8n-S4D" customClass="PrivateMessageController" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -477,11 +481,11 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                             <action selector="onMessageSendPressed:" destination="te2-8n-S4D" eventType="touchUpInside" id="7fP-tw-xml"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UwE-vd-dI6">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UwE-vd-dI6">
                                         <rect key="frame" x="8" y="8" width="348" height="34"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="NzV-5e-YBG"/>
+                                            <constraint firstAttribute="height" constant="34" id="zwA-Lj-DbA"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -526,7 +530,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pYt-X5-jic"/>
                     </stackView>
-                    <navigationItem key="navigationItem" title="Guy" id="LbB-g8-jvG"/>
+                    <navigationItem key="navigationItem" title="Call" id="LbB-g8-jvG"/>
                     <connections>
                         <outlet property="bottomContraint" destination="0Bl-cy-S79" id="qg1-rL-DEW"/>
                         <outlet property="messageEnterView" destination="UwE-vd-dI6" id="6ub-Cs-5ut"/>
@@ -534,6 +538,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                         <outlet property="messageTableView" destination="MXS-Hh-I5e" id="2gP-Fg-5F9"/>
                         <outlet property="navBar" destination="LbB-g8-jvG" id="oB6-Hb-LNB"/>
                         <outlet property="textFieldView" destination="0HD-wt-cFK" id="1QA-m5-gbf"/>
+                        <outlet property="textViewHeight" destination="zwA-Lj-DbA" id="AMn-Ho-Aj1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VCm-wz-Cw5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

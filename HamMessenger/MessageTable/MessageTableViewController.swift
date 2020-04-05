@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MessageTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
   
   @IBOutlet weak var tableView: UITableView!
   
@@ -23,8 +23,10 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   @IBOutlet weak var buttonCQ: UIButton!
   @IBOutlet weak var buttonBC: UIButton!
   @IBOutlet weak var buttonEM: UIButton!
+  @IBOutlet weak var textViewHeight: NSLayoutConstraint!
   
   static var messages: [ReceivedMessage] = [];
+  var textViewOldHeight: CGFloat = 0
   
   override func viewDidLoad() {
     buttonCQ.layer.cornerRadius = 10;
@@ -37,6 +39,8 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
     self.enteredMessage.layer.borderWidth = 1
     self.enteredMessage.layer.borderColor = UIColor.systemGray.cgColor
     self.enteredMessage.layer.cornerRadius = 10
+    self.enteredMessage.delegate = self
+    self.textViewOldHeight = self.enteredMessage.contentSize.height
     
     super.viewDidLoad();
     self.tableView.dataSource = self;
@@ -122,6 +126,21 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
       return UIColor(named: "mEMBackground")!
     default:
       return UIColor(named: "fieldColour")!
+    }
+  }
+  
+  public func textViewDidChange(_ textView: UITextView) {
+    var size = textView.contentSize.height
+    if size > 200 {
+      size = 200
+    }
+    if size != self.textViewOldHeight {
+      UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+        self.textViewHeight.constant = size
+        self.view.layoutIfNeeded()
+      }, completion: { (completion) in
+        self.textViewOldHeight = size
+      })
     }
   }
 }
