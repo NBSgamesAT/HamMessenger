@@ -143,7 +143,6 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
   
   public func textViewDidChange(_ textView: UITextView) {
     var textViewSize = textView.contentSize.height
-    print(textViewSize)
     if textViewSize > 250 {
       textViewSize = 250
     }
