@@ -23,18 +23,39 @@ class OnlineHandler: TCPEventHandler{
       //print("HA")
       let info = message.payloadString.split(separator: "\t");
       if(info[4] == "CLOSE"){
-        AppDelegate.peopleOnline.removeAll { (callInformation) -> Bool in
-          return message.source == callInformation.callSign
-        }
+        let call = OnlineTableViewController.peopleFound.filter({ (call) -> Bool in
+          return call.callSign == message.source
+        })[0]
+        call.isOnline = false
+        call.name = ""
+        call.locator = ""
+        call.location = ""
+        call.ip = ""
         DispatchQueue.main.async {
           (self.tableController.view as! UITableView).reloadData()
         }
       }
       else{
-        if(!OnlineHandler.arrayContainInfo(array: &AppDelegate.peopleOnline, call: message.source)){
+        if(!OnlineHandler.arrayContainInfo(array: &OnlineTableViewController.peopleFound, call: message.source)){
+          OnlineTableViewController.peopleFound.append(OnlineCall(callSign: message.source, name: String(info[0]), ip: String(info[2]), locator: String(info[3]), location: String(info[1])))
           DispatchQueue.main.async {
-            AppDelegate.peopleOnline.append(OnlineCall(callSign: message.source, name: String(info[0]), ip: String(info[2]), locator: String(info[3]), location: String(info[1])))
             (self.tableController.view as! UITableView).reloadData()
+          }
+        }
+        else{
+          let call = OnlineTableViewController.peopleFound.filter({ (searchCall) -> Bool in
+            return searchCall.callSign == message.source
+          })[0]
+          call.lastOnlineMessage = Date().timeIntervalSince1970
+          call.name = String(info[0])
+          call.location = String(info[1])
+          call.ip = String(info[2])
+          call.locator = String(info[3])
+          if !call.isOnline {
+            call.isOnline = true
+            DispatchQueue.main.async {
+              (self.tableController.view as! UITableView).reloadData()
+            }
           }
         }
       }
@@ -109,6 +130,23 @@ class OnlineHandler: TCPEventHandler{
     print("Message with the ID " + String(message.seqCounter) + " couldn't be delivered")
   }
   
+  func onOnlineNoticeSent() {
+    for call in OnlineTableViewController.peopleFound {
+      if call.isOnline {
+        if call.lastOnlineMessage + 118 < Date().timeIntervalSince1970 {
+          call.name = ""
+          call.isOnline = false
+          call.location = ""
+          call.locator = ""
+          call.ip = ""
+        }
+      }
+    }
+    DispatchQueue.main.async {
+      (self.tableController.view as! UITableView).reloadData()
+    }
+  }
+  
   static func arrayContainInfo(array: inout [OnlineCall], call: String) -> Bool {
     for checkfor in array {
       if checkfor.callSign == call {
@@ -117,5 +155,6 @@ class OnlineHandler: TCPEventHandler{
     }
     return false;
   }
+  
   
 }

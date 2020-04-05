@@ -75,6 +75,7 @@ class TCPController{
   
   @objc private func run_timer(){
     self.sendLineStatus(HamMessage.login());
+    self.eventHandler.onOnlineNoticeSent()
     print("NEXT CALL AT: ---------------------------------------------");
     print(self.onlineTimer!.fireDate);
   }
@@ -129,4 +130,5 @@ protocol TCPEventHandler{
   func onConnecting();
   func onConnectionLost();
   func messageDeliveryProblem(_ message: HamMessage);
+  func onOnlineNoticeSent();
 }

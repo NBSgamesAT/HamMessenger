@@ -12,45 +12,42 @@ class OnlineTableViewController: UITableViewController {
   
   @IBOutlet weak var tableNavItem: UINavigationItem!
   
+  static var peopleFound: [OnlineCall] = [];
+  private var peopleOnline: [OnlineCall] = [];
+  private var peopleOffline: [OnlineCall] = []
+  
   var selectedCall: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    OnlineTableViewController.peopleFound = AppDelegate.getAppDelegate().idb?.privateMessage.loadCallsWithChatlogs() ?? []
+    
   }
 
   // MARK: Data is from AppDelegate
 
   override func numberOfSections(in tableView: UITableView) -> Int {
+    peopleOnline = []
+    peopleOffline = []
+    for call in OnlineTableViewController.peopleFound {
+      if call.isOnline {
+        peopleOnline.append(call)
+      }
+      else{
+        peopleOffline.append(call)
+      }
+    }
     return 2
   }
-  var offlineCalls: [OnlineCall] = []
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if(section == 0){
-      return AppDelegate.peopleOnline.count;
+      return self.peopleOnline.count;
     }
     else if(section == 1){
-      var calls = AppDelegate.getAppDelegate().idb?.privateMessage.loadCallsWithChatlogs()
-      calls?.removeAll(where: {onLineCallOut(call: $0)})
-      offlineCalls = calls ?? [];
-      return calls?.count ?? 0
+      return self.peopleOffline.count
     }
     return 0
-  }
-  
-  func onLineCallOut(call: OnlineCall) -> Bool {
-    for online in AppDelegate.peopleOnline {
-      if online.callSign == call.callSign {
-        return true
-      }
-    }
-    return false
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,7 +58,7 @@ class OnlineTableViewController: UITableViewController {
       guard let actualCell = cell as? OnlineTableViewCell else {
         fatalError("Could not downgrade the cell");
       }
-      let user = AppDelegate.peopleOnline[indexPath.row];
+      let user = peopleOnline[indexPath.row];
       actualCell.callLabel.text = user.callSign;
       actualCell.nameLabel.text = user.name;
       actualCell.ipLabel.text = user.ip;
@@ -77,7 +74,7 @@ class OnlineTableViewController: UITableViewController {
       guard let actualCell = cell as? OnlineTableViewCellOffline else {
         fatalError("Could not downgrade the cell");
       }
-      let user = offlineCalls[indexPath.row];
+      let user = peopleOffline[indexPath.row];
       actualCell.callLabel.text = user.callSign;
       actualCell.contentView.sizeToFit()
       return actualCell;
@@ -87,10 +84,10 @@ class OnlineTableViewController: UITableViewController {
   
   public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
     if indexPath.section == 0{
-      selectedCall = AppDelegate.peopleOnline[indexPath.row].callSign
+      selectedCall = peopleOnline[indexPath.row].callSign
     }
     else if indexPath.section == 1{
-      selectedCall = offlineCalls[indexPath.row].callSign
+      selectedCall = peopleOffline[indexPath.row].callSign
     }
     else{
       return

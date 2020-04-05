@@ -11,7 +11,6 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
   
-  static var peopleOnline: [OnlineCall] = [];
   static var messageView: UITableView?
   var idb: DBMan?
   static var privateMessageView: PrivateMessageController?
@@ -51,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   }
   
   func applicationWillResignActive(_ application: UIApplication) {
-    self.closeConnection();
+    
   }
   
   func applicationDidEnterBackground(_ application: UIApplication) {
@@ -64,9 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   }
   
   func applicationDidBecomeActive(_ application: UIApplication) {
-    if(tableController != nil) {
-      self.openConnection(tableController: tableController!);
-    }
+    
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
