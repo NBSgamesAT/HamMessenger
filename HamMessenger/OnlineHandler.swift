@@ -83,7 +83,8 @@ class OnlineHandler: TCPEventHandler{
   func addMessageLogic(message: HamMessage, callsign: String){
     if message.contact == "'" + callsign {
       let priv = PrivateMessage(callsign: message.source, message: message.payloadString, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: true)
-      AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
+      priv.databaseId = AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
+      
       if(AppDelegate.privateMessageView != nil && AppDelegate.privateMessageView!.currentSelectedCall == message.source){
         addPrivateMessageToView(privateMessage: priv)
       }
@@ -92,7 +93,7 @@ class OnlineHandler: TCPEventHandler{
       var actualContact = message.contact
       actualContact.remove(at: actualContact.startIndex)
       let priv = PrivateMessage(callsign: actualContact, message: message.payloadString, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: false)
-      AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
+      priv.databaseId = AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
       if(AppDelegate.privateMessageView != nil && AppDelegate.privateMessageView!.currentSelectedCall == actualContact){
         addPrivateMessageToView(privateMessage: priv)
       }
@@ -120,10 +121,22 @@ class OnlineHandler: TCPEventHandler{
     }
   }
   
+  func onConnectionClosed() {
+    DispatchQueue.main.async {
+      self.tableController.tableNavItem.title = "No Connection"
+    }
+  }
+  
   func onConnectionLost() {
     DispatchQueue.main.async {
       self.tableController.tableNavItem.title = "Connection Lost"
     }
+    Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (time) in
+      AppDelegate.con = nil
+      let url = UserDefaults.standard.value(forKey: "server") as? String ?? "44.143.0.1"
+      AppDelegate.con = TCPController(url, port: 9124, eventHandler: self)
+      AppDelegate.con?.activateListener()
+    })
   }
   
   func messageDeliveryProblem(_ message: HamMessage) {

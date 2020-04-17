@@ -18,7 +18,7 @@ class TCPController{
   public var tcpGetter: TCPClient?;
   public var giveUp: Bool = false;
   public var tcpStuff: TCPStuff;
-  public var ownMessage: [UInt64];
+  public var ownMessage: [UInt64]
   
   private let timeout: Int = 2
   
@@ -43,24 +43,25 @@ class TCPController{
         self.onlineTimer = Timer.scheduledTimer(timeInterval: 59, target: self, selector: #selector(self.run_timer), userInfo: nil, repeats: true);
         self.run_timer()
       }
-      
+      var hasFull = true
       while(!giveUp){
         guard let data = self.tcpGetter!.read(1024*10, timeout: timeout) else{
-          //isComplete = false;
+          hasFull = true;
           tcpStuff.clearBytes();
           continue;
         };
-        if(data[0] == 0xAA){
-          //print(data);
-          
-          if(tcpStuff.addPart(bytes: data)){
+        if(data[0] == 0xAA || !hasFull){
+          hasFull = tcpStuff.addPart(bytes: data)
+          if(hasFull){
             let message: HamMessage? = tcpStuff.decodeMessage()
             if(message != nil){
               if(!self.ownMessage.contains(message!.seqCounter)){
-                self.ownMessage.removeAll { (testNumber: UInt64) -> Bool in
-                  return testNumber == message!.seqCounter;
-                }
                 eventHandler.onReceive(message!);
+              } else {
+                self.ownMessage.removeAll { (test) -> Bool in
+                  print(test == message!.seqCounter ? "Message removed from run" : "")
+                  return test == message!.seqCounter
+                }
               }
               tcpStuff.clearBytes();
             }
@@ -69,15 +70,26 @@ class TCPController{
       }
     case .failure(let error):
       print(error.localizedDescription);
-      self.eventHandler.onConnectionLost();
+      self.eventHandler.onConnectionClosed();
     }
   }
   
   @objc private func run_timer(){
-    self.sendLineStatus(HamMessage.login());
+    let message = HamMessage.login()
+    self.sendLineStatus(message);
     self.eventHandler.onOnlineNoticeSent()
     print("NEXT CALL AT: ---------------------------------------------");
     print(self.onlineTimer!.fireDate);
+    
+    Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {(timer) in
+      if self.ownMessage.filter({ (seq) -> Bool in
+        return message.seqCounter == seq
+      }).count != 0 {
+        self.giveUp = true
+        self.stopListener()
+        self.eventHandler.onConnectionLost()
+      }
+    })
   }
   
   public func activateListener(){
@@ -87,18 +99,25 @@ class TCPController{
     
   }
   public func stopListener(){
+    self.deactivateListener(withMessage: false)
+  }
+  
+  private func deactivateListener(withMessage: Bool){
     self.onlineTimer?.invalidate()
-    self.sendLineStatus(HamMessage.logout());
-    self.tcpGetter?.close();
-    self.giveUp = true;
-    self.receiver.cancel();
-    print("Stopped");
+    if withMessage {
+      self.sendLineStatus(HamMessage.logout())
+    }
+    self.giveUp = true
+    self.tcpGetter?.close()
+    self.eventHandler.onConnectionClosed()
+  }
+  
+  public func stopListenerWithOfflineMessage(){
+    self.deactivateListener(withMessage: true)
   }
   public func sendLineStatus(_ message: HamMessage){
-    //tcpGetter?.send(data: message.getData())
     switch tcpGetter?.send(data: TCPStuff.getData(message: message)!) {
     case .success:
-      //print("Successfully sent message");
       ownMessage.append(message.seqCounter)
       
     case .failure(let error):
@@ -115,11 +134,14 @@ class TCPController{
       ownMessage.append(message.seqCounter)
       self.eventHandler.onReceive(message)
       
-    case .failure(let error):
+    case .failure:
       self.eventHandler.messageDeliveryProblem(message);
-      print(error);
-    case .none:
+      giveUp = true
+      self.receiver.cancel()
       print("Won't be here");
+      self.eventHandler.onConnectionLost()
+    case .none:
+      print("")
     }
   }
 }
@@ -129,6 +151,7 @@ protocol TCPEventHandler{
   func onConnect();
   func onConnecting();
   func onConnectionLost();
+  func onConnectionClosed();
   func messageDeliveryProblem(_ message: HamMessage);
   func onOnlineNoticeSent();
 }

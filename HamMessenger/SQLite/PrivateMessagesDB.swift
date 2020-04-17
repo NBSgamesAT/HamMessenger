@@ -35,13 +35,13 @@ public class PrivateMessagesDB{
   public func loadMessages(callsign: String, offsetMultiplier: Int, reversed: Bool) -> [PrivateMessage]{
     do{
       print("called at offset " + String(offsetMultiplier))
-      let messages = try self.db.prepare(messageTable.select(callSign, message, timestamp, isReceived)
+      let messages = try self.db.prepare(messageTable.select(id, callSign, message, timestamp, isReceived)
            .filter(callSign == callsign)
            .order(reversed ? timestamp.asc : timestamp.desc)
            .limit(30, offset: (30 * offsetMultiplier)))
       var messageList: [PrivateMessage] = []
       for message in messages {
-        let privateMessage = PrivateMessage(callsign: message[self.callSign], message: message[self.message], timestamp: message[self.timestamp], isReceived: message[self.isReceived])
+        let privateMessage = PrivateMessage(databaseId: message[self.id], callsign: message[self.callSign], message: message[self.message], timestamp: message[self.timestamp], isReceived: message[self.isReceived])
         messageList.append(privateMessage)
       }
       return messageList
@@ -50,17 +50,18 @@ public class PrivateMessagesDB{
       return []
     }
   }
-  public func saveMessage(message: PrivateMessage){
+  public func saveMessage(message: PrivateMessage) -> Int64?{
     do{
       let message = messageTable.insert(
         self.callSign <- message.callsign,
         self.message <- message.message,
         self.timestamp <- message.timestamp,
         self.isReceived <- message.isReceived)
-      try db.run(message)
+      return try db.run(message)
     }
     catch {
       print("Failed to add item")
+      return nil
     }
   }
   public func loadCallsWithChatlogs() -> [OnlineCall] {
