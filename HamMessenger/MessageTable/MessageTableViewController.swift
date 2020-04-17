@@ -82,9 +82,10 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   @IBAction func SendCQ(_ sender: Any) {
     if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
     let payload = HamMessage.createLoginString() + HamMessage.getInformationSeperator() + enteredMessage.text!;
-    let message = HamMessage(call: "OE1NBS/iOS", contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload);
+    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload);
     AppDelegate.con?.sendMessage(message);
     enteredMessage.text = "";
+    self.textViewDidChange(enteredMessage)
   }
   
   @IBAction func sendBC(_ sender: Any) {
@@ -92,6 +93,7 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
     let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: 0x06, payload: enteredMessage.text!);
     AppDelegate.con?.sendMessage(message);
     enteredMessage.text = "";
+    self.textViewDidChange(enteredMessage)
   }
   
   @IBAction func sendEM(_ sender: Any){
@@ -99,6 +101,7 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
     let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: PayloadTypes.EM_EMERGENCY.rawValue, payload: enteredMessage.text!)
     AppDelegate.con?.sendMessage(message);
     enteredMessage.text = ""
+    self.textViewDidChange(enteredMessage)
   }
   
   

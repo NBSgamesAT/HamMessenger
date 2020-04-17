@@ -107,6 +107,7 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
       let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "'" + currentSelectedCall!, payloadType: PayloadTypes.PC_PRIVATE_CALL.rawValue, payload: messageEnterView.text!);
       AppDelegate.con?.sendMessage(message);
       messageEnterView.text = ""
+      self.textViewDidChange(messageEnterView)
     }
   }
   
@@ -155,5 +156,4 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
       })
     }
   }
-  
 }
