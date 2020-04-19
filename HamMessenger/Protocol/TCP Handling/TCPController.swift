@@ -56,7 +56,9 @@ class TCPController{
             let message: HamMessage? = tcpStuff.decodeMessage()
             if(message != nil){
               if(!self.ownMessage.contains(message!.seqCounter)){
-                eventHandler.onReceive(message!);
+                DispatchQueue.main.async {
+                  self.eventHandler.onReceive(message!)
+                }
               } else {
                 self.ownMessage.removeAll { (test) -> Bool in
                   print(test == message!.seqCounter ? "Message removed from run" : "")
