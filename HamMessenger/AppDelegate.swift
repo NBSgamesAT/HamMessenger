@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
   
   var window: UIWindow?
   
-  static var con: TCPController?;
+  static var con: TCPController?
+  var privateSplit: PrivateSplitViewController?
   var tableController: UITableViewController?;
   var onlineHandler: OnlineHandler?
   
@@ -36,8 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         window?.rootViewController = controller;
         window?.makeKeyAndVisible()
       #endif
-      let tabController = window?.rootViewController as! UITabBarController;
-      tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
+      privateSplit = window?.rootViewController as? PrivateSplitViewController
+      //tableController = ((privateSplit?.viewControllers[0] as! UITabBarController).viewControllers![0] as! UINavigationController).viewControllers[0] as? UITableViewController
+      //_ = privateSplit?.viewControllers[0] as! UITabBarController
+      //_ = (privateSplit?.viewControllers[0] as! UITabBarController).viewControllers![0] as! UINavigationController
+      tableController = ((privateSplit?.viewControllers[0] as! UITabBarController).viewControllers![0] as! UINavigationController).viewControllers[0] as? UITableViewController
       self.openConnection(tableController: tableController!);
     }
     else{

@@ -38,6 +38,10 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
       messages = AppDelegate.getAppDelegate().idb?.privateMessage.loadMessages(callsign: currentSelectedCall!, offsetMultiplier: 0, reversed: false) ?? []
       messages.reverse()
     }
+    else {
+      messageEnterView.isUserInteractionEnabled = false
+      messageSendButton.isEnabled = false
+    }
     
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)

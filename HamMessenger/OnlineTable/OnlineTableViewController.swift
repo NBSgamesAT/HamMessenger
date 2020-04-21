@@ -97,7 +97,7 @@ class OnlineTableViewController: UITableViewController {
   
   public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toPrivMessage" {
-      let cont: PrivateMessageController = segue.destination as! PrivateMessageController
+      let cont: PrivateMessageController = (segue.destination as! UINavigationController).viewControllers[0] as! PrivateMessageController
       cont.currentSelectedCall = selectedCall
     }
   }

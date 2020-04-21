@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6UL-bA-79n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RSR-Ya-1xQ">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4864" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -190,7 +190,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="800.00000000000011" y="768.08035714285711"/>
+            <point key="canvasLocation" x="2000" y="984"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="Zgp-m4-Xh6">
@@ -202,14 +202,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6vn-Kk-JYI" kind="relationship" relationship="viewControllers" id="H8Q-R2-Ni6"/>
+                        <segue destination="6vn-Kk-JYI" kind="relationship" relationship="viewControllers" id="SCX-1n-CHU"/>
                         <segue destination="TD7-iL-xJx" kind="relationship" relationship="viewControllers" id="Sal-Kh-bfJ"/>
                         <segue destination="VnX-Yb-QY1" kind="relationship" relationship="viewControllers" id="tKA-aq-RyS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvZ-bB-6qZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800" y="76"/>
+            <point key="canvasLocation" x="2000" y="74"/>
         </scene>
         <!--Credit-->
         <scene sceneID="BRR-v8-X6z">
@@ -246,7 +246,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lo-Ex-jWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1647.826086956522" y="768.75"/>
+            <point key="canvasLocation" x="2964" y="984"/>
         </scene>
         <!--Connecting...-->
         <scene sceneID="Y4F-I4-eLh">
@@ -347,12 +347,29 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableNavItem" destination="uHf-us-RC6" id="INu-Jw-HMM"/>
-                        <segue destination="te2-8n-S4D" kind="show" identifier="toPrivMessage" id="UPd-h2-Xkn"/>
+                        <segue destination="xoc-Fv-MFt" kind="showDetail" identifier="toPrivMessage" id="Qsm-Rz-LEP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvT-6v-sIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3503" y="-224"/>
+            <point key="canvasLocation" x="3888" y="74"/>
+        </scene>
+        <!--Online-->
+        <scene sceneID="wSw-82-sf7">
+            <objects>
+                <splitViewController modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" interfaceStyle="light" presentsWithGesture="NO" id="RSR-Ya-1xQ" customClass="PrivateSplitViewController" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" title="Online" image="o.square" catalog="system" id="n6P-oo-UVc"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="xoc-Fv-MFt" kind="relationship" relationship="detailViewController" id="skf-AG-zlm"/>
+                        <segue destination="6UL-bA-79n" kind="relationship" relationship="masterViewController" id="Mxf-pv-oom"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mjK-qZ-y2V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="74"/>
         </scene>
         <!--Online-->
         <scene sceneID="pRR-va-s7e">
@@ -370,7 +387,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVa-NH-yDA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670" y="-224"/>
+            <point key="canvasLocation" x="2965" y="74"/>
         </scene>
         <!--Call-->
         <scene sceneID="a6r-1a-J5k">
@@ -552,10 +569,32 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                         <action selector="removeKeyboard:" destination="te2-8n-S4D" id="Jo3-WO-ejn"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="JA7-L5-Rai" userLabel="ChatMessagePage"/>
             </objects>
-            <point key="canvasLocation" x="2669.5652173913045" y="456.69642857142856"/>
+            <point key="canvasLocation" x="1003" y="1703"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oxW-yq-o9y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xoc-Fv-MFt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iHo-KS-4kH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="te2-8n-S4D" kind="relationship" relationship="rootViewController" id="IXP-dV-qaS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91P-hp-JWN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="984"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="skf-AG-zlm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="keyboard" catalog="system" width="128" height="70"/>
         <image name="o.square" catalog="system" width="128" height="114"/>
