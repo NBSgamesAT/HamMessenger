@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B10852D2450CE8300FCB4BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B10852C2450CE8300FCB4BF /* Main.storyboard */; };
 		8B19196123799170004B526E /* OnlineHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B19196023799170004B526E /* OnlineHandler.swift */; };
 		8B1F5D6923F170A3002BA3DA /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F5D6823F170A3002BA3DA /* Mac.storyboard */; };
 		8B2097A1237340FB00B305CF /* TCPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2097A0237340FB00B305CF /* TCPController.swift */; };
@@ -68,6 +69,7 @@
 		3DF95AA41129D772F3B62EAD /* Pods-HamMessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessengerUITests/Pods-HamMessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		65B5B7BD9D804E10F1AF3542 /* Pods_HamMessanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8929C74498713782BEF8D128 /* Pods-HamMessanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessanger/Pods-HamMessanger.release.xcconfig"; sourceTree = "<group>"; };
+		8B10852C2450CE8300FCB4BF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		8B19196023799170004B526E /* OnlineHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineHandler.swift; sourceTree = "<group>"; };
 		8B1F5D6823F170A3002BA3DA /* Mac.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mac.storyboard; sourceTree = "<group>"; };
 		8B2097A0237340FB00B305CF /* TCPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				8B19196023799170004B526E /* OnlineHandler.swift */,
 				8BC0455B22F9B98700EABFD9 /* ViewController.swift */,
 				8BD43A0C240AE0AC00AA7F49 /* FirstStart.storyboard */,
+				8B10852C2450CE8300FCB4BF /* Main.storyboard */,
 				8BFD95D022FA208A00741B72 /* iPhone.storyboard */,
 				8B1F5D6823F170A3002BA3DA /* Mac.storyboard */,
 				8BC0456222F9B98800EABFD9 /* Assets.xcassets */,
@@ -432,6 +435,7 @@
 				8BD43A0B240AD41500AA7F49 /* Settings.bundle in Resources */,
 				8BC0456322F9B98800EABFD9 /* Assets.xcassets in Resources */,
 				8BD43A0D240AE0AC00AA7F49 /* FirstStart.storyboard in Resources */,
+				8B10852D2450CE8300FCB4BF /* Main.storyboard in Resources */,
 				8B1F5D6923F170A3002BA3DA /* Mac.storyboard in Resources */,
 				8BFD95D122FA208A00741B72 /* iPhone.storyboard in Resources */,
 			);
@@ -721,7 +725,7 @@
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,7 +754,7 @@
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

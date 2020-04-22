@@ -31,16 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
       print("NO DATABASE AVAILABLE")
     }
     if(UserDefaults.standard.bool(forKey: "hasValues")){
-      #if targetEnvironment(macCatalyst)
+      /*#if targetEnvironment(macCatalyst)
         let board = UIStoryboard.init(name: "Mac", bundle: nil)
         let controller = board.instantiateInitialViewController()
         window?.rootViewController = controller;
         window?.makeKeyAndVisible()
-      #endif
+      #endif*/
       privateSplit = window?.rootViewController as? PrivateSplitViewController
-      //tableController = ((privateSplit?.viewControllers[0] as! UITabBarController).viewControllers![0] as! UINavigationController).viewControllers[0] as? UITableViewController
-      //_ = privateSplit?.viewControllers[0] as! UITabBarController
-      //_ = (privateSplit?.viewControllers[0] as! UITabBarController).viewControllers![0] as! UINavigationController
       tableController = ((privateSplit?.viewControllers[0] as! UITabBarController).viewControllers![0] as! UINavigationController).viewControllers[0] as? UITableViewController
       self.openConnection(tableController: tableController!);
     }

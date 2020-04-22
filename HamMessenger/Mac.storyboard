@@ -52,14 +52,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjj-CJ-ZTL">
                                 <rect key="frame" x="20" y="20" width="280" height="510"/>
-                                <string key="text">HAMMessanger Ideo and Design by ÖVSV 
+                                <mutableString key="text">HAMMessanger Ideo and Design by ÖVSV 
 iOS/iPad OS/Mac OS X Client Nicolas OE1NBS
 HAMGO Protokoll Alex OE1VQS
 .NET Programming Kurt OE1KBC
 ANDROID Client Kurt OE1KBC 
 (c) by ÖVSV/OE1KBC 2018
 (c) by OE1NBS 2019/2020 
-Special thanks to ÖVSV for letting me create a version for Apple Devices</string>
+Special thanks to ÖVSV for letting me create a version for Apple Devices</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                             <size key="shadowOffset" width="1" height="-1"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44.144.144.144" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqS-Nh-a2W">
-                                            <rect key="frame" x="188" y="18" width="116" height="19"/>
+                                            <rect key="frame" x="192.5" y="18" width="111.5" height="19"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -229,7 +229,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyt-4e-SzP">
-                                        <rect key="frame" x="20" y="8" width="93" height="41"/>
+                                        <rect key="frame" x="20" y="8" width="90" height="41"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="ASi-9d-1Bg"/>
@@ -244,7 +244,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icO-7q-t6y">
-                                        <rect key="frame" x="121" y="8" width="40" height="41"/>
+                                        <rect key="frame" x="118" y="8" width="40" height="41"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="BWO-50-Bbq"/>
@@ -259,7 +259,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEW-bb-nrc">
-                                        <rect key="frame" x="199" y="8" width="101" height="41"/>
+                                        <rect key="frame" x="202" y="8" width="98" height="41"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="KCe-8f-mad"/>
@@ -307,26 +307,26 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                 <gestureRecognizers/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tcMessageId" id="OCq-Hf-Ypv" customClass="MessageTableViewCell" customModule="HamMessenger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="72"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="74.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OCq-Hf-Ypv" id="GcV-h1-xIY">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelg" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F00-kg-f6R">
-                                                    <rect key="frame" x="15" y="42" width="290" height="20"/>
+                                                    <rect key="frame" x="15" y="43" width="290" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8T-a7-vRj">
-                                                    <rect key="frame" x="219" y="10" width="86" height="24"/>
+                                                    <rect key="frame" x="219" y="11" width="86" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Sign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2x-iB-owh">
-                                                    <rect key="frame" x="15" y="10" width="196" height="24"/>
+                                                    <rect key="frame" x="15" y="11" width="196" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="196" id="63I-0r-aZh"/>
                                                         <constraint firstAttribute="height" constant="24" id="MeK-Qw-BIU"/>
@@ -389,19 +389,19 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="AUz-xf-vfn" customClass="PrivateMessageController" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
                     <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="GJu-v5-TQK">
-                        <rect key="frame" x="0.0" y="0.0" width="478.5" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9GN-Nl-L5h">
-                                <rect key="frame" x="0.0" y="0.0" width="479" height="550"/>
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="550"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
                                 <prototypes>
                                     <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="privMessageIdOther" id="69n-XC-FS9" customClass="PrivateMessageTableViewCellOther" customModule="HamMessenger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="479" height="24"/>
+                                        <rect key="frame" x="0.0" y="28" width="800" height="24"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="69n-XC-FS9" id="CJz-ql-kAJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="479" height="24"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="800" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04a-3e-lyw" userLabel="OtherView">
@@ -436,14 +436,14 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="privMessageIdOwn" id="gRb-Oe-BeR" customClass="PrivateMessageTableViewCellOwn" customModule="HamMessenger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="52" width="479" height="24"/>
+                                        <rect key="frame" x="0.0" y="52" width="800" height="24"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRb-Oe-BeR" id="EIo-fC-Tmj">
-                                            <rect key="frame" x="0.0" y="0.0" width="479" height="24"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="800" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdt-bG-jOr" userLabel="OwnView">
-                                                    <rect key="frame" x="455" y="4" width="16" height="16"/>
+                                                    <rect key="frame" x="776" y="4" width="16" height="16"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-4b-4n7">
                                                             <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
@@ -476,10 +476,10 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKG-SF-rmN">
-                                <rect key="frame" x="0.0" y="550" width="479" height="50"/>
+                                <rect key="frame" x="0.0" y="550" width="800" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIU-yX-B3l">
-                                        <rect key="frame" x="429" y="8" width="42" height="34"/>
+                                        <rect key="frame" x="750" y="8" width="42" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="kWc-rM-PMG"/>
                                             <constraint firstAttribute="width" constant="42" id="ou1-6G-BOf"/>
@@ -491,7 +491,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aKo-Fd-0qN">
-                                        <rect key="frame" x="8" y="8" width="413" height="34"/>
+                                        <rect key="frame" x="8" y="8" width="734" height="34"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="75e-h3-MxC"/>
@@ -514,7 +514,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                                 <viewLayoutGuide key="safeArea" id="lY3-xj-8rG"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53W-ld-fDK" userLabel="SpacerView">
-                                <rect key="frame" x="0.0" y="600" width="479" height="0.0"/>
+                                <rect key="frame" x="0.0" y="600" width="800" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="VBi-yE-Mi0"/>
@@ -557,7 +557,7 @@ Special thanks to ÖVSV for letting me create a version for Apple Devices</strin
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="0Nd-5W-1fd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="daI-vO-3aR">
-                        <rect key="frame" x="0.0" y="0.0" width="478.5" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

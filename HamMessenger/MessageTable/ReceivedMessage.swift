@@ -13,11 +13,13 @@ class ReceivedMessage {
   var time: Date
   var label: String
   var payloadType: PayloadTypes
-  init(callSign: String, time: Date, label: String, payloadType: PayloadTypes){
+  var contact: String
+  init(callSign: String, time: Date, label: String, payloadType: PayloadTypes, contact: String){
     self.callSign = callSign
     self.time = time;
     self.label = label;
     self.payloadType = payloadType;
+    self.contact = contact
   }
   
 }

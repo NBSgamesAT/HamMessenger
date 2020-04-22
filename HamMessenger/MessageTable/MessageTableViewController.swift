@@ -12,8 +12,6 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   
   @IBOutlet weak var tableView: UITableView!
   
-  @IBOutlet weak var tabBar: UITabBarItem!
-  
   @IBOutlet weak var enteredMessage: UITextView!
   
   @IBAction func resignKeyboard(_ sender: UITapGestureRecognizer) {
@@ -67,11 +65,13 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
     let formatter = DateFormatter();
     formatter.timeStyle = .medium
     addInfo.date.text = formatter.string(from: message.time)
+    addInfo.contact.text = message.contact
     addInfo.label.text = message.label
     addInfo.label.sizeToFit()
     
     addInfo.callSign.textColor = getTextColorForContactType(message.payloadType)
     addInfo.date.textColor = getTextColorForContactType(message.payloadType)
+    addInfo.contact.textColor = getTextColorForContactType(message.payloadType)
     addInfo.label.textColor = getTextColorForContactType(message.payloadType)
     
     addInfo.backgroundColor = getBackgroundColorForContactType(message.payloadType)

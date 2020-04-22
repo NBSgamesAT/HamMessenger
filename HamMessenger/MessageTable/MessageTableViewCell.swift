@@ -13,6 +13,7 @@ class MessageTableViewCell: UITableViewCell {
   @IBOutlet weak var callSign: UILabel!
   @IBOutlet weak var date: UILabel!
   @IBOutlet weak var label: UILabel!
+  @IBOutlet weak var contact: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()

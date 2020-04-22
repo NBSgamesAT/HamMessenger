@@ -62,10 +62,8 @@ class OnlineTableViewController: UITableViewController {
       actualCell.callLabel.text = user.callSign;
       actualCell.nameLabel.text = user.name;
       actualCell.ipLabel.text = user.ip;
-      #if targetEnvironment(macCatalyst)
       actualCell.location.text = user.location;
       actualCell.locator.text = user.locator;
-      #endif
       actualCell.contentView.sizeToFit()
       return actualCell;
     }
@@ -82,7 +80,7 @@ class OnlineTableViewController: UITableViewController {
   }
   
   
-  public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+  /*public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
     if indexPath.section == 0{
       selectedCall = peopleOnline[indexPath.row].callSign
     }
@@ -92,13 +90,25 @@ class OnlineTableViewController: UITableViewController {
     else{
       return
     }
-    self.performSegue(withIdentifier: "toPrivMessage", sender: self)
-  }
+    //self.performSegue(withIdentifier: "toPrivMessage", sender: self)
+  }*/
   
   public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "toPrivMessage" {
-      let cont: PrivateMessageController = (segue.destination as! UINavigationController).viewControllers[0] as! PrivateMessageController
-      cont.currentSelectedCall = selectedCall
+    if segue.identifier == "toPrivMessageOnline" {
+      if let indexPath = tableView.indexPathForSelectedRow {
+        let cont: PrivateMessageController = (segue.destination as! UINavigationController).topViewController as! PrivateMessageController
+        cont.currentSelectedCall = peopleOnline[indexPath.row].callSign
+        cont.navigationItem.leftBarButtonItem = AppDelegate.getAppDelegate().privateSplit?.displayModeButtonItem
+        cont.navigationItem.leftItemsSupplementBackButton = true
+      }
+    }
+    else if(segue.identifier == "toPrivMessageOffline"){
+      if let indexPath = tableView.indexPathForSelectedRow {
+        let cont: PrivateMessageController = (segue.destination as! UINavigationController).topViewController as! PrivateMessageController
+        cont.currentSelectedCall = peopleOffline[indexPath.row].callSign
+        cont.navigationItem.leftBarButtonItem = AppDelegate.getAppDelegate().privateSplit?.displayModeButtonItem
+        cont.navigationItem.leftItemsSupplementBackButton = true
+      }
     }
   }
   

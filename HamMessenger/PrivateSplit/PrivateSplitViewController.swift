@@ -13,7 +13,6 @@ public class PrivateSplitViewController: UISplitViewController, UISplitViewContr
   public override func viewDidLoad() {
     super.viewDidLoad()
     self.delegate = self
-    self.preferredDisplayMode = .automatic
   }
 
 
