@@ -28,6 +28,7 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
   
   public override func viewDidLoad() {
     super.viewDidLoad();
+    
     messageEnterView.delegate = self
     messageTableView.delegate = self
     messageTableView.dataSource = self
@@ -47,7 +48,7 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     
-    AppDelegate.privateMessageView = self
+    SceneDelegate.privateMessageView = self
     
   }
   
@@ -109,7 +110,7 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
   @IBAction func onMessageSendPressed(_ sender: Any) {
     if messageEnterView.text != "" {
       let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "'" + currentSelectedCall!, payloadType: PayloadTypes.PC_PRIVATE_CALL.rawValue, payload: messageEnterView.text!);
-      AppDelegate.con?.sendMessage(message);
+      SceneDelegate.con?.sendMessage(message);
       messageEnterView.text = ""
       self.textViewDidChange(messageEnterView)
     }

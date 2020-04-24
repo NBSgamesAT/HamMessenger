@@ -43,7 +43,7 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
     super.viewDidLoad();
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    AppDelegate.messageView = tableView;
+    SceneDelegate.messageView = tableView;
   }
   
   
@@ -83,7 +83,7 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
     if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
     let payload = HamMessage.createLoginString() + HamMessage.getInformationSeperator() + enteredMessage.text!;
     let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload);
-    AppDelegate.con?.sendMessage(message);
+    SceneDelegate.con?.sendMessage(message);
     enteredMessage.text = "";
     self.textViewDidChange(enteredMessage)
   }
@@ -91,7 +91,7 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   @IBAction func sendBC(_ sender: Any) {
     if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
     let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: 0x06, payload: enteredMessage.text!);
-    AppDelegate.con?.sendMessage(message);
+    SceneDelegate.con?.sendMessage(message);
     enteredMessage.text = "";
     self.textViewDidChange(enteredMessage)
   }
@@ -99,7 +99,7 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   @IBAction func sendEM(_ sender: Any){
     if enteredMessage.text == "" || enteredMessage.text == nil {return}
     let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: PayloadTypes.EM_EMERGENCY.rawValue, payload: enteredMessage.text!)
-    AppDelegate.con?.sendMessage(message);
+    SceneDelegate.con?.sendMessage(message);
     enteredMessage.text = ""
     self.textViewDidChange(enteredMessage)
   }

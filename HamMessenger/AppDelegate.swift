@@ -1,28 +1,21 @@
 //
 //  AppDelegate.swift
-//  te
+//  HamMessenger
 //
-//  Created by Nicolas Bachschwell on 06.08.19.
-//  Copyright © 2019 NBSgamesAT. All rights reserved.
+//  Created by Nicolas Bachschwell on 24.04.20.
+//  Copyright © 2020 NBSgamesAT. All rights reserved.
 //
 
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate{
-  
-  static var messageView: UITableView?
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
   var idb: DBMan?
-  static var privateMessageView: PrivateMessageController?
-  
-  var window: UIWindow?
-  
-  static var con: TCPController?
-  var privateSplit: PrivateSplitViewController?
-  var tableController: UITableViewController?;
-  var onlineHandler: OnlineHandler?
-  
+  static var sceneDelegate: SceneDelegate?
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Override point for customization after application launch.
     SettingsManager.registerSettingsBundle()
     do{
       self.idb = try DBMan();
@@ -30,71 +23,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     catch {
       print("NO DATABASE AVAILABLE")
     }
-    if(UserDefaults.standard.bool(forKey: "hasValues")){
-      /*#if targetEnvironment(macCatalyst)
-        let board = UIStoryboard.init(name: "Mac", bundle: nil)
-        let controller = board.instantiateInitialViewController()
-        window?.rootViewController = controller;
-        window?.makeKeyAndVisible()
-      #endif*/
-      privateSplit = window?.rootViewController as? PrivateSplitViewController
-      tableController = ((privateSplit?.viewControllers[0] as! UITabBarController).viewControllers![0] as! UINavigationController).viewControllers[0] as? UITableViewController
-      self.openConnection(tableController: tableController!);
-    }
-    else{
-      let board = UIStoryboard.init(name: "FirstStart", bundle: nil)
-      let controller = board.instantiateInitialViewController()
-      window?.rootViewController = controller;
-      window?.makeKeyAndVisible()
-    }
-    
     return true
   }
-  
-  func applicationWillResignActive(_ application: UIApplication) {
+
+  // MARK: UISceneSession Lifecycle
+
+  func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+    // Called when a new scene session is being created.
+    // Use this method to select a configuration to create the new scene with.
     
+    return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
   }
-  
-  func applicationDidEnterBackground(_ application: UIApplication) {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    AppDelegate.con?.stopListenerWithOfflineMessage()
-    AppDelegate.con = nil
-  }
-  
-  func applicationWillEnterForeground(_ application: UIApplication) {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    let url = UserDefaults.standard.value(forKey: "server") as? String ?? "44.143.0.1"
-    AppDelegate.con = TCPController(url, port: 9124, eventHandler: self.onlineHandler!)
-    AppDelegate.con?.activateListener()
-    
-  }
-  
-  func applicationDidBecomeActive(_ application: UIApplication) {
-    
-  }
-  
-  func applicationWillTerminate(_ application: UIApplication) {
-    self.closeConnection();
-  }
-  
-  func openConnection(tableController: UITableViewController){
-    if(AppDelegate.con == nil || AppDelegate.con!.giveUp){
-      let url = UserDefaults.standard.value(forKey: "server") as? String ?? "44.143.0.1"
-      self.onlineHandler = OnlineHandler(tableController: tableController)
-      AppDelegate.con = TCPController(url, port: 9124, eventHandler: self.onlineHandler!)
-      AppDelegate.con?.activateListener();
-    }
-  }
-  func closeConnection(){
-    if(AppDelegate.con != nil && !AppDelegate.con!.giveUp){
-      AppDelegate.con?.stopListenerWithOfflineMessage();
-    }
+
+  func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    // Called when the user discards a scene session.
+    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
   }
   
   static func getAppDelegate() -> AppDelegate{
     let delegate = UIApplication.shared.delegate as! AppDelegate
     return delegate;
+  }
+  func applicationDidEnterBackground(_ application: UIApplication) {
+    SceneDelegate.con?.stopListenerWithOfflineMessage()
+    SceneDelegate.con = nil
+  }
+  func applicationWillTerminate(_ application: UIApplication) {
+    AppDelegate.sceneDelegate?.closeConnection()
+  }
+  func applicationWillEnterForeground(_ application: UIApplication) {
+    SceneDelegate.con = AppDelegate.sceneDelegate!.createTCPController()
+    SceneDelegate.con?.activateListener()
   }
 }
 

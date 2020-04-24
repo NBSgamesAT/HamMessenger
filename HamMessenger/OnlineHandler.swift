@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class OnlineHandler: TCPEventHandler{
+class OnlineHandler: TCPEventHandler {
   
   var tableController: OnlineTableViewController;
   
@@ -65,9 +65,9 @@ class OnlineHandler: TCPEventHandler{
       }
       MessageTableViewController.messages.append(ReceivedMessage(callSign: message.source, time: Date(), label: payload, payloadType: PayloadTypes.getTypeById(id: message.payloadType), contact: message.contact
       ))
-      AppDelegate.messageView?.beginUpdates()
-      AppDelegate.messageView?.insertRows(at: [IndexPath(row: MessageTableViewController.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
-      AppDelegate.messageView?.endUpdates()
+      SceneDelegate.messageView?.beginUpdates()
+      SceneDelegate.messageView?.insertRows(at: [IndexPath(row: MessageTableViewController.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
+      SceneDelegate.messageView?.endUpdates()
     }
     else if message.payloadType == PayloadTypes.PC_PRIVATE_CALL.rawValue && (message.contact == "'" + ProtocolSettings.getCall() || message.source == ProtocolSettings.getCall()) {
       addMessageLogic(message: message, callsign: ProtocolSettings.getCall())
@@ -79,7 +79,7 @@ class OnlineHandler: TCPEventHandler{
       let priv = PrivateMessage(callsign: message.source, message: message.payloadString, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: true)
       priv.databaseId = AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
       
-      if(AppDelegate.privateMessageView != nil && AppDelegate.privateMessageView!.currentSelectedCall == message.source){
+      if(SceneDelegate.privateMessageView != nil && SceneDelegate.privateMessageView!.currentSelectedCall == message.source){
         addPrivateMessageToView(privateMessage: priv)
       }
     }
@@ -88,22 +88,23 @@ class OnlineHandler: TCPEventHandler{
       actualContact.remove(at: actualContact.startIndex)
       let priv = PrivateMessage(callsign: actualContact, message: message.payloadString, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: false)
       priv.databaseId = AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
-      if(AppDelegate.privateMessageView != nil && AppDelegate.privateMessageView!.currentSelectedCall == actualContact){
+      if(SceneDelegate.privateMessageView != nil && SceneDelegate.privateMessageView!.currentSelectedCall == actualContact){
         addPrivateMessageToView(privateMessage: priv)
       }
     }
   }
   
   private func addPrivateMessageToView(privateMessage priv: PrivateMessage){
-    AppDelegate.privateMessageView!.messages.append(priv)
-    AppDelegate.privateMessageView!.messageTableView.beginUpdates()
-    AppDelegate.privateMessageView!.messageTableView.insertRows(at: [IndexPath(row: AppDelegate.privateMessageView!.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
-    AppDelegate.privateMessageView!.messageTableView.endUpdates()
+    SceneDelegate.privateMessageView!.messages.append(priv)
+    SceneDelegate.privateMessageView!.messageTableView.beginUpdates()
+    SceneDelegate.privateMessageView!.messageTableView.insertRows(at: [IndexPath(row: SceneDelegate.privateMessageView!.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
+    SceneDelegate.privateMessageView!.messageTableView.endUpdates()
   }
   
   func onConnect() {
     DispatchQueue.main.async {
       self.tableController.tableNavItem.title = "Online"
+      (self.tableController.tabBarController as! TabBarController).navBar?.title = "Online"
     }
   }
   
@@ -124,10 +125,10 @@ class OnlineHandler: TCPEventHandler{
       self.tableController.tableNavItem.title = "Connection Lost"
     }
     Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (time) in
-      AppDelegate.con = nil
+      SceneDelegate.con = nil
       let url = UserDefaults.standard.value(forKey: "server") as? String ?? "44.143.0.1"
-      AppDelegate.con = TCPController(url, port: 9124, eventHandler: self)
-      AppDelegate.con?.activateListener()
+      SceneDelegate.con = TCPController(url, port: 9124, eventHandler: self)
+      SceneDelegate.con?.activateListener()
     })
   }
   

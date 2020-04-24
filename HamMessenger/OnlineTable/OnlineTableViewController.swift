@@ -98,7 +98,7 @@ class OnlineTableViewController: UITableViewController {
       if let indexPath = tableView.indexPathForSelectedRow {
         let cont: PrivateMessageController = (segue.destination as! UINavigationController).topViewController as! PrivateMessageController
         cont.currentSelectedCall = peopleOnline[indexPath.row].callSign
-        cont.navigationItem.leftBarButtonItem = AppDelegate.getAppDelegate().privateSplit?.displayModeButtonItem
+        cont.navigationItem.leftBarButtonItem = AppDelegate.sceneDelegate?.privateSplit?.displayModeButtonItem
         cont.navigationItem.leftItemsSupplementBackButton = true
       }
     }
@@ -106,7 +106,7 @@ class OnlineTableViewController: UITableViewController {
       if let indexPath = tableView.indexPathForSelectedRow {
         let cont: PrivateMessageController = (segue.destination as! UINavigationController).topViewController as! PrivateMessageController
         cont.currentSelectedCall = peopleOffline[indexPath.row].callSign
-        cont.navigationItem.leftBarButtonItem = AppDelegate.getAppDelegate().privateSplit?.displayModeButtonItem
+        cont.navigationItem.leftBarButtonItem = AppDelegate.sceneDelegate?.privateSplit?.displayModeButtonItem
         cont.navigationItem.leftItemsSupplementBackButton = true
       }
     }

@@ -71,22 +71,21 @@ class SettingsController: UIViewController, UITextFieldDelegate {
     UserDefaults.standard.set(tfLocator.text!, forKey: "locator")
     UserDefaults.standard.set(tfLocation.text!, forKey: "location")
     UserDefaults.standard.set(tfIP.text!, forKey: "ip")
-    let delegate = AppDelegate.getAppDelegate()
     #if targetEnvironment(macCatalyst)
-      let board = UIStoryboard.init(name: "Mac", bundle: nil)
-      let controller = board.instantiateInitialViewController()
-      delegate.window?.rootViewController = controller;
-      delegate.window?.makeKeyAndVisible()
+    let board = UIStoryboard.init(name: "Mac", bundle: nil)
+    let controller = board.instantiateInitialViewController()
+    AppDelegate.sceneDelegate?.window?.rootViewController = controller;
+    AppDelegate.sceneDelegate?.window?.makeKeyAndVisible()
     #endif
     #if !targetEnvironment(macCatalyst)
-      let board = UIStoryboard.init(name: "iPhone", bundle: nil)
-      let controller = board.instantiateInitialViewController()
-      delegate.window?.rootViewController = controller;
-      delegate.window?.makeKeyAndVisible()
+    let board = UIStoryboard.init(name: "iPhone", bundle: nil)
+    let controller = board.instantiateInitialViewController()
+    AppDelegate.sceneDelegate?.window?.rootViewController = controller;
+    AppDelegate.sceneDelegate?.window?.makeKeyAndVisible()
     #endif
-    let tabController = delegate.window?.rootViewController as! UITabBarController;
-    delegate.tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
-    delegate.openConnection(tableController: delegate.tableController!);
+    let tabController = AppDelegate.sceneDelegate?.window?.rootViewController as! UITabBarController;
+    AppDelegate.sceneDelegate?.tableController = (tabController.viewControllers?[0] as! UINavigationController).viewControllers[0] as? UITableViewController;
+    AppDelegate.sceneDelegate?.openConnection(tableController: AppDelegate.sceneDelegate!.tableController!);
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {

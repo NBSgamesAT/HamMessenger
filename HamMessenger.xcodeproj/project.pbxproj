@@ -3,411 +3,402 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B10852D2450CE8300FCB4BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B10852C2450CE8300FCB4BF /* Main.storyboard */; };
-		8B19196123799170004B526E /* OnlineHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B19196023799170004B526E /* OnlineHandler.swift */; };
-		8B1F5D6923F170A3002BA3DA /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1F5D6823F170A3002BA3DA /* Mac.storyboard */; };
-		8B2097A1237340FB00B305CF /* TCPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2097A0237340FB00B305CF /* TCPController.swift */; };
-		8B2097A32374444A00B305CF /* NBSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2097A22374444A00B305CF /* NBSError.swift */; };
-		8B2C21B424375AD000383701 /* PrivateMessageTableViewCellOwn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C21B324375AD000383701 /* PrivateMessageTableViewCellOwn.swift */; };
-		8B3A570723FAFECC00974148 /* PayloadTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A570623FAFECC00974148 /* PayloadTypes.swift */; };
-		8B637F25243236DE00D3088F /* OnlineTableViewCellOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B637F24243236DE00D3088F /* OnlineTableViewCellOffline.swift */; };
-		8B85951C2427B4E5006FCF34 /* PrivateMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85951B2427B4E5006FCF34 /* PrivateMessageController.swift */; };
-		8B85951E2427B7E0006FCF34 /* PrivateMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85951D2427B7E0006FCF34 /* PrivateMessageTableViewCell.swift */; };
-		8B8595202427F538006FCF34 /* DBMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85951F2427F538006FCF34 /* DBMan.swift */; };
-		8B8595222427F62C006FCF34 /* PrivateMessagesDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8595212427F62C006FCF34 /* PrivateMessagesDB.swift */; };
-		8B85952424281EAE006FCF34 /* PrivateMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85952324281EAE006FCF34 /* PrivateMessage.swift */; };
-		8B8A8D14240BB9CC00E732F6 /* ProtocolSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8A8D13240BB9CC00E732F6 /* ProtocolSettings.swift */; };
-		8B9AAA7722FEE1EB00E87C01 /* TCPStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9AAA7622FEE1EB00E87C01 /* TCPStuff.swift */; };
-		8BA18F4D244C43D40037AF33 /* PrivateSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA18F4C244C43D40037AF33 /* PrivateSplitViewController.swift */; };
-		8BC0455A22F9B98700EABFD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0455922F9B98700EABFD9 /* AppDelegate.swift */; };
-		8BC0455C22F9B98700EABFD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0455B22F9B98700EABFD9 /* ViewController.swift */; };
-		8BC0456322F9B98800EABFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0456222F9B98800EABFD9 /* Assets.xcassets */; };
-		8BC0457122F9B98800EABFD9 /* HamMessangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0457022F9B98800EABFD9 /* HamMessangerTests.swift */; };
-		8BC0457C22F9B98800EABFD9 /* HamMessangerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0457B22F9B98800EABFD9 /* HamMessangerUITests.swift */; };
-		8BC0458A22F9B9D500EABFD9 /* HamMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC0458922F9B9D500EABFD9 /* HamMessage.swift */; };
-		8BCC03832385B2E40041A116 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */; };
-		8BCC03872385B5580041A116 /* ReceivedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC03862385B5580041A116 /* ReceivedMessage.swift */; };
-		8BCC038B2385BACE0041A116 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC038A2385BACE0041A116 /* MessageTableViewController.swift */; };
-		8BD43A0B240AD41500AA7F49 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BD43A0A240AD41500AA7F49 /* Settings.bundle */; };
-		8BD43A0D240AE0AC00AA7F49 /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD43A0C240AE0AC00AA7F49 /* FirstStart.storyboard */; };
-		8BD43A10240AE5CA00AA7F49 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD43A0F240AE5CA00AA7F49 /* SettingsController.swift */; };
-		8BD43A12240B04F700AA7F49 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD43A11240B04F700AA7F49 /* SettingsManager.swift */; };
-		8BEB79CF2369DFE400883FF4 /* OnlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */; };
-		8BFD5239236A04A90023B9CF /* OnlineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */; };
-		8BFD523B236A06D50023B9CF /* OnlineCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFD523A236A06D50023B9CF /* OnlineCall.swift */; };
-		8BFD95D122FA208A00741B72 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BFD95D022FA208A00741B72 /* iPhone.storyboard */; };
-		DB69050584359BEF7DBAE0D0 /* Pods_HamMessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB49ACED106BF5AA01B41635 /* Pods_HamMessengerTests.framework */; };
-		F80B2DF062F8D8C87A14F45A /* Pods_HamMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92583454003ECA391B2DA758 /* Pods_HamMessenger.framework */; };
-		FE913B6416E49778D83F0683 /* Pods_HamMessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A10FF3033C219830A10B59 /* Pods_HamMessengerUITests.framework */; };
+		2936291563C12C467557490B /* Pods_HamMessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A173A8E9018FFBA6C7FD53DB /* Pods_HamMessengerTests.framework */; };
+		7A444605913FAF1FA0009236 /* Pods_HamMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E14BEFF806209759181B431 /* Pods_HamMessenger.framework */; };
+		8B2D82C5245362C3007C718F /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2D82C3245362C2007C718F /* FirstStart.storyboard */; };
+		8B53469C24531D6900BAC69D /* PrivateMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53469724531D6900BAC69D /* PrivateMessage.swift */; };
+		8B53469D24531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53469824531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift */; };
+		8B53469E24531D6900BAC69D /* PrivateNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53469924531D6900BAC69D /* PrivateNavigationViewController.swift */; };
+		8B53469F24531D6900BAC69D /* PrivateMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53469A24531D6900BAC69D /* PrivateMessageController.swift */; };
+		8B5346A024531D6900BAC69D /* PrivateMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53469B24531D6900BAC69D /* PrivateMessageTableViewCell.swift */; };
+		8B5346A324531D9200BAC69D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346A224531D9200BAC69D /* TabBarController.swift */; };
+		8B5346A924531E0800BAC69D /* PayloadTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346A524531E0800BAC69D /* PayloadTypes.swift */; };
+		8B5346AA24531E0800BAC69D /* ProtocolSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346A624531E0800BAC69D /* ProtocolSettings.swift */; };
+		8B5346AB24531E0800BAC69D /* HamMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346A724531E0800BAC69D /* HamMessage.swift */; };
+		8B5346AC24531E0800BAC69D /* NBSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346A824531E0800BAC69D /* NBSError.swift */; };
+		8B5346B024531E2100BAC69D /* TCPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346AE24531E2100BAC69D /* TCPController.swift */; };
+		8B5346B124531E2100BAC69D /* TCPStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346AF24531E2100BAC69D /* TCPStuff.swift */; };
+		8B5346B524531E5600BAC69D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346B324531E5600BAC69D /* SettingsController.swift */; };
+		8B5346B624531E5600BAC69D /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346B424531E5600BAC69D /* SettingsManager.swift */; };
+		8B5346BA24531ED600BAC69D /* DBMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346B824531ED600BAC69D /* DBMan.swift */; };
+		8B5346BB24531ED600BAC69D /* PrivateMessagesDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346B924531ED600BAC69D /* PrivateMessagesDB.swift */; };
+		8B7960592452FD5200CF7796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7960582452FD5200CF7796 /* AppDelegate.swift */; };
+		8B79605B2452FD5200CF7796 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79605A2452FD5200CF7796 /* SceneDelegate.swift */; };
+		8B79605D2452FD5200CF7796 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79605C2452FD5200CF7796 /* MasterViewController.swift */; };
+		8B79605F2452FD5200CF7796 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79605E2452FD5200CF7796 /* DetailViewController.swift */; };
+		8B7960622452FD5200CF7796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7960602452FD5200CF7796 /* Main.storyboard */; };
+		8B7960642452FD5300CF7796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B7960632452FD5300CF7796 /* Assets.xcassets */; };
+		8B7960672452FD5300CF7796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7960652452FD5300CF7796 /* LaunchScreen.storyboard */; };
+		8B7960722452FD5300CF7796 /* HamMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7960712452FD5300CF7796 /* HamMessengerTests.swift */; };
+		8B79607D2452FD5300CF7796 /* HamMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79607C2452FD5300CF7796 /* HamMessengerUITests.swift */; };
+		8BE8892824531BAF00DA8029 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BE8891F24531BAE00DA8029 /* Settings.bundle */; };
+		8BE8892E24531BAF00DA8029 /* OnlineHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8892524531BAE00DA8029 /* OnlineHandler.swift */; };
+		8BE8893424531C6600DA8029 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8893124531C6600DA8029 /* MessageTableViewCell.swift */; };
+		8BE8893524531C6600DA8029 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8893224531C6600DA8029 /* MessageTableViewController.swift */; };
+		8BE8893624531C6600DA8029 /* ReceivedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8893324531C6600DA8029 /* ReceivedMessage.swift */; };
+		8BE8893C24531CC400DA8029 /* OnlineTableViewCellOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8893824531CC400DA8029 /* OnlineTableViewCellOffline.swift */; };
+		8BE8893D24531CC400DA8029 /* OnlineCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8893924531CC400DA8029 /* OnlineCall.swift */; };
+		8BE8893E24531CC400DA8029 /* OnlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8893A24531CC400DA8029 /* OnlineTableViewCell.swift */; };
+		8BE8893F24531CC400DA8029 /* OnlineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8893B24531CC400DA8029 /* OnlineTableViewController.swift */; };
+		DA78D903FB2DBDE4EBF4FFF5 /* Pods_HamMessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401F50B2712B9E9C662F697F /* Pods_HamMessengerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8BC0456D22F9B98800EABFD9 /* PBXContainerItemProxy */ = {
+		8B79606E2452FD5300CF7796 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8BC0454E22F9B98700EABFD9 /* Project object */;
+			containerPortal = 8B79604D2452FD5200CF7796 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8BC0455522F9B98700EABFD9;
-			remoteInfo = HamMessanger;
+			remoteGlobalIDString = 8B7960542452FD5200CF7796;
+			remoteInfo = HamMessenger;
 		};
-		8BC0457822F9B98800EABFD9 /* PBXContainerItemProxy */ = {
+		8B7960792452FD5300CF7796 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8BC0454E22F9B98700EABFD9 /* Project object */;
+			containerPortal = 8B79604D2452FD5200CF7796 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8BC0455522F9B98700EABFD9;
-			remoteInfo = HamMessanger;
+			remoteGlobalIDString = 8B7960542452FD5200CF7796;
+			remoteInfo = HamMessenger;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07DEFDC15109EFF73C62CB6F /* Pods-HamMessanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessanger/Pods-HamMessanger.debug.xcconfig"; sourceTree = "<group>"; };
-		0BF4AF3B3EDB0FDCF4C4951C /* Pods-HamMessangerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessangerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessangerTests/Pods-HamMessangerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		0F808488D46E1705E1B6C8A4 /* Pods-HamMessangerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessangerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessangerUITests/Pods-HamMessangerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		3DF95AA41129D772F3B62EAD /* Pods-HamMessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessengerUITests/Pods-HamMessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		65B5B7BD9D804E10F1AF3542 /* Pods_HamMessanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8929C74498713782BEF8D128 /* Pods-HamMessanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessanger/Pods-HamMessanger.release.xcconfig"; sourceTree = "<group>"; };
-		8B10852C2450CE8300FCB4BF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
-		8B19196023799170004B526E /* OnlineHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineHandler.swift; sourceTree = "<group>"; };
-		8B1F5D6823F170A3002BA3DA /* Mac.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mac.storyboard; sourceTree = "<group>"; };
-		8B2097A0237340FB00B305CF /* TCPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
-		8B2097A22374444A00B305CF /* NBSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBSError.swift; sourceTree = "<group>"; };
-		8B2C21B324375AD000383701 /* PrivateMessageTableViewCellOwn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateMessageTableViewCellOwn.swift; sourceTree = "<group>"; };
-		8B34414B237A0F060038F246 /* HamMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HamMessenger.entitlements; sourceTree = "<group>"; };
-		8B3A570623FAFECC00974148 /* PayloadTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadTypes.swift; sourceTree = "<group>"; };
-		8B637F24243236DE00D3088F /* OnlineTableViewCellOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTableViewCellOffline.swift; sourceTree = "<group>"; };
-		8B85951B2427B4E5006FCF34 /* PrivateMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateMessageController.swift; sourceTree = "<group>"; };
-		8B85951D2427B7E0006FCF34 /* PrivateMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateMessageTableViewCell.swift; sourceTree = "<group>"; };
-		8B85951F2427F538006FCF34 /* DBMan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMan.swift; sourceTree = "<group>"; };
-		8B8595212427F62C006FCF34 /* PrivateMessagesDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateMessagesDB.swift; sourceTree = "<group>"; };
-		8B85952324281EAE006FCF34 /* PrivateMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateMessage.swift; sourceTree = "<group>"; };
-		8B8A8D13240BB9CC00E732F6 /* ProtocolSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolSettings.swift; sourceTree = "<group>"; };
-		8B9AAA7622FEE1EB00E87C01 /* TCPStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPStuff.swift; sourceTree = "<group>"; };
-		8BA18F4C244C43D40037AF33 /* PrivateSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateSplitViewController.swift; sourceTree = "<group>"; };
-		8BC0455622F9B98700EABFD9 /* HamMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BC0455922F9B98700EABFD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BC0455B22F9B98700EABFD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8BC0456222F9B98800EABFD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8BC0456722F9B98800EABFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BC0456C22F9B98800EABFD9 /* HamMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BC0457022F9B98800EABFD9 /* HamMessangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessangerTests.swift; sourceTree = "<group>"; };
-		8BC0457222F9B98800EABFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BC0457722F9B98800EABFD9 /* HamMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BC0457B22F9B98800EABFD9 /* HamMessangerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessangerUITests.swift; sourceTree = "<group>"; };
-		8BC0457D22F9B98800EABFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BC0458922F9B9D500EABFD9 /* HamMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessage.swift; sourceTree = "<group>"; };
-		8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		8BCC03862385B5580041A116 /* ReceivedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedMessage.swift; sourceTree = "<group>"; };
-		8BCC038A2385BACE0041A116 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
-		8BD43A0A240AD41500AA7F49 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		8BD43A0C240AE0AC00AA7F49 /* FirstStart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstStart.storyboard; sourceTree = "<group>"; };
-		8BD43A0F240AE5CA00AA7F49 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		8BD43A11240B04F700AA7F49 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
-		8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTableViewCell.swift; sourceTree = "<group>"; };
-		8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineTableViewController.swift; sourceTree = "<group>"; };
-		8BFD523A236A06D50023B9CF /* OnlineCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineCall.swift; sourceTree = "<group>"; };
-		8BFD95D022FA208A00741B72 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		92583454003ECA391B2DA758 /* Pods_HamMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A127B54C0F36458E8BD24A38 /* Pods-HamMessangerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessangerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessangerUITests/Pods-HamMessangerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A9BCF355B98D46DD9E83C413 /* Pods-HamMessangerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessangerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessangerTests/Pods-HamMessangerTests.release.xcconfig"; sourceTree = "<group>"; };
-		AB49ACED106BF5AA01B41635 /* Pods_HamMessengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADA2753C5C5B1E0912AC33AB /* Pods-HamMessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessengerTests/Pods-HamMessengerTests.release.xcconfig"; sourceTree = "<group>"; };
-		E31EE94EA1106C697778CA23 /* Pods-HamMessengerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessengerTests/Pods-HamMessengerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EAC2A807C3EC19783502E459 /* Pods-HamMessengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessengerUITests/Pods-HamMessengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F3AB4E994511D31E3C5C5E3A /* Pods-HamMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessenger/Pods-HamMessenger.debug.xcconfig"; sourceTree = "<group>"; };
-		F6F1C4D0DD432D5AC6244D72 /* Pods-HamMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamMessenger/Pods-HamMessenger.release.xcconfig"; sourceTree = "<group>"; };
-		F8A10FF3033C219830A10B59 /* Pods_HamMessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A73F880D86ACD8AAD4D0241 /* Pods-HamMessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerTests.release.xcconfig"; path = "Target Support Files/Pods-HamMessengerTests/Pods-HamMessengerTests.release.xcconfig"; sourceTree = "<group>"; };
+		2E14BEFF806209759181B431 /* Pods_HamMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		401F50B2712B9E9C662F697F /* Pods_HamMessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6BC153C2A70CBAE8C37BDD /* Pods-HamMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessenger.debug.xcconfig"; path = "Target Support Files/Pods-HamMessenger/Pods-HamMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		732FCA4222ED85CE5C069A97 /* Pods-HamMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessenger.release.xcconfig"; path = "Target Support Files/Pods-HamMessenger/Pods-HamMessenger.release.xcconfig"; sourceTree = "<group>"; };
+		8B2D82C4245362C2007C718F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstStart.storyboard; sourceTree = "<group>"; };
+		8B53469724531D6900BAC69D /* PrivateMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMessage.swift; sourceTree = "<group>"; };
+		8B53469824531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMessageTableViewCellOwn.swift; sourceTree = "<group>"; };
+		8B53469924531D6900BAC69D /* PrivateNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateNavigationViewController.swift; sourceTree = "<group>"; };
+		8B53469A24531D6900BAC69D /* PrivateMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMessageController.swift; sourceTree = "<group>"; };
+		8B53469B24531D6900BAC69D /* PrivateMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMessageTableViewCell.swift; sourceTree = "<group>"; };
+		8B5346A224531D9200BAC69D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8B5346A524531E0800BAC69D /* PayloadTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayloadTypes.swift; sourceTree = "<group>"; };
+		8B5346A624531E0800BAC69D /* ProtocolSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolSettings.swift; sourceTree = "<group>"; };
+		8B5346A724531E0800BAC69D /* HamMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamMessage.swift; sourceTree = "<group>"; };
+		8B5346A824531E0800BAC69D /* NBSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBSError.swift; sourceTree = "<group>"; };
+		8B5346AE24531E2100BAC69D /* TCPController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
+		8B5346AF24531E2100BAC69D /* TCPStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPStuff.swift; sourceTree = "<group>"; };
+		8B5346B324531E5600BAC69D /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		8B5346B424531E5600BAC69D /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		8B5346B824531ED600BAC69D /* DBMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMan.swift; sourceTree = "<group>"; };
+		8B5346B924531ED600BAC69D /* PrivateMessagesDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMessagesDB.swift; sourceTree = "<group>"; };
+		8B7960552452FD5200CF7796 /* HamMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B7960582452FD5200CF7796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B79605A2452FD5200CF7796 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8B79605C2452FD5200CF7796 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		8B79605E2452FD5200CF7796 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8B7960612452FD5200CF7796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B7960632452FD5300CF7796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B7960662452FD5300CF7796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B7960682452FD5300CF7796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B79606D2452FD5300CF7796 /* HamMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B7960712452FD5300CF7796 /* HamMessengerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessengerTests.swift; sourceTree = "<group>"; };
+		8B7960732452FD5300CF7796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B7960782452FD5300CF7796 /* HamMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HamMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B79607C2452FD5300CF7796 /* HamMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamMessengerUITests.swift; sourceTree = "<group>"; };
+		8B79607E2452FD5300CF7796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B79608A2452FD5C00CF7796 /* HamMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HamMessenger.entitlements; sourceTree = "<group>"; };
+		8BE8891F24531BAE00DA8029 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8BE8892524531BAE00DA8029 /* OnlineHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineHandler.swift; sourceTree = "<group>"; };
+		8BE8893124531C6600DA8029 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		8BE8893224531C6600DA8029 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		8BE8893324531C6600DA8029 /* ReceivedMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedMessage.swift; sourceTree = "<group>"; };
+		8BE8893824531CC400DA8029 /* OnlineTableViewCellOffline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineTableViewCellOffline.swift; sourceTree = "<group>"; };
+		8BE8893924531CC400DA8029 /* OnlineCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineCall.swift; sourceTree = "<group>"; };
+		8BE8893A24531CC400DA8029 /* OnlineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineTableViewCell.swift; sourceTree = "<group>"; };
+		8BE8893B24531CC400DA8029 /* OnlineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineTableViewController.swift; sourceTree = "<group>"; };
+		92E61F661093C5B21329A31F /* Pods-HamMessengerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerTests.debug.xcconfig"; path = "Target Support Files/Pods-HamMessengerTests/Pods-HamMessengerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A173A8E9018FFBA6C7FD53DB /* Pods_HamMessengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HamMessengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8F50E32F274C4D3843AC662 /* Pods-HamMessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerUITests.release.xcconfig"; path = "Target Support Files/Pods-HamMessengerUITests/Pods-HamMessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CF67D60A80E8D0C890FF78C2 /* Pods-HamMessengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessengerUITests.debug.xcconfig"; path = "Target Support Files/Pods-HamMessengerUITests/Pods-HamMessengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8BC0455322F9B98700EABFD9 /* Frameworks */ = {
+		8B7960522452FD5200CF7796 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80B2DF062F8D8C87A14F45A /* Pods_HamMessenger.framework in Frameworks */,
+				7A444605913FAF1FA0009236 /* Pods_HamMessenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BC0456922F9B98800EABFD9 /* Frameworks */ = {
+		8B79606A2452FD5300CF7796 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB69050584359BEF7DBAE0D0 /* Pods_HamMessengerTests.framework in Frameworks */,
+				2936291563C12C467557490B /* Pods_HamMessengerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BC0457422F9B98800EABFD9 /* Frameworks */ = {
+		8B7960752452FD5300CF7796 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE913B6416E49778D83F0683 /* Pods_HamMessengerUITests.framework in Frameworks */,
+				DA78D903FB2DBDE4EBF4FFF5 /* Pods_HamMessengerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C8C2D61E84D1ADD526B205D /* Frameworks */ = {
+		0E3142D769AB2F559E3CB46E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				65B5B7BD9D804E10F1AF3542 /* Pods_HamMessanger.framework */,
-				92583454003ECA391B2DA758 /* Pods_HamMessenger.framework */,
-				AB49ACED106BF5AA01B41635 /* Pods_HamMessengerTests.framework */,
-				F8A10FF3033C219830A10B59 /* Pods_HamMessengerUITests.framework */,
+				4B6BC153C2A70CBAE8C37BDD /* Pods-HamMessenger.debug.xcconfig */,
+				732FCA4222ED85CE5C069A97 /* Pods-HamMessenger.release.xcconfig */,
+				92E61F661093C5B21329A31F /* Pods-HamMessengerTests.debug.xcconfig */,
+				1A73F880D86ACD8AAD4D0241 /* Pods-HamMessengerTests.release.xcconfig */,
+				CF67D60A80E8D0C890FF78C2 /* Pods-HamMessengerUITests.debug.xcconfig */,
+				B8F50E32F274C4D3843AC662 /* Pods-HamMessengerUITests.release.xcconfig */,
 			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		8B1BBE3524222C7100C3A82F /* SQLite */ = {
+		8B53469624531D5B00BAC69D /* PrivateMessage */ = {
 			isa = PBXGroup;
 			children = (
-				8B85951F2427F538006FCF34 /* DBMan.swift */,
-				8B8595212427F62C006FCF34 /* PrivateMessagesDB.swift */,
-			);
-			path = SQLite;
-			sourceTree = "<group>";
-		};
-		8B3A570523FADD5A00974148 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				8BCC037E2385B0540041A116 /* TCP Handling */,
-				8B3A570623FAFECC00974148 /* PayloadTypes.swift */,
-				8B2097A22374444A00B305CF /* NBSError.swift */,
-				8BC0458922F9B9D500EABFD9 /* HamMessage.swift */,
-				8B8A8D13240BB9CC00E732F6 /* ProtocolSettings.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		8B85951A2427B3E4006FCF34 /* PrivateMessage */ = {
-			isa = PBXGroup;
-			children = (
-				8B85951B2427B4E5006FCF34 /* PrivateMessageController.swift */,
-				8B85951D2427B7E0006FCF34 /* PrivateMessageTableViewCell.swift */,
-				8B2C21B324375AD000383701 /* PrivateMessageTableViewCellOwn.swift */,
-				8B85952324281EAE006FCF34 /* PrivateMessage.swift */,
+				8B53469724531D6900BAC69D /* PrivateMessage.swift */,
+				8B53469A24531D6900BAC69D /* PrivateMessageController.swift */,
+				8B53469B24531D6900BAC69D /* PrivateMessageTableViewCell.swift */,
+				8B53469824531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift */,
+				8B53469924531D6900BAC69D /* PrivateNavigationViewController.swift */,
 			);
 			path = PrivateMessage;
 			sourceTree = "<group>";
 		};
-		8BA18F4B244C43660037AF33 /* PrivateSplit */ = {
+		8B5346A124531D8200BAC69D /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				8BA18F4C244C43D40037AF33 /* PrivateSplitViewController.swift */,
+				8B5346A224531D9200BAC69D /* TabBarController.swift */,
 			);
-			path = PrivateSplit;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
-		8BC0454D22F9B98700EABFD9 = {
+		8B5346A424531DF000BAC69D /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				8BC0455822F9B98700EABFD9 /* HamMessenger */,
-				8BC0456F22F9B98800EABFD9 /* HamMessengerTests */,
-				8BC0457A22F9B98800EABFD9 /* HamMessengerUITests */,
-				8BC0455722F9B98700EABFD9 /* Products */,
-				9E85E800C369F1A6ED3ACD8E /* Pods */,
-				0C8C2D61E84D1ADD526B205D /* Frameworks */,
+				8B5346AD24531E1700BAC69D /* TCP Handling */,
+				8B5346A724531E0800BAC69D /* HamMessage.swift */,
+				8B5346A824531E0800BAC69D /* NBSError.swift */,
+				8B5346A524531E0800BAC69D /* PayloadTypes.swift */,
+				8B5346A624531E0800BAC69D /* ProtocolSettings.swift */,
 			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
-		8BC0455722F9B98700EABFD9 /* Products */ = {
+		8B5346AD24531E1700BAC69D /* TCP Handling */ = {
 			isa = PBXGroup;
 			children = (
-				8BC0455622F9B98700EABFD9 /* HamMessenger.app */,
-				8BC0456C22F9B98800EABFD9 /* HamMessengerTests.xctest */,
-				8BC0457722F9B98800EABFD9 /* HamMessengerUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8BC0455822F9B98700EABFD9 /* HamMessenger */ = {
-			isa = PBXGroup;
-			children = (
-				8BA18F4B244C43660037AF33 /* PrivateSplit */,
-				8B85951A2427B3E4006FCF34 /* PrivateMessage */,
-				8B1BBE3524222C7100C3A82F /* SQLite */,
-				8B3A570523FADD5A00974148 /* Protocol */,
-				8BCC03802385B20A0041A116 /* MessageTable */,
-				8BCC037D2385B0340041A116 /* OnlineTable */,
-				8BD43A0E240AE5A900AA7F49 /* Settings */,
-				8B34414B237A0F060038F246 /* HamMessenger.entitlements */,
-				8BC0455922F9B98700EABFD9 /* AppDelegate.swift */,
-				8B19196023799170004B526E /* OnlineHandler.swift */,
-				8BC0455B22F9B98700EABFD9 /* ViewController.swift */,
-				8BD43A0C240AE0AC00AA7F49 /* FirstStart.storyboard */,
-				8B10852C2450CE8300FCB4BF /* Main.storyboard */,
-				8BFD95D022FA208A00741B72 /* iPhone.storyboard */,
-				8B1F5D6823F170A3002BA3DA /* Mac.storyboard */,
-				8BC0456222F9B98800EABFD9 /* Assets.xcassets */,
-				8BD43A0A240AD41500AA7F49 /* Settings.bundle */,
-				8BC0456722F9B98800EABFD9 /* Info.plist */,
-			);
-			path = HamMessenger;
-			sourceTree = "<group>";
-		};
-		8BC0456F22F9B98800EABFD9 /* HamMessengerTests */ = {
-			isa = PBXGroup;
-			children = (
-				8BC0457022F9B98800EABFD9 /* HamMessangerTests.swift */,
-				8BC0457222F9B98800EABFD9 /* Info.plist */,
-			);
-			path = HamMessengerTests;
-			sourceTree = "<group>";
-		};
-		8BC0457A22F9B98800EABFD9 /* HamMessengerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8BC0457B22F9B98800EABFD9 /* HamMessangerUITests.swift */,
-				8BC0457D22F9B98800EABFD9 /* Info.plist */,
-			);
-			path = HamMessengerUITests;
-			sourceTree = "<group>";
-		};
-		8BCC037D2385B0340041A116 /* OnlineTable */ = {
-			isa = PBXGroup;
-			children = (
-				8BFD523A236A06D50023B9CF /* OnlineCall.swift */,
-				8BEB79CE2369DFE400883FF4 /* OnlineTableViewCell.swift */,
-				8B637F24243236DE00D3088F /* OnlineTableViewCellOffline.swift */,
-				8BFD5238236A04A90023B9CF /* OnlineTableViewController.swift */,
-			);
-			path = OnlineTable;
-			sourceTree = "<group>";
-		};
-		8BCC037E2385B0540041A116 /* TCP Handling */ = {
-			isa = PBXGroup;
-			children = (
-				8B9AAA7622FEE1EB00E87C01 /* TCPStuff.swift */,
-				8B2097A0237340FB00B305CF /* TCPController.swift */,
+				8B5346AE24531E2100BAC69D /* TCPController.swift */,
+				8B5346AF24531E2100BAC69D /* TCPStuff.swift */,
 			);
 			path = "TCP Handling";
 			sourceTree = "<group>";
 		};
-		8BCC03802385B20A0041A116 /* MessageTable */ = {
+		8B5346B224531E4700BAC69D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				8BCC03822385B2E40041A116 /* MessageTableViewCell.swift */,
-				8BCC03862385B5580041A116 /* ReceivedMessage.swift */,
-				8BCC038A2385BACE0041A116 /* MessageTableViewController.swift */,
-			);
-			path = MessageTable;
-			sourceTree = "<group>";
-		};
-		8BD43A0E240AE5A900AA7F49 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				8BD43A0F240AE5CA00AA7F49 /* SettingsController.swift */,
-				8BD43A11240B04F700AA7F49 /* SettingsManager.swift */,
+				8B5346B324531E5600BAC69D /* SettingsController.swift */,
+				8B5346B424531E5600BAC69D /* SettingsManager.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		9E85E800C369F1A6ED3ACD8E /* Pods */ = {
+		8B5346B724531EC800BAC69D /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				07DEFDC15109EFF73C62CB6F /* Pods-HamMessanger.debug.xcconfig */,
-				8929C74498713782BEF8D128 /* Pods-HamMessanger.release.xcconfig */,
-				0BF4AF3B3EDB0FDCF4C4951C /* Pods-HamMessangerTests.debug.xcconfig */,
-				A9BCF355B98D46DD9E83C413 /* Pods-HamMessangerTests.release.xcconfig */,
-				A127B54C0F36458E8BD24A38 /* Pods-HamMessangerUITests.debug.xcconfig */,
-				0F808488D46E1705E1B6C8A4 /* Pods-HamMessangerUITests.release.xcconfig */,
-				F3AB4E994511D31E3C5C5E3A /* Pods-HamMessenger.debug.xcconfig */,
-				F6F1C4D0DD432D5AC6244D72 /* Pods-HamMessenger.release.xcconfig */,
-				E31EE94EA1106C697778CA23 /* Pods-HamMessengerTests.debug.xcconfig */,
-				ADA2753C5C5B1E0912AC33AB /* Pods-HamMessengerTests.release.xcconfig */,
-				EAC2A807C3EC19783502E459 /* Pods-HamMessengerUITests.debug.xcconfig */,
-				3DF95AA41129D772F3B62EAD /* Pods-HamMessengerUITests.release.xcconfig */,
+				8B5346B824531ED600BAC69D /* DBMan.swift */,
+				8B5346B924531ED600BAC69D /* PrivateMessagesDB.swift */,
 			);
-			name = Pods;
+			path = SQLite;
+			sourceTree = "<group>";
+		};
+		8B79604C2452FD5200CF7796 = {
+			isa = PBXGroup;
+			children = (
+				8B7960572452FD5200CF7796 /* HamMessenger */,
+				8B7960702452FD5300CF7796 /* HamMessengerTests */,
+				8B79607B2452FD5300CF7796 /* HamMessengerUITests */,
+				8B7960562452FD5200CF7796 /* Products */,
+				0E3142D769AB2F559E3CB46E /* Pods */,
+				AFBAE66065A113BD410EE2F9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8B7960562452FD5200CF7796 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B7960552452FD5200CF7796 /* HamMessenger.app */,
+				8B79606D2452FD5300CF7796 /* HamMessengerTests.xctest */,
+				8B7960782452FD5300CF7796 /* HamMessengerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B7960572452FD5200CF7796 /* HamMessenger */ = {
+			isa = PBXGroup;
+			children = (
+				8B5346A424531DF000BAC69D /* Protocol */,
+				8BE8893724531CB000DA8029 /* OnlineTable */,
+				8BE8893024531C4600DA8029 /* MessageTable */,
+				8B53469624531D5B00BAC69D /* PrivateMessage */,
+				8B5346A124531D8200BAC69D /* TabBar */,
+				8B5346B224531E4700BAC69D /* Settings */,
+				8B5346B724531EC800BAC69D /* SQLite */,
+				8B79608A2452FD5C00CF7796 /* HamMessenger.entitlements */,
+				8B7960582452FD5200CF7796 /* AppDelegate.swift */,
+				8BE8892524531BAE00DA8029 /* OnlineHandler.swift */,
+				8BE8891F24531BAE00DA8029 /* Settings.bundle */,
+				8B79605A2452FD5200CF7796 /* SceneDelegate.swift */,
+				8B79605C2452FD5200CF7796 /* MasterViewController.swift */,
+				8B79605E2452FD5200CF7796 /* DetailViewController.swift */,
+				8B7960602452FD5200CF7796 /* Main.storyboard */,
+				8B7960632452FD5300CF7796 /* Assets.xcassets */,
+				8B2D82C3245362C2007C718F /* FirstStart.storyboard */,
+				8B7960652452FD5300CF7796 /* LaunchScreen.storyboard */,
+				8B7960682452FD5300CF7796 /* Info.plist */,
+			);
+			path = HamMessenger;
+			sourceTree = "<group>";
+		};
+		8B7960702452FD5300CF7796 /* HamMessengerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B7960712452FD5300CF7796 /* HamMessengerTests.swift */,
+				8B7960732452FD5300CF7796 /* Info.plist */,
+			);
+			path = HamMessengerTests;
+			sourceTree = "<group>";
+		};
+		8B79607B2452FD5300CF7796 /* HamMessengerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8B79607C2452FD5300CF7796 /* HamMessengerUITests.swift */,
+				8B79607E2452FD5300CF7796 /* Info.plist */,
+			);
+			path = HamMessengerUITests;
+			sourceTree = "<group>";
+		};
+		8BE8893024531C4600DA8029 /* MessageTable */ = {
+			isa = PBXGroup;
+			children = (
+				8BE8893124531C6600DA8029 /* MessageTableViewCell.swift */,
+				8BE8893224531C6600DA8029 /* MessageTableViewController.swift */,
+				8BE8893324531C6600DA8029 /* ReceivedMessage.swift */,
+			);
+			path = MessageTable;
+			sourceTree = "<group>";
+		};
+		8BE8893724531CB000DA8029 /* OnlineTable */ = {
+			isa = PBXGroup;
+			children = (
+				8BE8893924531CC400DA8029 /* OnlineCall.swift */,
+				8BE8893A24531CC400DA8029 /* OnlineTableViewCell.swift */,
+				8BE8893824531CC400DA8029 /* OnlineTableViewCellOffline.swift */,
+				8BE8893B24531CC400DA8029 /* OnlineTableViewController.swift */,
+			);
+			path = OnlineTable;
+			sourceTree = "<group>";
+		};
+		AFBAE66065A113BD410EE2F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E14BEFF806209759181B431 /* Pods_HamMessenger.framework */,
+				A173A8E9018FFBA6C7FD53DB /* Pods_HamMessengerTests.framework */,
+				401F50B2712B9E9C662F697F /* Pods_HamMessengerUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8BC0455522F9B98700EABFD9 /* HamMessenger */ = {
+		8B7960542452FD5200CF7796 /* HamMessenger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BC0458022F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessenger" */;
+			buildConfigurationList = 8B7960812452FD5300CF7796 /* Build configuration list for PBXNativeTarget "HamMessenger" */;
 			buildPhases = (
-				C8D56D45A177A3F08631CFEE /* [CP] Check Pods Manifest.lock */,
-				8BC0455222F9B98700EABFD9 /* Sources */,
-				8BC0455322F9B98700EABFD9 /* Frameworks */,
-				8BC0455422F9B98700EABFD9 /* Resources */,
-				3E22FD9F2871265DC700CDC6 /* [CP] Embed Pods Frameworks */,
+				43D26DA9E08A13A515C2A60E /* [CP] Check Pods Manifest.lock */,
+				8B7960512452FD5200CF7796 /* Sources */,
+				8B7960522452FD5200CF7796 /* Frameworks */,
+				8B7960532452FD5200CF7796 /* Resources */,
+				2C81683E277D2A43DBADADD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = HamMessenger;
-			productName = HamMessanger;
-			productReference = 8BC0455622F9B98700EABFD9 /* HamMessenger.app */;
+			productName = HamMessenger;
+			productReference = 8B7960552452FD5200CF7796 /* HamMessenger.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8BC0456B22F9B98800EABFD9 /* HamMessengerTests */ = {
+		8B79606C2452FD5300CF7796 /* HamMessengerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BC0458322F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessengerTests" */;
+			buildConfigurationList = 8B7960842452FD5300CF7796 /* Build configuration list for PBXNativeTarget "HamMessengerTests" */;
 			buildPhases = (
-				2A39A898F700F6D8E600A38C /* [CP] Check Pods Manifest.lock */,
-				8BC0456822F9B98800EABFD9 /* Sources */,
-				8BC0456922F9B98800EABFD9 /* Frameworks */,
-				8BC0456A22F9B98800EABFD9 /* Resources */,
+				76E0DACE1553DFC0EE3127E7 /* [CP] Check Pods Manifest.lock */,
+				8B7960692452FD5300CF7796 /* Sources */,
+				8B79606A2452FD5300CF7796 /* Frameworks */,
+				8B79606B2452FD5300CF7796 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8BC0456E22F9B98800EABFD9 /* PBXTargetDependency */,
+				8B79606F2452FD5300CF7796 /* PBXTargetDependency */,
 			);
 			name = HamMessengerTests;
-			productName = HamMessangerTests;
-			productReference = 8BC0456C22F9B98800EABFD9 /* HamMessengerTests.xctest */;
+			productName = HamMessengerTests;
+			productReference = 8B79606D2452FD5300CF7796 /* HamMessengerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8BC0457622F9B98800EABFD9 /* HamMessengerUITests */ = {
+		8B7960772452FD5300CF7796 /* HamMessengerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BC0458622F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessengerUITests" */;
+			buildConfigurationList = 8B7960872452FD5300CF7796 /* Build configuration list for PBXNativeTarget "HamMessengerUITests" */;
 			buildPhases = (
-				1D9A49EE69569689F2B2F62A /* [CP] Check Pods Manifest.lock */,
-				8BC0457322F9B98800EABFD9 /* Sources */,
-				8BC0457422F9B98800EABFD9 /* Frameworks */,
-				8BC0457522F9B98800EABFD9 /* Resources */,
+				8B4DD28BB2E1FBD8BA3D07B8 /* [CP] Check Pods Manifest.lock */,
+				8B7960742452FD5300CF7796 /* Sources */,
+				8B7960752452FD5300CF7796 /* Frameworks */,
+				8B7960762452FD5300CF7796 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8BC0457922F9B98800EABFD9 /* PBXTargetDependency */,
+				8B79607A2452FD5300CF7796 /* PBXTargetDependency */,
 			);
 			name = HamMessengerUITests;
-			productName = HamMessangerUITests;
-			productReference = 8BC0457722F9B98800EABFD9 /* HamMessengerUITests.xctest */;
+			productName = HamMessengerUITests;
+			productReference = 8B7960782452FD5300CF7796 /* HamMessengerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8BC0454E22F9B98700EABFD9 /* Project object */ = {
+		8B79604D2452FD5200CF7796 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = NBSgamesAT;
 				TargetAttributes = {
-					8BC0455522F9B98700EABFD9 = {
-						CreatedOnToolsVersion = 10.3;
+					8B7960542452FD5200CF7796 = {
+						CreatedOnToolsVersion = 11.4.1;
 					};
-					8BC0456B22F9B98800EABFD9 = {
-						CreatedOnToolsVersion = 10.3;
-						TestTargetID = 8BC0455522F9B98700EABFD9;
+					8B79606C2452FD5300CF7796 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 8B7960542452FD5200CF7796;
 					};
-					8BC0457622F9B98800EABFD9 = {
-						CreatedOnToolsVersion = 10.3;
-						TestTargetID = 8BC0455522F9B98700EABFD9;
+					8B7960772452FD5300CF7796 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 8B7960542452FD5200CF7796;
 					};
 				};
 			};
-			buildConfigurationList = 8BC0455122F9B98700EABFD9 /* Build configuration list for PBXProject "HamMessenger" */;
+			buildConfigurationList = 8B7960502452FD5200CF7796 /* Build configuration list for PBXProject "HamMessenger" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -415,40 +406,39 @@
 				en,
 				Base,
 			);
-			mainGroup = 8BC0454D22F9B98700EABFD9;
-			productRefGroup = 8BC0455722F9B98700EABFD9 /* Products */;
+			mainGroup = 8B79604C2452FD5200CF7796;
+			productRefGroup = 8B7960562452FD5200CF7796 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8BC0455522F9B98700EABFD9 /* HamMessenger */,
-				8BC0456B22F9B98800EABFD9 /* HamMessengerTests */,
-				8BC0457622F9B98800EABFD9 /* HamMessengerUITests */,
+				8B7960542452FD5200CF7796 /* HamMessenger */,
+				8B79606C2452FD5300CF7796 /* HamMessengerTests */,
+				8B7960772452FD5300CF7796 /* HamMessengerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8BC0455422F9B98700EABFD9 /* Resources */ = {
+		8B7960532452FD5200CF7796 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BD43A0B240AD41500AA7F49 /* Settings.bundle in Resources */,
-				8BC0456322F9B98800EABFD9 /* Assets.xcassets in Resources */,
-				8BD43A0D240AE0AC00AA7F49 /* FirstStart.storyboard in Resources */,
-				8B10852D2450CE8300FCB4BF /* Main.storyboard in Resources */,
-				8B1F5D6923F170A3002BA3DA /* Mac.storyboard in Resources */,
-				8BFD95D122FA208A00741B72 /* iPhone.storyboard in Resources */,
+				8B7960672452FD5300CF7796 /* LaunchScreen.storyboard in Resources */,
+				8BE8892824531BAF00DA8029 /* Settings.bundle in Resources */,
+				8B2D82C5245362C3007C718F /* FirstStart.storyboard in Resources */,
+				8B7960642452FD5300CF7796 /* Assets.xcassets in Resources */,
+				8B7960622452FD5200CF7796 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BC0456A22F9B98800EABFD9 /* Resources */ = {
+		8B79606B2452FD5300CF7796 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BC0457522F9B98800EABFD9 /* Resources */ = {
+		8B7960762452FD5300CF7796 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -458,43 +448,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D9A49EE69569689F2B2F62A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HamMessengerUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2A39A898F700F6D8E600A38C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HamMessengerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3E22FD9F2871265DC700CDC6 /* [CP] Embed Pods Frameworks */ = {
+		2C81683E277D2A43DBADADD4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -511,18 +465,66 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HamMessenger/Pods-HamMessenger-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8D56D45A177A3F08631CFEE /* [CP] Check Pods Manifest.lock */ = {
+		43D26DA9E08A13A515C2A60E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-HamMessenger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76E0DACE1553DFC0EE3127E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HamMessengerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B4DD28BB2E1FBD8BA3D07B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HamMessengerUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -532,71 +534,101 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8BC0455222F9B98700EABFD9 /* Sources */ = {
+		8B7960512452FD5200CF7796 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BFD523B236A06D50023B9CF /* OnlineCall.swift in Sources */,
-				8B19196123799170004B526E /* OnlineHandler.swift in Sources */,
-				8B2097A32374444A00B305CF /* NBSError.swift in Sources */,
-				8B2097A1237340FB00B305CF /* TCPController.swift in Sources */,
-				8B3A570723FAFECC00974148 /* PayloadTypes.swift in Sources */,
-				8BD43A12240B04F700AA7F49 /* SettingsManager.swift in Sources */,
-				8B2C21B424375AD000383701 /* PrivateMessageTableViewCellOwn.swift in Sources */,
-				8BCC03832385B2E40041A116 /* MessageTableViewCell.swift in Sources */,
-				8B8A8D14240BB9CC00E732F6 /* ProtocolSettings.swift in Sources */,
-				8BD43A10240AE5CA00AA7F49 /* SettingsController.swift in Sources */,
-				8BCC038B2385BACE0041A116 /* MessageTableViewController.swift in Sources */,
-				8BCC03872385B5580041A116 /* ReceivedMessage.swift in Sources */,
-				8B85951E2427B7E0006FCF34 /* PrivateMessageTableViewCell.swift in Sources */,
-				8B8595202427F538006FCF34 /* DBMan.swift in Sources */,
-				8B85951C2427B4E5006FCF34 /* PrivateMessageController.swift in Sources */,
-				8B9AAA7722FEE1EB00E87C01 /* TCPStuff.swift in Sources */,
-				8B637F25243236DE00D3088F /* OnlineTableViewCellOffline.swift in Sources */,
-				8BA18F4D244C43D40037AF33 /* PrivateSplitViewController.swift in Sources */,
-				8BEB79CF2369DFE400883FF4 /* OnlineTableViewCell.swift in Sources */,
-				8BC0455C22F9B98700EABFD9 /* ViewController.swift in Sources */,
-				8B8595222427F62C006FCF34 /* PrivateMessagesDB.swift in Sources */,
-				8BC0458A22F9B9D500EABFD9 /* HamMessage.swift in Sources */,
-				8BFD5239236A04A90023B9CF /* OnlineTableViewController.swift in Sources */,
-				8BC0455A22F9B98700EABFD9 /* AppDelegate.swift in Sources */,
-				8B85952424281EAE006FCF34 /* PrivateMessage.swift in Sources */,
+				8B7960592452FD5200CF7796 /* AppDelegate.swift in Sources */,
+				8BE8892E24531BAF00DA8029 /* OnlineHandler.swift in Sources */,
+				8B53469C24531D6900BAC69D /* PrivateMessage.swift in Sources */,
+				8B79605B2452FD5200CF7796 /* SceneDelegate.swift in Sources */,
+				8B5346A924531E0800BAC69D /* PayloadTypes.swift in Sources */,
+				8B79605D2452FD5200CF7796 /* MasterViewController.swift in Sources */,
+				8B5346B524531E5600BAC69D /* SettingsController.swift in Sources */,
+				8B5346BB24531ED600BAC69D /* PrivateMessagesDB.swift in Sources */,
+				8BE8893D24531CC400DA8029 /* OnlineCall.swift in Sources */,
+				8BE8893E24531CC400DA8029 /* OnlineTableViewCell.swift in Sources */,
+				8B5346B124531E2100BAC69D /* TCPStuff.swift in Sources */,
+				8B53469E24531D6900BAC69D /* PrivateNavigationViewController.swift in Sources */,
+				8BE8893624531C6600DA8029 /* ReceivedMessage.swift in Sources */,
+				8B79605F2452FD5200CF7796 /* DetailViewController.swift in Sources */,
+				8B5346A324531D9200BAC69D /* TabBarController.swift in Sources */,
+				8B5346B624531E5600BAC69D /* SettingsManager.swift in Sources */,
+				8B5346AA24531E0800BAC69D /* ProtocolSettings.swift in Sources */,
+				8BE8893424531C6600DA8029 /* MessageTableViewCell.swift in Sources */,
+				8B5346B024531E2100BAC69D /* TCPController.swift in Sources */,
+				8B5346AC24531E0800BAC69D /* NBSError.swift in Sources */,
+				8B53469D24531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift in Sources */,
+				8BE8893C24531CC400DA8029 /* OnlineTableViewCellOffline.swift in Sources */,
+				8B53469F24531D6900BAC69D /* PrivateMessageController.swift in Sources */,
+				8BE8893F24531CC400DA8029 /* OnlineTableViewController.swift in Sources */,
+				8B5346A024531D6900BAC69D /* PrivateMessageTableViewCell.swift in Sources */,
+				8B5346BA24531ED600BAC69D /* DBMan.swift in Sources */,
+				8B5346AB24531E0800BAC69D /* HamMessage.swift in Sources */,
+				8BE8893524531C6600DA8029 /* MessageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BC0456822F9B98800EABFD9 /* Sources */ = {
+		8B7960692452FD5300CF7796 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BC0457122F9B98800EABFD9 /* HamMessangerTests.swift in Sources */,
+				8B7960722452FD5300CF7796 /* HamMessengerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BC0457322F9B98800EABFD9 /* Sources */ = {
+		8B7960742452FD5300CF7796 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BC0457C22F9B98800EABFD9 /* HamMessangerUITests.swift in Sources */,
+				8B79607D2452FD5300CF7796 /* HamMessengerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8BC0456E22F9B98800EABFD9 /* PBXTargetDependency */ = {
+		8B79606F2452FD5300CF7796 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8BC0455522F9B98700EABFD9 /* HamMessenger */;
-			targetProxy = 8BC0456D22F9B98800EABFD9 /* PBXContainerItemProxy */;
+			target = 8B7960542452FD5200CF7796 /* HamMessenger */;
+			targetProxy = 8B79606E2452FD5300CF7796 /* PBXContainerItemProxy */;
 		};
-		8BC0457922F9B98800EABFD9 /* PBXTargetDependency */ = {
+		8B79607A2452FD5300CF7796 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8BC0455522F9B98700EABFD9 /* HamMessenger */;
-			targetProxy = 8BC0457822F9B98800EABFD9 /* PBXContainerItemProxy */;
+			target = 8B7960542452FD5200CF7796 /* HamMessenger */;
+			targetProxy = 8B7960792452FD5300CF7796 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		8B2D82C3245362C2007C718F /* FirstStart.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B2D82C4245362C2007C718F /* Base */,
+			);
+			name = FirstStart.storyboard;
+			sourceTree = "<group>";
+		};
+		8B7960602452FD5200CF7796 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B7960612452FD5200CF7796 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B7960652452FD5300CF7796 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B7960662452FD5300CF7796 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		8BC0457E22F9B98800EABFD9 /* Debug */ = {
+		8B79607F2452FD5300CF7796 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -628,7 +660,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -647,7 +678,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -657,7 +688,7 @@
 			};
 			name = Debug;
 		};
-		8BC0457F22F9B98800EABFD9 /* Release */ = {
+		8B7960802452FD5300CF7796 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -689,7 +720,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -702,7 +732,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -712,26 +742,26 @@
 			};
 			name = Release;
 		};
-		8BC0458122F9B98800EABFD9 /* Debug */ = {
+		8B7960822452FD5300CF7796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3AB4E994511D31E3C5C5E3A /* Pods-HamMessenger.debug.xcconfig */;
+			baseConfigurationReference = 4B6BC153C2A70CBAE8C37BDD /* Pods-HamMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HamMessenger/HamMessenger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0alpha3;
+				MARKETING_VERSION = 1.0beta1;
 				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessenger;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = maccatalyst.at.nbsgames.HamMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IosHamMessanger;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = MacHamMessanger;
@@ -741,50 +771,51 @@
 			};
 			name = Debug;
 		};
-		8BC0458222F9B98800EABFD9 /* Release */ = {
+		8B7960832452FD5300CF7796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6F1C4D0DD432D5AC6244D72 /* Pods-HamMessenger.release.xcconfig */;
+			baseConfigurationReference = 732FCA4222ED85CE5C069A97 /* Pods-HamMessenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HamMessenger/HamMessenger.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0alpha3;
+				MARKETING_VERSION = 1.0beta1;
 				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessenger;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = maccatalyst.at.nbsgames.HamMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = IosHamMessanger;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "HamMessenger Release Profile";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = MacHamMessanger;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		8BC0458422F9B98800EABFD9 /* Debug */ = {
+		8B7960852452FD5300CF7796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E31EE94EA1106C697778CA23 /* Pods-HamMessengerTests.debug.xcconfig */;
+			baseConfigurationReference = 92E61F661093C5B21329A31F /* Pods-HamMessengerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D46R59592N;
-				INFOPLIST_FILE = HamMessangerTests/Info.plist;
+				INFOPLIST_FILE = HamMessengerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessangerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessengerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -792,21 +823,22 @@
 			};
 			name = Debug;
 		};
-		8BC0458522F9B98800EABFD9 /* Release */ = {
+		8B7960862452FD5300CF7796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADA2753C5C5B1E0912AC33AB /* Pods-HamMessengerTests.release.xcconfig */;
+			baseConfigurationReference = 1A73F880D86ACD8AAD4D0241 /* Pods-HamMessengerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D46R59592N;
-				INFOPLIST_FILE = HamMessangerTests/Info.plist;
+				INFOPLIST_FILE = HamMessengerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessangerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessengerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -814,88 +846,88 @@
 			};
 			name = Release;
 		};
-		8BC0458722F9B98800EABFD9 /* Debug */ = {
+		8B7960882452FD5300CF7796 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAC2A807C3EC19783502E459 /* Pods-HamMessengerUITests.debug.xcconfig */;
+			baseConfigurationReference = CF67D60A80E8D0C890FF78C2 /* Pods-HamMessengerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D46R59592N;
-				INFOPLIST_FILE = HamMessangerUITests/Info.plist;
+				INFOPLIST_FILE = HamMessengerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessangerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessengerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HamMessanger;
+				TEST_TARGET_NAME = HamMessenger;
 			};
 			name = Debug;
 		};
-		8BC0458822F9B98800EABFD9 /* Release */ = {
+		8B7960892452FD5300CF7796 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DF95AA41129D772F3B62EAD /* Pods-HamMessengerUITests.release.xcconfig */;
+			baseConfigurationReference = B8F50E32F274C4D3843AC662 /* Pods-HamMessengerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D46R59592N;
-				INFOPLIST_FILE = HamMessangerUITests/Info.plist;
+				INFOPLIST_FILE = HamMessengerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = at.NBSgames.HamMessangerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessengerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HamMessanger;
+				TEST_TARGET_NAME = HamMessenger;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8BC0455122F9B98700EABFD9 /* Build configuration list for PBXProject "HamMessenger" */ = {
+		8B7960502452FD5200CF7796 /* Build configuration list for PBXProject "HamMessenger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BC0457E22F9B98800EABFD9 /* Debug */,
-				8BC0457F22F9B98800EABFD9 /* Release */,
+				8B79607F2452FD5300CF7796 /* Debug */,
+				8B7960802452FD5300CF7796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BC0458022F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessenger" */ = {
+		8B7960812452FD5300CF7796 /* Build configuration list for PBXNativeTarget "HamMessenger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BC0458122F9B98800EABFD9 /* Debug */,
-				8BC0458222F9B98800EABFD9 /* Release */,
+				8B7960822452FD5300CF7796 /* Debug */,
+				8B7960832452FD5300CF7796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BC0458322F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessengerTests" */ = {
+		8B7960842452FD5300CF7796 /* Build configuration list for PBXNativeTarget "HamMessengerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BC0458422F9B98800EABFD9 /* Debug */,
-				8BC0458522F9B98800EABFD9 /* Release */,
+				8B7960852452FD5300CF7796 /* Debug */,
+				8B7960862452FD5300CF7796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BC0458622F9B98800EABFD9 /* Build configuration list for PBXNativeTarget "HamMessengerUITests" */ = {
+		8B7960872452FD5300CF7796 /* Build configuration list for PBXNativeTarget "HamMessengerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8BC0458722F9B98800EABFD9 /* Debug */,
-				8BC0458822F9B98800EABFD9 /* Release */,
+				8B7960882452FD5300CF7796 /* Debug */,
+				8B7960892452FD5300CF7796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8BC0454E22F9B98700EABFD9 /* Project object */;
+	rootObject = 8B79604D2452FD5200CF7796 /* Project object */;
 }

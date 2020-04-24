@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1140"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BC0455522F9B98700EABFD9"
+               BlueprintIdentifier = "8B7960542452FD5200CF7796"
                BuildableName = "HamMessenger.app"
                BlueprintName = "HamMessenger"
                ReferencedContainer = "container:HamMessenger.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BC0456B22F9B98800EABFD9"
+               BlueprintIdentifier = "8B79606C2452FD5300CF7796"
                BuildableName = "HamMessengerTests.xctest"
                BlueprintName = "HamMessengerTests"
                ReferencedContainer = "container:HamMessenger.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BC0457622F9B98800EABFD9"
+               BlueprintIdentifier = "8B7960772452FD5300CF7796"
                BuildableName = "HamMessengerUITests.xctest"
                BlueprintName = "HamMessengerUITests"
                ReferencedContainer = "container:HamMessenger.xcodeproj">
@@ -64,7 +64,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BC0455522F9B98700EABFD9"
+            BlueprintIdentifier = "8B7960542452FD5200CF7796"
             BuildableName = "HamMessenger.app"
             BlueprintName = "HamMessenger"
             ReferencedContainer = "container:HamMessenger.xcodeproj">
@@ -81,7 +81,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BC0455522F9B98700EABFD9"
+            BlueprintIdentifier = "8B7960542452FD5200CF7796"
             BuildableName = "HamMessenger.app"
             BlueprintName = "HamMessenger"
             ReferencedContainer = "container:HamMessenger.xcodeproj">
