@@ -199,18 +199,21 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeZ-g7-9y6">
                                 <rect key="frame" x="16" y="58" width="288" height="484"/>
-                                <string key="text">HAMMessanger Ideo and Design by ÖVSV
+                                <mutableString key="text">HAMMessanger Ideo and Design by ÖVSV
+
 iOS/iPad OS/Mac OS X Client Nicolas OE1NBS
 HAMGO Protokoll Alex OE1VQS
 .NET Programming Kurt OE1KBC
-ANDROID Client Kurt OE1KBC 
+ANDROID Client Kurt OE1KBC
+
 (c) by ÖVSV/OE1KBC 2018
-(c) by OE1NBS 2019/2020 
+(c) by OE1NBS 2019/2020
+
 Special thanks to ÖVSV for letting me create a version for Apple Devices
 
 Other Information:
 Version: ios1.0beta1
-Build Version: 4</string>
+Build Version: 4</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -586,7 +589,7 @@ Build Version: 4</string>
             <objects>
                 <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="478.5" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
