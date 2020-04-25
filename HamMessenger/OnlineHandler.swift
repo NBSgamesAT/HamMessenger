@@ -25,13 +25,18 @@ class OnlineHandler: TCPEventHandler {
       if(info[4] == "CLOSE"){
         let call = OnlineTableViewController.peopleFound.filter({ (call) -> Bool in
           return call.callSign == message.source
-        })[0]
-        call.isOnline = false
-        call.name = ""
-        call.locator = ""
-        call.location = ""
-        call.ip = ""
-        call.version = ""
+        }).first
+        if call != nil {
+          call!.isOnline = false
+          call!.name = ""
+          call!.locator = ""
+          call!.location = ""
+          call!.ip = ""
+          call!.version = ""
+        }
+        else {
+          OnlineTableViewController.peopleFound.append(OnlineCall(callSign: message.source));
+        }
         DispatchQueue.main.async {
           (self.tableController.view as! UITableView).reloadData()
         }

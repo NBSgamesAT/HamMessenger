@@ -25,6 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     
     guard let window = window else { return }
+    
+    AppDelegate.sceneDelegate = self
+    
     if(UserDefaults.standard.bool(forKey: "hasValues")){
       /*#if targetEnvironment(macCatalyst)
       let board = UIStoryboard.init(name: "Mac", bundle: nil)
@@ -33,11 +36,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       window?.makeKeyAndVisible()
       #endif*/
       privateSplit = window.rootViewController as? UISplitViewController
+      if privateSplit == nil {
+        return
+      }
       //tableController = ((privateSplit?.viewControllers.first as! UITabBarController).viewControllers!.first as! UINavigationController).viewControllers.first as? UITableViewController
       //tableController = (privateSplit?.viewControllers.first as! UINavigationController).viewControllers.first as? UITableViewController
       //tableController = (((privateSplit!.viewControllers.first as! UINavigationController).viewControllers.first as! UITabBarController).viewControllers!.first as! UINavigationController).viewControllers.first as? UITableViewController
-      tableController = ((privateSplit?.viewControllers.first as! UINavigationController).viewControllers.first as! UITabBarController).viewControllers!.first as? UITableViewController
+      tableController = ((privateSplit!.viewControllers.first as! UINavigationController).viewControllers.first as! UITabBarController).viewControllers!.first as? UITableViewController
       self.openConnection(tableController: tableController!);
+      guard let splitViewController = window.rootViewController as? UISplitViewController else { return }
+      self.privateSplit = splitViewController
+      guard let navigationController = splitViewController.viewControllers.last as? UINavigationController else { return }
+      navigationController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+      navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
+      splitViewController.delegate = self
     }
     else{
       let board = UIStoryboard.init(name: "FirstStart", bundle: nil)
@@ -45,13 +57,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       window.rootViewController = controller;
       window.makeKeyAndVisible()
     }
-    guard let splitViewController = window.rootViewController as? UISplitViewController else { return }
-    self.privateSplit = splitViewController
-    guard let navigationController = splitViewController.viewControllers.last as? UINavigationController else { return }
-    navigationController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-    navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
-    splitViewController.delegate = self
-    AppDelegate.sceneDelegate = self
+    
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
