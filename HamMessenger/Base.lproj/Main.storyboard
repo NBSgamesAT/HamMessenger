@@ -502,6 +502,7 @@ Build Version: 4</mutableString>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44.255.255.255" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsn-Fd-J8g">
                                             <rect key="frame" x="177" y="10" width="127" height="21"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="4GC-iK-FJ2"/>
                                                 <constraint firstAttribute="height" constant="21" id="oAM-KI-2IJ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -509,7 +510,16 @@ Build Version: 4</mutableString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88888888" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWf-Rx-BIm">
-                                            <rect key="frame" x="201" y="40" width="99" height="23"/>
+                                            <rect key="frame" x="205" y="40" width="99" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="Yae-Q3-6Ss"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1H-vL-buc">
+                                            <rect key="frame" x="239" y="71" width="65" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -523,13 +533,16 @@ Build Version: 4</mutableString>
                                         <constraint firstAttribute="bottom" secondItem="Gdq-EI-oCM" secondAttribute="bottom" constant="8" id="D6Q-fW-NtV"/>
                                         <constraint firstAttribute="trailing" secondItem="Gsn-Fd-J8g" secondAttribute="trailing" constant="16" id="DtS-Up-Sy6"/>
                                         <constraint firstItem="74Z-Oo-ArA" firstAttribute="top" secondItem="lAu-J7-WSi" secondAttribute="top" constant="8" id="F8x-mQ-u6L"/>
-                                        <constraint firstAttribute="trailing" secondItem="RWf-Rx-BIm" secondAttribute="trailing" constant="20" symbolic="YES" id="IKt-ZL-2rH"/>
+                                        <constraint firstAttribute="trailing" secondItem="RWf-Rx-BIm" secondAttribute="trailing" constant="16" id="IKt-ZL-2rH"/>
+                                        <constraint firstAttribute="trailing" secondItem="t1H-vL-buc" secondAttribute="trailing" constant="16" id="JX8-CZ-WVr"/>
                                         <constraint firstItem="Gsn-Fd-J8g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="74Z-Oo-ArA" secondAttribute="trailing" constant="8" symbolic="YES" id="Ptr-nK-kvC"/>
+                                        <constraint firstItem="t1H-vL-buc" firstAttribute="top" secondItem="RWf-Rx-BIm" secondAttribute="bottom" constant="8" id="XTV-3y-Exy"/>
                                         <constraint firstItem="RWf-Rx-BIm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DMd-z5-7eV" secondAttribute="trailing" id="cmp-RS-70L"/>
                                         <constraint firstItem="Gdq-EI-oCM" firstAttribute="top" secondItem="DMd-z5-7eV" secondAttribute="bottom" constant="8" id="hkb-fj-rjP"/>
+                                        <constraint firstAttribute="bottom" secondItem="t1H-vL-buc" secondAttribute="bottom" constant="8" id="jFs-E1-Ekw"/>
                                         <constraint firstItem="Gsn-Fd-J8g" firstAttribute="top" secondItem="lAu-J7-WSi" secondAttribute="top" constant="10" id="mEy-HW-AXZ"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gdq-EI-oCM" secondAttribute="trailing" constant="20" symbolic="YES" id="vU7-aK-X0p"/>
                                         <constraint firstItem="DMd-z5-7eV" firstAttribute="leading" secondItem="lAu-J7-WSi" secondAttribute="leading" constant="16" id="x8s-5b-V4R"/>
+                                        <constraint firstItem="t1H-vL-buc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gdq-EI-oCM" secondAttribute="trailing" constant="8" symbolic="YES" id="ybI-YO-tJa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -538,6 +551,7 @@ Build Version: 4</mutableString>
                                     <outlet property="location" destination="Gdq-EI-oCM" id="4DN-F0-iKl"/>
                                     <outlet property="locator" destination="RWf-Rx-BIm" id="YmB-XK-sd5"/>
                                     <outlet property="nameLabel" destination="DMd-z5-7eV" id="cb4-FZ-cbK"/>
+                                    <outlet property="version" destination="t1H-vL-buc" id="LKZ-6Z-IbR"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="toPrivMessageOnline" id="dZ3-2W-W0d"/>
                                 </connections>
                             </tableViewCell>
@@ -582,14 +596,14 @@ Build Version: 4</mutableString>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495.6521739130435" y="-630.13392857142856"/>
+            <point key="canvasLocation" x="1495.5" y="-631"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
-                        <rect key="frame" x="0.0" y="0.0" width="478.5" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

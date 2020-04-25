@@ -64,6 +64,7 @@ class OnlineTableViewController: UITableViewController {
       actualCell.ipLabel.text = user.ip;
       actualCell.location.text = user.location;
       actualCell.locator.text = user.locator;
+      actualCell.version.text = user.version;
       actualCell.contentView.sizeToFit()
       return actualCell;
     }

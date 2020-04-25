@@ -15,9 +15,10 @@ public class OnlineCall {
   var locator: String //The Locator of the online user
   var location: String //The Location of the online user (eg. Vienna, Berlin, even Fucking (in Austria))
   var isOnline: Bool
+  var version: String
   var lastOnlineMessage: TimeInterval
   
-  init(callSign: String, name: String, ip: String, locator: String, location: String){
+  init(callSign: String, name: String, ip: String, locator: String, location: String, version: String){
     self.callSign = callSign;
     self.name = name;
     self.ip = ip;
@@ -25,6 +26,7 @@ public class OnlineCall {
     self.location = location;
     self.isOnline = true;
     self.lastOnlineMessage = Date().timeIntervalSince1970
+    self.version = version
   }
   init(callSign: String){
     self.callSign = callSign;
@@ -34,6 +36,7 @@ public class OnlineCall {
     self.location = ""
     self.locator = ""
     self.lastOnlineMessage = 0
+    self.version = ""
   }
   
 }

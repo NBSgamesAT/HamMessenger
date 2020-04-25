@@ -16,6 +16,7 @@ class OnlineTableViewCell: UITableViewCell {
   @IBOutlet weak var ipLabel: UILabel!
   @IBOutlet weak var location: UILabel!
   @IBOutlet weak var locator: UILabel!
+  @IBOutlet weak var version: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()

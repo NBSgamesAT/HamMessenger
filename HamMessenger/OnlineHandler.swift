@@ -31,13 +31,14 @@ class OnlineHandler: TCPEventHandler {
         call.locator = ""
         call.location = ""
         call.ip = ""
+        call.version = ""
         DispatchQueue.main.async {
           (self.tableController.view as! UITableView).reloadData()
         }
       }
       else{
         if(!OnlineHandler.arrayContainInfo(array: &OnlineTableViewController.peopleFound, call: message.source)){
-          OnlineTableViewController.peopleFound.append(OnlineCall(callSign: message.source, name: String(info[0]), ip: String(info[2]), locator: String(info[3]), location: String(info[1])))
+          OnlineTableViewController.peopleFound.append(OnlineCall(callSign: message.source, name: String(info[0]), ip: String(info[2]), locator: String(info[3]), location: String(info[1]), version: String(info[4])))
           (self.tableController.view as! UITableView).reloadData()
         }
         else{
@@ -49,6 +50,7 @@ class OnlineHandler: TCPEventHandler {
           call.location = String(info[1])
           call.ip = String(info[2])
           call.locator = String(info[3])
+          call.version = String(info[4])
           if !call.isOnline {
             call.isOnline = true
             (self.tableController.view as! UITableView).reloadData()
@@ -110,24 +112,23 @@ class OnlineHandler: TCPEventHandler {
   
   func onConnecting() {
     DispatchQueue.main.async {
-      self.tableController.tableNavItem.title = "Connecting..."
+      (self.tableController.tabBarController as! TabBarController).navBar?.title = "Connecting..."
     }
   }
   
   func onConnectionClosed() {
     DispatchQueue.main.async {
-      self.tableController.tableNavItem.title = "No Connection"
+      (self.tableController.tabBarController as! TabBarController).navBar?.title = "No Connection"
     }
   }
   
   func onConnectionLost() {
     DispatchQueue.main.async {
-      self.tableController.tableNavItem.title = "Connection Lost"
+      (self.tableController.tabBarController as! TabBarController).navBar?.title = "Connection Lost"
     }
     Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (time) in
       SceneDelegate.con = nil
-      let url = UserDefaults.standard.value(forKey: "server") as? String ?? "44.143.0.1"
-      SceneDelegate.con = TCPController(url, port: 9124, eventHandler: self)
+      SceneDelegate.con = AppDelegate.sceneDelegate?.createTCPController()
       SceneDelegate.con?.activateListener()
     })
   }

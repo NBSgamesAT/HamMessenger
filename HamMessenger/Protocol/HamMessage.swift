@@ -120,7 +120,8 @@ class HamMessage {
   
   //var msg: Message = Message(source: "OE1NBS", contactType: UInt8(8), contact: "OE1KBC", payloadType: UInt8(2), payload: "Hallo OE1KBC, wie geht es dir zur Zeit?")
   public static func createLoginString() -> String{
-    let payload = ProtocolSettings.getName() + "\t" + ProtocolSettings.getLocation() + "\t" + ProtocolSettings.getIP() + "\t" + ProtocolSettings.getLocator() + "\t" + "iOS_1.0alpha3";
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    let payload = ProtocolSettings.getName() + "\t" + ProtocolSettings.getLocation() + "\t" + ProtocolSettings.getIP() + "\t" + ProtocolSettings.getLocator() + "\t" + "iOS_" + appVersion;
     return payload
   }
   public static func createLogoutString() -> String{
