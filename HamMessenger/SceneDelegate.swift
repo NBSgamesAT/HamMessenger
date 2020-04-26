@@ -35,21 +35,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       window?.rootViewController = controller;
       window?.makeKeyAndVisible()
       #endif*/
-      privateSplit = window.rootViewController as? UISplitViewController
+      privateSplit = (window.rootViewController as! TabBarController).viewControllers!.first! as? UISplitViewController
       if privateSplit == nil {
         return
       }
-      //tableController = ((privateSplit?.viewControllers.first as! UITabBarController).viewControllers!.first as! UINavigationController).viewControllers.first as? UITableViewController
-      //tableController = (privateSplit?.viewControllers.first as! UINavigationController).viewControllers.first as? UITableViewController
-      //tableController = (((privateSplit!.viewControllers.first as! UINavigationController).viewControllers.first as! UITabBarController).viewControllers!.first as! UINavigationController).viewControllers.first as? UITableViewController
-      tableController = ((privateSplit!.viewControllers.first as! UINavigationController).viewControllers.first as! UITabBarController).viewControllers!.first as? UITableViewController
+      tableController = (privateSplit?.viewControllers.first as! UINavigationController).viewControllers.first as! OnlineTableViewController
       self.openConnection(tableController: tableController!);
-      guard let splitViewController = window.rootViewController as? UISplitViewController else { return }
-      self.privateSplit = splitViewController
-      guard let navigationController = splitViewController.viewControllers.last as? UINavigationController else { return }
-      navigationController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+      guard let navigationController = privateSplit!.viewControllers.last as? UINavigationController else { return }
+      navigationController.topViewController?.navigationItem.leftBarButtonItem = privateSplit!.displayModeButtonItem
       navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
-      splitViewController.delegate = self
+      privateSplit!.delegate = self
     }
     else{
       let board = UIStoryboard.init(name: "FirstStart", bundle: nil)

@@ -77,12 +77,12 @@ class SettingsController: UIViewController, UITextFieldDelegate {
     AppDelegate.sceneDelegate?.window?.rootViewController = controller;
     AppDelegate.sceneDelegate?.window?.makeKeyAndVisible()
     
-    AppDelegate.sceneDelegate?.privateSplit = AppDelegate.sceneDelegate?.window?.rootViewController as? UISplitViewController
+    AppDelegate.sceneDelegate?.privateSplit = (AppDelegate.sceneDelegate?.window?.rootViewController as! UITabBarController).viewControllers!.first! as? UISplitViewController
     if AppDelegate.sceneDelegate!.privateSplit == nil {
       return
     }
     
-    AppDelegate.sceneDelegate?.tableController = ((AppDelegate.sceneDelegate!.privateSplit!.viewControllers.first as! UINavigationController).viewControllers.first as! UITabBarController).viewControllers!.first as? UITableViewController
+    AppDelegate.sceneDelegate?.tableController = (AppDelegate.sceneDelegate!.privateSplit!.viewControllers.first as! UINavigationController).viewControllers.first as? UITableViewController
     AppDelegate.sceneDelegate?.openConnection(tableController: AppDelegate.sceneDelegate!.tableController!);
     guard let navigationController = AppDelegate.sceneDelegate!.privateSplit!.viewControllers.last as? UINavigationController else { return }
     navigationController.topViewController?.navigationItem.leftBarButtonItem = AppDelegate.sceneDelegate!.privateSplit!.displayModeButtonItem
