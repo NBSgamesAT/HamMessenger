@@ -28,8 +28,6 @@
 		8B5346BB24531ED600BAC69D /* PrivateMessagesDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5346B924531ED600BAC69D /* PrivateMessagesDB.swift */; };
 		8B7960592452FD5200CF7796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7960582452FD5200CF7796 /* AppDelegate.swift */; };
 		8B79605B2452FD5200CF7796 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79605A2452FD5200CF7796 /* SceneDelegate.swift */; };
-		8B79605D2452FD5200CF7796 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79605C2452FD5200CF7796 /* MasterViewController.swift */; };
-		8B79605F2452FD5200CF7796 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B79605E2452FD5200CF7796 /* DetailViewController.swift */; };
 		8B7960622452FD5200CF7796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7960602452FD5200CF7796 /* Main.storyboard */; };
 		8B7960642452FD5300CF7796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B7960632452FD5300CF7796 /* Assets.xcassets */; };
 		8B7960672452FD5300CF7796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7960652452FD5300CF7796 /* LaunchScreen.storyboard */; };
@@ -90,8 +88,6 @@
 		8B7960552452FD5200CF7796 /* HamMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7960582452FD5200CF7796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B79605A2452FD5200CF7796 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B79605C2452FD5200CF7796 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		8B79605E2452FD5200CF7796 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8B7960612452FD5200CF7796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B7960632452FD5300CF7796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B7960662452FD5300CF7796 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -255,8 +251,6 @@
 				8BE8892524531BAE00DA8029 /* OnlineHandler.swift */,
 				8BE8891F24531BAE00DA8029 /* Settings.bundle */,
 				8B79605A2452FD5200CF7796 /* SceneDelegate.swift */,
-				8B79605C2452FD5200CF7796 /* MasterViewController.swift */,
-				8B79605E2452FD5200CF7796 /* DetailViewController.swift */,
 				8B7960602452FD5200CF7796 /* Main.storyboard */,
 				8B7960632452FD5300CF7796 /* Assets.xcassets */,
 				8B2D82C3245362C2007C718F /* FirstStart.storyboard */,
@@ -543,7 +537,6 @@
 				8B53469C24531D6900BAC69D /* PrivateMessage.swift in Sources */,
 				8B79605B2452FD5200CF7796 /* SceneDelegate.swift in Sources */,
 				8B5346A924531E0800BAC69D /* PayloadTypes.swift in Sources */,
-				8B79605D2452FD5200CF7796 /* MasterViewController.swift in Sources */,
 				8B5346B524531E5600BAC69D /* SettingsController.swift in Sources */,
 				8B5346BB24531ED600BAC69D /* PrivateMessagesDB.swift in Sources */,
 				8BE8893D24531CC400DA8029 /* OnlineCall.swift in Sources */,
@@ -551,7 +544,6 @@
 				8B5346B124531E2100BAC69D /* TCPStuff.swift in Sources */,
 				8B53469E24531D6900BAC69D /* PrivateNavigationViewController.swift in Sources */,
 				8BE8893624531C6600DA8029 /* ReceivedMessage.swift in Sources */,
-				8B79605F2452FD5200CF7796 /* DetailViewController.swift in Sources */,
 				8B5346A324531D9200BAC69D /* TabBarController.swift in Sources */,
 				8B5346B624531E5600BAC69D /* SettingsManager.swift in Sources */,
 				8B5346AA24531E0800BAC69D /* ProtocolSettings.swift in Sources */,
@@ -751,7 +743,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -759,7 +751,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0beta1;
+				MARKETING_VERSION = 1.0beta2;
 				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessenger;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = maccatalyst.at.nbsgames.HamMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -780,7 +772,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -788,7 +780,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0beta1;
+				MARKETING_VERSION = 1.0beta2;
 				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessenger;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = maccatalyst.at.nbsgames.HamMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
