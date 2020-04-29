@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDelegate {
 
@@ -28,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     
     AppDelegate.sceneDelegate = self
     
-    if(UserDefaults.standard.bool(forKey: "hasValues")){
+    if(!UserDefaults.standard.bool(forKey: "hasValues")){
       /*#if targetEnvironment(macCatalyst)
       let board = UIStoryboard.init(name: "Mac", bundle: nil)
       let controller = board.instantiateInitialViewController()
@@ -47,8 +48,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       privateSplit!.delegate = self
     }
     else{
-      let board = UIStoryboard.init(name: "FirstStart", bundle: nil)
-      let controller = board.instantiateInitialViewController()
+      //let board = UIStoryboard.init(name: "FirstStart", bundle: nil)
+      //let controller = board.instantiateInitialViewController()
+      let controller = UIHostingController(rootView: FirstStartUI())
       window.rootViewController = controller;
       window.makeKeyAndVisible()
     }

@@ -10,6 +10,7 @@
 		2936291563C12C467557490B /* Pods_HamMessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A173A8E9018FFBA6C7FD53DB /* Pods_HamMessengerTests.framework */; };
 		7A444605913FAF1FA0009236 /* Pods_HamMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E14BEFF806209759181B431 /* Pods_HamMessenger.framework */; };
 		8B2D82C5245362C3007C718F /* FirstStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B2D82C3245362C2007C718F /* FirstStart.storyboard */; };
+		8B36A3CE2457437700BC71EE /* FirstStartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B36A3CD2457437700BC71EE /* FirstStartUI.swift */; };
 		8B53469C24531D6900BAC69D /* PrivateMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53469724531D6900BAC69D /* PrivateMessage.swift */; };
 		8B53469D24531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53469824531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift */; };
 		8B53469E24531D6900BAC69D /* PrivateNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B53469924531D6900BAC69D /* PrivateNavigationViewController.swift */; };
@@ -69,6 +70,7 @@
 		4B6BC153C2A70CBAE8C37BDD /* Pods-HamMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessenger.debug.xcconfig"; path = "Target Support Files/Pods-HamMessenger/Pods-HamMessenger.debug.xcconfig"; sourceTree = "<group>"; };
 		732FCA4222ED85CE5C069A97 /* Pods-HamMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamMessenger.release.xcconfig"; path = "Target Support Files/Pods-HamMessenger/Pods-HamMessenger.release.xcconfig"; sourceTree = "<group>"; };
 		8B2D82C4245362C2007C718F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstStart.storyboard; sourceTree = "<group>"; };
+		8B36A3CD2457437700BC71EE /* FirstStartUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartUI.swift; sourceTree = "<group>"; };
 		8B53469724531D6900BAC69D /* PrivateMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMessage.swift; sourceTree = "<group>"; };
 		8B53469824531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMessageTableViewCellOwn.swift; sourceTree = "<group>"; };
 		8B53469924531D6900BAC69D /* PrivateNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateNavigationViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 				B8F50E32F274C4D3843AC662 /* Pods-HamMessengerUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8B36A3CC2457434800BC71EE /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				8B36A3CD2457437700BC71EE /* FirstStartUI.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		8B53469624531D5B00BAC69D /* PrivateMessage */ = {
@@ -249,6 +259,7 @@
 				8B79608A2452FD5C00CF7796 /* HamMessenger.entitlements */,
 				8B7960582452FD5200CF7796 /* AppDelegate.swift */,
 				8BE8892524531BAE00DA8029 /* OnlineHandler.swift */,
+				8B36A3CC2457434800BC71EE /* SwiftUI */,
 				8BE8891F24531BAE00DA8029 /* Settings.bundle */,
 				8B79605A2452FD5200CF7796 /* SceneDelegate.swift */,
 				8B7960602452FD5200CF7796 /* Main.storyboard */,
@@ -548,6 +559,7 @@
 				8B5346B624531E5600BAC69D /* SettingsManager.swift in Sources */,
 				8B5346AA24531E0800BAC69D /* ProtocolSettings.swift in Sources */,
 				8BE8893424531C6600DA8029 /* MessageTableViewCell.swift in Sources */,
+				8B36A3CE2457437700BC71EE /* FirstStartUI.swift in Sources */,
 				8B5346B024531E2100BAC69D /* TCPController.swift in Sources */,
 				8B5346AC24531E0800BAC69D /* NBSError.swift in Sources */,
 				8B53469D24531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift in Sources */,
