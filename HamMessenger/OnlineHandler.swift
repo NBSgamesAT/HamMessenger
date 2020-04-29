@@ -111,25 +111,24 @@ class OnlineHandler: TCPEventHandler {
   func onConnect() {
     DispatchQueue.main.async {
       self.tableController.tableNavItem.title = "Online"
-      (self.tableController.tabBarController as! TabBarController).navBar?.title = "Online"
     }
   }
   
   func onConnecting() {
     DispatchQueue.main.async {
-      (self.tableController.tabBarController as! TabBarController).navBar?.title = "Connecting..."
+      self.tableController.tableNavItem.title = "Connecting..."
     }
   }
   
   func onConnectionClosed() {
     DispatchQueue.main.async {
-      (self.tableController.tabBarController as! TabBarController).navBar?.title = "No Connection"
+      self.tableController.tableNavItem.title = "No Connection"
     }
   }
   
   func onConnectionLost() {
     DispatchQueue.main.async {
-      (self.tableController.tabBarController as! TabBarController).navBar?.title = "Connection Lost"
+      self.tableController.tableNavItem.title = "Connection Lost"
     }
     Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (time) in
       SceneDelegate.con = nil
