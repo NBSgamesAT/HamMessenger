@@ -89,6 +89,11 @@ class OnlineHandler: TCPEventHandler {
       if(SceneDelegate.privateMessageView != nil && SceneDelegate.privateMessageView!.currentSelectedCall == message.source){
         addPrivateMessageToView(privateMessage: priv)
       }
+      else{
+        _ = AppDelegate.getAppDelegate().idb?.privateMessageData
+          .increaseUnreadCount(forCallSign: message.source)
+        tableController.tableView.reloadData()
+      }
     }
     else if message.source == callsign {
       var actualContact = message.contact

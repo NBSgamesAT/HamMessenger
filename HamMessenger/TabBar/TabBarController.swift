@@ -21,12 +21,11 @@ public class TabBarController: UITabBarController, UITabBarControllerDelegate {
     //self.
   }
   
-  /*public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-    if type(of: viewController) != OnlineTableViewController.Type.self {
-      self.splitViewController?.preferredDisplayMode = .primaryHidden
-      self.splitViewController?.collapseSecondaryViewController(self.splitViewController!.viewControllers.last!, for: self.splitViewController!)
+  public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    if viewController is MessageTableViewController {
+      MessageTableViewController.unread = 0
     }
-  }*/
+  }
 
   /*
   // MARK: - Navigation

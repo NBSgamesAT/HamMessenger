@@ -65,6 +65,8 @@ class OnlineTableViewController: UITableViewController {
       actualCell.location.text = user.location;
       actualCell.locator.text = user.locator;
       actualCell.version.text = user.version;
+      let num = AppDelegate.getAppDelegate().idb?.privateMessageData.getUnreadCount(forCallSign: user.callSign)
+      actualCell.unread.text = num != nil ? "  " + String(num!) + "  " : "";
       actualCell.contentView.sizeToFit()
       return actualCell;
     }
@@ -75,6 +77,8 @@ class OnlineTableViewController: UITableViewController {
       }
       let user = peopleOffline[indexPath.row];
       actualCell.callLabel.text = user.callSign;
+      let num = AppDelegate.getAppDelegate().idb?.privateMessageData.getUnreadCount(forCallSign: user.callSign)
+      actualCell.unread.text = num != nil ? "  " + String(num!) + "  " : "";
       actualCell.contentView.sizeToFit()
       return actualCell;
     }
@@ -99,6 +103,9 @@ class OnlineTableViewController: UITableViewController {
       if let indexPath = tableView.indexPathForSelectedRow {
         let cont: PrivateMessageController = (segue.destination as! UINavigationController).topViewController as! PrivateMessageController
         cont.currentSelectedCall = peopleOnline[indexPath.row].callSign
+        _ = AppDelegate.getAppDelegate().idb?.privateMessageData
+          .resetUnreadCount(forCallSign: peopleOnline[indexPath.row].callSign)
+        self.tableView.reloadData()
         cont.navigationItem.leftBarButtonItem = AppDelegate.sceneDelegate?.privateSplit?.displayModeButtonItem
         cont.navigationItem.leftItemsSupplementBackButton = true
       }
@@ -107,6 +114,9 @@ class OnlineTableViewController: UITableViewController {
       if let indexPath = tableView.indexPathForSelectedRow {
         let cont: PrivateMessageController = (segue.destination as! UINavigationController).topViewController as! PrivateMessageController
         cont.currentSelectedCall = peopleOffline[indexPath.row].callSign
+        _ = AppDelegate.getAppDelegate().idb?.privateMessageData
+        .resetUnreadCount(forCallSign: peopleOffline[indexPath.row].callSign)
+        self.tableView.reloadData()
         cont.navigationItem.leftBarButtonItem = AppDelegate.sceneDelegate?.privateSplit?.displayModeButtonItem
         cont.navigationItem.leftItemsSupplementBackButton = true
       }

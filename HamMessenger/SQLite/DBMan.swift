@@ -14,12 +14,14 @@ public class DBMan {
   
   private var db: Connection;
   public let privateMessage: PrivateMessagesDB
+  public let privateMessageData: PrivateMessageDataDB
   
   init() throws {
     let fileLocation = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
     let file = fileLocation.appendingPathComponent("chats").appendingPathExtension("sqlite3")
     db = try Connection(file.path)
-    privateMessage = try PrivateMessagesDB(db: &db);
+    privateMessage = try PrivateMessagesDB(db: &db)
+    privateMessageData = try PrivateMessageDataDB(db: &db)
   }
   
 }

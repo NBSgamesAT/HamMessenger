@@ -12,6 +12,8 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   
   @IBOutlet weak var tableView: UITableView!
   
+  @IBOutlet weak var tabBar: UITabBarItem!
+  
   @IBOutlet weak var enteredMessage: UITextView!
   
   @IBAction func resignKeyboard(_ sender: UITapGestureRecognizer) {
@@ -23,7 +25,9 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   @IBOutlet weak var buttonEM: UIButton!
   @IBOutlet weak var textViewHeight: NSLayoutConstraint!
   
-  static var messages: [ReceivedMessage] = [];
+  static var messages: [ReceivedMessage] = []
+  static var unread = 0
+  
   var textViewOldHeight: CGFloat = 0
   
   override func viewDidLoad() {

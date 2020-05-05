@@ -12,6 +12,7 @@ class OnlineTableViewCellOffline: UITableViewCell {
   
   // Mark: Properties
   @IBOutlet weak var callLabel: UILabel!
+  @IBOutlet weak var unread: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()

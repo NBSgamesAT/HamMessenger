@@ -171,6 +171,7 @@
                         <outlet property="buttonCQ" destination="USM-XX-vy8" id="HKg-Gq-yDm"/>
                         <outlet property="buttonEM" destination="nah-bB-Aqs" id="aaY-Pr-6ZS"/>
                         <outlet property="enteredMessage" destination="tPQ-99-LkS" id="Dcl-U5-qGU"/>
+                        <outlet property="tabBar" destination="Ete-95-CCo" id="ZCP-WL-PlA"/>
                         <outlet property="tableView" destination="znw-k2-YSP" id="hF0-Jx-h1m"/>
                         <outlet property="textViewHeight" destination="tfb-c7-Lvw" id="NSF-gZ-4Is"/>
                     </connections>
@@ -526,6 +527,13 @@ Build Version: 5</string>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  999  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgA-QM-2ZP">
+                                            <rect key="frame" x="101" y="8" width="55" height="24"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Gdq-EI-oCM" firstAttribute="leading" secondItem="lAu-J7-WSi" secondAttribute="leading" constant="16" id="3Om-7j-F9H"/>
@@ -537,12 +545,14 @@ Build Version: 5</string>
                                         <constraint firstItem="74Z-Oo-ArA" firstAttribute="top" secondItem="lAu-J7-WSi" secondAttribute="top" constant="8" id="F8x-mQ-u6L"/>
                                         <constraint firstAttribute="trailing" secondItem="RWf-Rx-BIm" secondAttribute="trailing" constant="16" id="IKt-ZL-2rH"/>
                                         <constraint firstAttribute="trailing" secondItem="t1H-vL-buc" secondAttribute="trailing" constant="16" id="JX8-CZ-WVr"/>
-                                        <constraint firstItem="Gsn-Fd-J8g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="74Z-Oo-ArA" secondAttribute="trailing" constant="8" symbolic="YES" id="Ptr-nK-kvC"/>
+                                        <constraint firstItem="mgA-QM-2ZP" firstAttribute="leading" secondItem="74Z-Oo-ArA" secondAttribute="trailing" constant="8" id="MZW-FO-Joh"/>
                                         <constraint firstItem="t1H-vL-buc" firstAttribute="top" secondItem="RWf-Rx-BIm" secondAttribute="bottom" constant="8" id="XTV-3y-Exy"/>
+                                        <constraint firstItem="mgA-QM-2ZP" firstAttribute="top" secondItem="lAu-J7-WSi" secondAttribute="top" constant="8" id="Zgd-9e-ZS9"/>
                                         <constraint firstItem="RWf-Rx-BIm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DMd-z5-7eV" secondAttribute="trailing" id="cmp-RS-70L"/>
                                         <constraint firstItem="Gdq-EI-oCM" firstAttribute="top" secondItem="DMd-z5-7eV" secondAttribute="bottom" constant="8" id="hkb-fj-rjP"/>
                                         <constraint firstAttribute="bottom" secondItem="t1H-vL-buc" secondAttribute="bottom" constant="8" id="jFs-E1-Ekw"/>
                                         <constraint firstItem="Gsn-Fd-J8g" firstAttribute="top" secondItem="lAu-J7-WSi" secondAttribute="top" constant="10" id="mEy-HW-AXZ"/>
+                                        <constraint firstItem="Gsn-Fd-J8g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mgA-QM-2ZP" secondAttribute="trailing" constant="8" symbolic="YES" id="nJA-64-Pz9"/>
                                         <constraint firstItem="DMd-z5-7eV" firstAttribute="leading" secondItem="lAu-J7-WSi" secondAttribute="leading" constant="16" id="x8s-5b-V4R"/>
                                         <constraint firstItem="t1H-vL-buc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gdq-EI-oCM" secondAttribute="trailing" constant="8" symbolic="YES" id="ybI-YO-tJa"/>
                                     </constraints>
@@ -553,34 +563,45 @@ Build Version: 5</string>
                                     <outlet property="location" destination="Gdq-EI-oCM" id="4DN-F0-iKl"/>
                                     <outlet property="locator" destination="RWf-Rx-BIm" id="YmB-XK-sd5"/>
                                     <outlet property="nameLabel" destination="DMd-z5-7eV" id="cb4-FZ-cbK"/>
+                                    <outlet property="unread" destination="mgA-QM-2ZP" id="fxW-A6-wOG"/>
                                     <outlet property="version" destination="t1H-vL-buc" id="LKZ-6Z-IbR"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="toPrivMessageOnline" id="dZ3-2W-W0d"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OfflineTableViewCell" id="5FI-i3-R3v" customClass="OnlineTableViewCellOffline" customModule="HamMessenger" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OfflineTableViewCell" id="Lou-m7-lH9" customClass="OnlineTableViewCellOffline" customModule="HamMessenger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="132" width="414" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5FI-i3-R3v" id="mfQ-vl-Tdj">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lou-m7-lH9" id="RcV-P7-6e5">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Callsign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2y-Fk-N5e" userLabel="Callsign">
-                                            <rect key="frame" x="16" y="8" width="382" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Callsign" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HI8-g8-Ag1" userLabel="Callsign">
+                                            <rect key="frame" x="16" y="8" width="76.333333333333329" height="24"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  999  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6R-Bn-Eax">
+                                            <rect key="frame" x="100.33333333333333" y="8" width="54.999999999999986" height="24"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="p2y-Fk-N5e" firstAttribute="top" secondItem="mfQ-vl-Tdj" secondAttribute="top" constant="8" id="Kw8-vK-iNf"/>
-                                        <constraint firstItem="p2y-Fk-N5e" firstAttribute="leading" secondItem="mfQ-vl-Tdj" secondAttribute="leading" constant="16" id="e9x-9X-LOT"/>
-                                        <constraint firstAttribute="trailing" secondItem="p2y-Fk-N5e" secondAttribute="trailing" constant="16" id="jmq-av-GgV"/>
-                                        <constraint firstAttribute="bottom" secondItem="p2y-Fk-N5e" secondAttribute="bottom" constant="8" id="yWl-gk-7vh"/>
+                                        <constraint firstItem="HI8-g8-Ag1" firstAttribute="top" secondItem="RcV-P7-6e5" secondAttribute="top" constant="8" id="1R2-Mb-fQK"/>
+                                        <constraint firstItem="HI8-g8-Ag1" firstAttribute="leading" secondItem="RcV-P7-6e5" secondAttribute="leading" constant="16" id="4EE-7Z-RFP"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G6R-Bn-Eax" secondAttribute="trailing" constant="20" symbolic="YES" id="Tp4-um-5Z0"/>
+                                        <constraint firstItem="G6R-Bn-Eax" firstAttribute="leading" secondItem="HI8-g8-Ag1" secondAttribute="trailing" constant="8" id="akA-I8-TPR"/>
+                                        <constraint firstAttribute="bottom" secondItem="HI8-g8-Ag1" secondAttribute="bottom" constant="8" id="p20-aa-Eiv"/>
+                                        <constraint firstItem="G6R-Bn-Eax" firstAttribute="top" secondItem="RcV-P7-6e5" secondAttribute="top" constant="8" id="xrg-6n-mh5"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="callLabel" destination="p2y-Fk-N5e" id="C5g-lv-8lm"/>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="toPrivMessageOffline" id="Gxr-h8-MoN"/>
+                                    <outlet property="callLabel" destination="HI8-g8-Ag1" id="YFc-fL-k9T"/>
+                                    <outlet property="unread" destination="G6R-Bn-Eax" id="p5t-Dr-Daj"/>
+                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="toPrivMessageOffline" id="UVY-j9-1Tn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -598,7 +619,7 @@ Build Version: 5</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495.5" y="-631"/>
+            <point key="canvasLocation" x="1494.2028985507247" y="-631.47321428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -615,11 +636,11 @@ Build Version: 5</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381" y="-970"/>
+            <point key="canvasLocation" x="2380" y="-1282"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dZ3-2W-W0d"/>
+        <segue reference="UVY-j9-1Tn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="keyboard" catalog="system" width="128" height="70"/>
