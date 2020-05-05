@@ -15,6 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
   static var messageView: UITableView?
   static var privateMessageView: PrivateMessageController?
   static var con: TCPController?
+  var tabBarController: TabBarController?
   var privateSplit: UISplitViewController?
   var tableController: UITableViewController?;
   var onlineHandler: OnlineHandler?
@@ -35,7 +36,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       window?.rootViewController = controller;
       window?.makeKeyAndVisible()
       #endif*/
-      privateSplit = (window.rootViewController as! TabBarController).viewControllers!.first! as? UISplitViewController
+      tabBarController = (window.rootViewController as! TabBarController)
+      privateSplit = tabBarController!.viewControllers!.first! as? UISplitViewController
       if privateSplit == nil {
         return
       }

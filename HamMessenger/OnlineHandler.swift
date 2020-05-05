@@ -75,6 +75,7 @@ class OnlineHandler: TCPEventHandler {
       SceneDelegate.messageView?.beginUpdates()
       SceneDelegate.messageView?.insertRows(at: [IndexPath(row: MessageTableViewController.messages.count - 1, section: 0)], with: UITableView.RowAnimation.none)
       SceneDelegate.messageView?.endUpdates()
+      AppDelegate.sceneDelegate!.tabBarController!.increaseSendBadge()
     }
     else if message.payloadType == PayloadTypes.PC_PRIVATE_CALL.rawValue && (message.contact == "'" + ProtocolSettings.getCall() || message.source == ProtocolSettings.getCall()) {
       addMessageLogic(message: message, callsign: ProtocolSettings.getCall())
@@ -86,10 +87,10 @@ class OnlineHandler: TCPEventHandler {
       let priv = PrivateMessage(callsign: message.source, message: message.payloadString, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: true)
       priv.databaseId = AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
       
-      if(SceneDelegate.privateMessageView != nil && SceneDelegate.privateMessageView!.currentSelectedCall == message.source){
+      if (SceneDelegate.privateMessageView != nil && SceneDelegate.privateMessageView!.currentSelectedCall == message.source) && isPrivateMessageControllerVisible() {
         addPrivateMessageToView(privateMessage: priv)
       }
-      else{
+      else {
         _ = AppDelegate.getAppDelegate().idb?.privateMessageData
           .increaseUnreadCount(forCallSign: message.source)
         tableController.tableView.reloadData()
@@ -104,6 +105,14 @@ class OnlineHandler: TCPEventHandler {
         addPrivateMessageToView(privateMessage: priv)
       }
     }
+  }
+  
+  private func isPrivateMessageControllerVisible () -> Bool {
+    if AppDelegate.sceneDelegate!.privateSplit!.viewControllers.count == 1 && AppDelegate.sceneDelegate!.privateSplit!.isCollapsed{
+      let preNav = AppDelegate.sceneDelegate?.privateSplit!.viewControllers.first! as! UINavigationController
+      return preNav.visibleViewController! is PrivateMessageController
+    }
+    return true
   }
   
   private func addPrivateMessageToView(privateMessage priv: PrivateMessage){

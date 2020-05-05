@@ -636,7 +636,7 @@ Build Version: 5</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="-1282"/>
+            <point key="canvasLocation" x="2380" y="-970"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

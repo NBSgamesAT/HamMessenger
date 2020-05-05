@@ -24,6 +24,13 @@ public class TabBarController: UITabBarController, UITabBarControllerDelegate {
   public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
     if viewController is MessageTableViewController {
       MessageTableViewController.unread = 0
+      (viewControllers![1] as! MessageTableViewController).updateTabBar()
+    }
+  }
+  func increaseSendBadge(){
+    if !(selectedViewController is MessageTableViewController) {
+      MessageTableViewController.unread += 1
+      (viewControllers![1] as! MessageTableViewController).updateTabBar()
     }
   }
 

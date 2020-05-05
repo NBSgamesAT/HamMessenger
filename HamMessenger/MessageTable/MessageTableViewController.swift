@@ -47,13 +47,22 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
     super.viewDidLoad();
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    SceneDelegate.messageView = tableView;
+    SceneDelegate.messageView = tableView
   }
   
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return MessageTableViewController
       .messages.count;
+  }
+  
+  func updateTabBar(){
+    if MessageTableViewController.unread != 0{
+      tabBar.badgeValue = String(MessageTableViewController.unread)
+    }
+    else{
+      tabBar.badgeValue = nil
+    }
   }
   
   public func numberOfSections(in tableView: UITableView) -> Int {
@@ -112,16 +121,12 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   private func getTextColorForContactType(_ contactType: PayloadTypes) -> UIColor{
     switch contactType {
     case PayloadTypes.BC_BROADCAST:
-      print("Broadcast")
       return UIColor(named: "mBroadcast")!
     case PayloadTypes.GC_GROUP_CHAT:
-      print("Group")
       return UIColor(named: "mGroupChat")!
     case PayloadTypes.PC_PRIVATE_CALL:
-      print("Private")
       return UIColor(named: "mPrivateCall")!
     default:
-      print("Default")
       return UIColor(named: "textColour")!
     }
   }

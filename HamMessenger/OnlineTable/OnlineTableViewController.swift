@@ -15,6 +15,7 @@ class OnlineTableViewController: UITableViewController {
   static var peopleFound: [OnlineCall] = [];
   private var peopleOnline: [OnlineCall] = [];
   private var peopleOffline: [OnlineCall] = []
+  private var totalUnread: Int64 = 0
   
   var selectedCall: String?
   
@@ -29,13 +30,21 @@ class OnlineTableViewController: UITableViewController {
   override func numberOfSections(in tableView: UITableView) -> Int {
     peopleOnline = []
     peopleOffline = []
+    totalUnread = 0
     for call in OnlineTableViewController.peopleFound {
+      totalUnread +=  AppDelegate.getAppDelegate().idb?.privateMessageData.getUnreadCount(forCallSign: call.callSign) ?? 0
       if call.isOnline {
         peopleOnline.append(call)
       }
       else{
         peopleOffline.append(call)
       }
+    }
+    if totalUnread != 0 {
+      navigationController!.splitViewController!.tabBarItem.badgeValue = String(totalUnread)
+    }
+    else{
+      navigationController!.splitViewController!.tabBarItem.badgeValue = nil;
     }
     return 2
   }
@@ -67,6 +76,8 @@ class OnlineTableViewController: UITableViewController {
       actualCell.version.text = user.version;
       let num = AppDelegate.getAppDelegate().idb?.privateMessageData.getUnreadCount(forCallSign: user.callSign)
       actualCell.unread.text = num != nil ? "  " + String(num!) + "  " : "";
+      actualCell.unread.clipsToBounds = true
+      actualCell.unread.layer.cornerRadius = 12
       actualCell.contentView.sizeToFit()
       return actualCell;
     }
@@ -79,24 +90,12 @@ class OnlineTableViewController: UITableViewController {
       actualCell.callLabel.text = user.callSign;
       let num = AppDelegate.getAppDelegate().idb?.privateMessageData.getUnreadCount(forCallSign: user.callSign)
       actualCell.unread.text = num != nil ? "  " + String(num!) + "  " : "";
+      actualCell.unread.clipsToBounds = true
+      actualCell.unread.layer.cornerRadius = 12
       actualCell.contentView.sizeToFit()
       return actualCell;
     }
   }
-  
-  
-  /*public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-    if indexPath.section == 0{
-      selectedCall = peopleOnline[indexPath.row].callSign
-    }
-    else if indexPath.section == 1{
-      selectedCall = peopleOffline[indexPath.row].callSign
-    }
-    else{
-      return
-    }
-    //self.performSegue(withIdentifier: "toPrivMessage", sender: self)
-  }*/
   
   public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toPrivMessageOnline" {

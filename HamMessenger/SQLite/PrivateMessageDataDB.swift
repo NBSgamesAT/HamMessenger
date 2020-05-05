@@ -66,10 +66,8 @@ public class PrivateMessageDataDB {
    */
   func increaseUnreadCount(forCallSign callsign: String) -> Bool{
     do{
-      print("messageFind")
       let count = try self.db.pluck(self.dataTable.select(self.unreadCount)
         .filter(self.callsign == callsign))
-      print("What")
       if count == nil {
         try self.db.run(self.dataTable.insert(
           self.callsign <- callsign,
