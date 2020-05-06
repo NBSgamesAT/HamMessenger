@@ -45,16 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     return delegate;
   }
-  func applicationDidEnterBackground(_ application: UIApplication) {
-    SceneDelegate.con?.stopListenerWithOfflineMessage()
-    SceneDelegate.con = nil
-  }
   func applicationWillTerminate(_ application: UIApplication) {
     AppDelegate.sceneDelegate?.closeConnection()
-  }
-  func applicationWillEnterForeground(_ application: UIApplication) {
-    SceneDelegate.con = AppDelegate.sceneDelegate!.createTCPController()
-    SceneDelegate.con?.activateListener()
   }
 }
 

@@ -77,12 +77,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
   func sceneWillEnterForeground(_ scene: UIScene) {
     // Called as the scene transitions from the background to the foreground.
     // Use this method to undo the changes made on entering the background.
+    if SceneDelegate.con == nil || (SceneDelegate.con != nil && SceneDelegate.con!.giveUp) {
+      SceneDelegate.con = self.createTCPController()
+      SceneDelegate.con?.activateListener()
+      print("Entered Foreground")
+    }
   }
 
   func sceneDidEnterBackground(_ scene: UIScene) {
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
+    SceneDelegate.con?.stopListenerWithOfflineMessage()
+    SceneDelegate.con = nil
+    print("Entered Background")
   }
 
   // MARK: - Split view
