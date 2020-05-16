@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     AppDelegate.sceneDelegate = self
     
     if(UserDefaults.standard.bool(forKey: "hasValues")){
+      print("shit");
       /*#if targetEnvironment(macCatalyst)
       let board = UIStoryboard.init(name: "Mac", bundle: nil)
       let controller = board.instantiateInitialViewController()
@@ -41,6 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       if privateSplit == nil {
         return
       }
+      privateSplit?.preferredDisplayMode = .allVisible;
       tableController = (privateSplit?.viewControllers.first as! UINavigationController).viewControllers.first as! OnlineTableViewController
       self.openConnection(tableController: tableController!);
       guard let navigationController = privateSplit!.viewControllers.last as? UINavigationController else { return }
@@ -49,6 +51,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       privateSplit!.delegate = self
     }
     else{
+      print("ok");
       let board = UIStoryboard.init(name: "FirstStart", bundle: nil)
       let controller = board.instantiateInitialViewController()
       window.rootViewController = controller;
@@ -77,10 +80,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
   func sceneWillEnterForeground(_ scene: UIScene) {
     // Called as the scene transitions from the background to the foreground.
     // Use this method to undo the changes made on entering the background.
-    if SceneDelegate.con == nil || (SceneDelegate.con != nil && SceneDelegate.con!.giveUp) {
+    if SceneDelegate.con != nil && SceneDelegate.con!.giveUp {
+      print("Entering Foreground")
       SceneDelegate.con = self.createTCPController()
       SceneDelegate.con?.activateListener()
-      print("Entered Foreground")
     }
   }
 
@@ -88,12 +91,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
+    print("Entering Background")
     SceneDelegate.con?.stopListenerWithOfflineMessage()
     SceneDelegate.con = nil
-    print("Entered Background")
   }
-
-  // MARK: - Split view
 
   func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
       guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }

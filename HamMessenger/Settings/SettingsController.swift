@@ -85,6 +85,7 @@ class SettingsController: UIViewController, UITextFieldDelegate {
     AppDelegate.sceneDelegate?.tableController = (AppDelegate.sceneDelegate!.privateSplit!.viewControllers.first as! UINavigationController).viewControllers.first as? UITableViewController
     AppDelegate.sceneDelegate?.openConnection(tableController: AppDelegate.sceneDelegate!.tableController!);
     guard let navigationController = AppDelegate.sceneDelegate!.privateSplit!.viewControllers.last as? UINavigationController else { return }
+    AppDelegate.sceneDelegate?.privateSplit?.preferredDisplayMode = .allVisible
     navigationController.topViewController?.navigationItem.leftBarButtonItem = AppDelegate.sceneDelegate!.privateSplit!.displayModeButtonItem
     navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
     AppDelegate.sceneDelegate!.privateSplit!.delegate = AppDelegate.sceneDelegate!
