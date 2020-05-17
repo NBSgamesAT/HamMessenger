@@ -30,13 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     AppDelegate.sceneDelegate = self
     
     if(UserDefaults.standard.bool(forKey: "hasValues")){
-      print("shit");
-      /*#if targetEnvironment(macCatalyst)
-      let board = UIStoryboard.init(name: "Mac", bundle: nil)
-      let controller = board.instantiateInitialViewController()
-      window?.rootViewController = controller;
-      window?.makeKeyAndVisible()
-      #endif*/
       tabBarController = (window.rootViewController as! TabBarController)
       privateSplit = tabBarController!.viewControllers!.first! as? UISplitViewController
       if privateSplit == nil {
@@ -51,7 +44,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       privateSplit!.delegate = self
     }
     else{
-      print("ok");
       let board = UIStoryboard.init(name: "FirstStart", bundle: nil)
       let controller = board.instantiateInitialViewController()
       window.rootViewController = controller;
@@ -95,8 +87,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     SceneDelegate.con?.stopListenerWithOfflineMessage()
     SceneDelegate.con = nil
   }
+  
+  // MARK: - Split view
 
+  
   func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
+    // This method is called to collapse the detail view onto the master view.
+    // This prevents the detail view to be visible on iPhones.
       guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
       guard let topAsDetailController = secondaryAsNavController.topViewController as? PrivateMessageController else { return false }
       if topAsDetailController.currentSelectedCall == nil || topAsDetailController.currentSelectedCall == "" {
@@ -106,8 +103,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       return false
   }
   
+  // MARK: - Connections
   
   func openConnection(tableController: UITableViewController){
+    // This Method will open the connection by setting the onlineHandler
+    // and the SceneDelegate.con variables.
+    // SceneDelegate.con?.activateListener(); will then start the tcp listener and
+    // open the connection
     if(SceneDelegate.con == nil || SceneDelegate.con!.giveUp){
       self.onlineHandler = OnlineHandler(tableController: tableController)
       SceneDelegate.con = self.createTCPController()
@@ -115,12 +117,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     }
   }
   func closeConnection(){
+    // This will close the connection again and send a offline message
     if(SceneDelegate.con != nil && !SceneDelegate.con!.giveUp){
       SceneDelegate.con?.stopListenerWithOfflineMessage();
     }
   }
   
   func createTCPController() -> TCPController{
+    // Initiallize a new TCP Controller
     let url = UserDefaults.standard.value(forKey: "server") as? String ?? "44.143.0.1"
     return TCPController(url, port: 9124, eventHandler: self.onlineHandler!)
   }
