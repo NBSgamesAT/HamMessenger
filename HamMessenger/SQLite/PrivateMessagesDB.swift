@@ -78,5 +78,15 @@ public class PrivateMessagesDB{
       return []
     }
   }
+  public func deleteChatlogs(callSign: String) -> Bool{
+    do{
+      let deletion = messageTable.filter(self.callSign == callSign).delete();
+      try db.run(deletion);
+      return true;
+    }
+    catch {
+      return false;
+    }
+  }
   
 }

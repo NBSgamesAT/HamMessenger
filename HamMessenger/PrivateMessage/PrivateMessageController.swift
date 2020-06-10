@@ -32,7 +32,7 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
     messageEnterView.delegate = self
     messageTableView.delegate = self
     messageTableView.dataSource = self
-    navBar.title = currentSelectedCall ?? "";
+    (navBar.titleView as! UIButton).setTitle(currentSelectedCall ?? "", for: .normal)
     offset = 0;
     lastSize = textViewHeight.constant
     if currentSelectedCall != nil {
@@ -79,8 +79,6 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
     self.view.layoutIfNeeded()
     
   }
-  
-  
   
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return messages.count
@@ -161,4 +159,11 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
       })
     }
   }
+  
+  public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toCallSettings" {
+      (segue.destination as! CallSettingsController).callSign = currentSelectedCall
+    }
+  }
+  
 }

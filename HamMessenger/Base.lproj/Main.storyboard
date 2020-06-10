@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="beQ-he-ks4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="beQ-he-ks4">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -427,7 +427,20 @@ Build Version: 5</string>
                         <viewLayoutGuide key="safeArea" id="sCl-GR-Bfb"/>
                     </stackView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Call sign" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" id="mOI-FS-AaM">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hMl-6s-0G3" userLabel="CallSign">
+                            <rect key="frame" x="70.666666666666686" y="4" width="273" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <state key="normal" title="Callsign">
+                                <color key="titleColor" name="textColour"/>
+                            </state>
+                            <connections>
+                                <segue destination="JhH-mq-VQw" kind="show" identifier="toCallSettings" id="vax-Tu-Qif"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomContraint" destination="Tpe-3S-Kpa" id="ifc-pD-0Nv"/>
                         <outlet property="messageEnterView" destination="MkY-KY-KnS" id="Lgc-Bu-JVJ"/>
@@ -445,7 +458,49 @@ Build Version: 5</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3197" y="-970"/>
+            <point key="canvasLocation" x="3195.6521739130435" y="-970.3125"/>
+        </scene>
+        <!--Callsign-->
+        <scene sceneID="gdY-mP-Ojw">
+            <objects>
+                <viewController id="JhH-mq-VQw" customClass="CallSettingsController" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B4x-bH-t5s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danger Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvM-0U-V5m">
+                                <rect key="frame" x="20" y="96" width="168" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" name="mEMBackground"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDQ-8f-Jl0">
+                                <rect key="frame" x="20" y="137.66666666666666" width="132" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="Delete Chat"/>
+                                <connections>
+                                    <action selector="deleteChat:" destination="JhH-mq-VQw" eventType="touchUpInside" id="KRQ-eR-ThL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rpd-UP-1nI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OvM-0U-V5m" secondAttribute="trailing" symbolic="YES" id="KUp-d7-E2N"/>
+                            <constraint firstItem="OvM-0U-V5m" firstAttribute="top" secondItem="rpd-UP-1nI" secondAttribute="top" constant="8" id="Rev-xl-9Q8"/>
+                            <constraint firstItem="rpd-UP-1nI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cDQ-8f-Jl0" secondAttribute="trailing" symbolic="YES" id="cov-gV-3sm"/>
+                            <constraint firstItem="cDQ-8f-Jl0" firstAttribute="top" secondItem="OvM-0U-V5m" secondAttribute="bottom" constant="8" id="g8B-It-3JX"/>
+                            <constraint firstItem="OvM-0U-V5m" firstAttribute="leading" secondItem="rpd-UP-1nI" secondAttribute="leading" constant="20" id="jzi-EJ-mz4"/>
+                            <constraint firstItem="cDQ-8f-Jl0" firstAttribute="leading" secondItem="rpd-UP-1nI" secondAttribute="leading" constant="20" id="qPg-Wr-pps"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rpd-UP-1nI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Callsign" id="Xq2-DW-RGY">
+                        <barButtonItem key="backBarButtonItem" title="Chat" id="srD-64-0xk"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f9R-Bi-OZG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4028.985507246377" y="-970.3125"/>
         </scene>
         <!--Online-->
         <scene sceneID="Nki-YV-4Qg">
@@ -640,7 +695,7 @@ Build Version: 5</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UVY-j9-1Tn"/>
+        <segue reference="dZ3-2W-W0d"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="keyboard" catalog="system" width="128" height="70"/>
@@ -654,6 +709,9 @@ Build Version: 5</string>
         </namedColor>
         <namedColor name="mCQBackground">
             <color red="1" green="1" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mEMBackground">
+            <color red="1" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColour">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
