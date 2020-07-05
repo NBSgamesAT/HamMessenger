@@ -37,11 +37,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
       }
       privateSplit?.preferredDisplayMode = .allVisible;
       tableController = (privateSplit?.viewControllers.first as! UINavigationController).viewControllers.first as! OnlineTableViewController
-      self.openConnection(tableController: tableController!);
       guard let navigationController = privateSplit!.viewControllers.last as? UINavigationController else { return }
       navigationController.topViewController?.navigationItem.leftBarButtonItem = privateSplit!.displayModeButtonItem
       navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
       privateSplit!.delegate = self
+      Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (time) in
+        self.openConnection(tableController: self.tableController!)
+      })
     }
     else{
       let board = UIStoryboard.init(name: "FirstStart", bundle: nil)
@@ -72,8 +74,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
   func sceneWillEnterForeground(_ scene: UIScene) {
     // Called as the scene transitions from the background to the foreground.
     // Use this method to undo the changes made on entering the background.
-    if SceneDelegate.con?.giveUp ?? true { // That is a wierdly simple solution
-      print("Entering Foreground")
+    if SceneDelegate.con?.giveUp ?? false{ // That is a wierdly simple solution (Afrer bugs: Is it tho?)
+      print("Entering Foreground------------------------------------")
       SceneDelegate.con = self.createTCPController()
       SceneDelegate.con?.activateListener()
     }
@@ -83,7 +85,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     // Called as the scene transitions from the foreground to the background.
     // Use this method to save data, release shared resources, and store enough scene-specific state information
     // to restore the scene back to its current state.
-    print("Entering Background")
+    print("Entering Background-------------------------------------")
     SceneDelegate.con?.stopListenerWithOfflineMessage()
     SceneDelegate.con = nil
   }

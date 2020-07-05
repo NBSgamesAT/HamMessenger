@@ -213,8 +213,8 @@ ANDROID Client Kurt OE1KBC
 Special thanks to ÖVSV for letting me create a version for Apple Devices
 
 Other Information:
-Version: ios1.0beta2
-Build Version: 5</string>
+Version: 1.0-rc1
+Build Version: 8</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -667,7 +667,7 @@ Build Version: 5</string>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Online" image="o.square" catalog="system" id="COc-Cw-WyA"/>
-                    <navigationItem key="navigationItem" title="Connecting..." id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Starting up..." id="Zdf-7t-Un8"/>
                     <connections>
                         <outlet property="tableNavItem" destination="Zdf-7t-Un8" id="6dA-hg-QV6"/>
                     </connections>

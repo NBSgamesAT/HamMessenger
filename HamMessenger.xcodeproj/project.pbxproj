@@ -88,6 +88,7 @@
 		8B5346B424531E5600BAC69D /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		8B5346B824531ED600BAC69D /* DBMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMan.swift; sourceTree = "<group>"; };
 		8B5346B924531ED600BAC69D /* PrivateMessagesDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMessagesDB.swift; sourceTree = "<group>"; };
+		8B754FDF24B08E240023FC8D /* HamMessengerDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HamMessengerDebug.entitlements; sourceTree = "<group>"; };
 		8B7960552452FD5200CF7796 /* HamMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7960582452FD5200CF7796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B79605A2452FD5200CF7796 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +245,7 @@
 		8B7960572452FD5200CF7796 /* HamMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				8B754FDF24B08E240023FC8D /* HamMessengerDebug.entitlements */,
 				8BA3ECF424670D8F00655E82 /* CallSettings */,
 				8B5346A424531DF000BAC69D /* Protocol */,
 				8BE8893724531CB000DA8029 /* OnlineTable */,
@@ -755,11 +757,11 @@
 			baseConfigurationReference = 4B6BC153C2A70CBAE8C37BDD /* Pods-HamMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HamMessenger/HamMessenger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = HamMessenger/HamMessengerDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -767,12 +769,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "1.0-rc2";
 				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessenger;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = maccatalyst.at.nbsgames.HamMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = iOSHamMessenger;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = MacHamMessengerDev;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = HamMessengerMacDeveloperId;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -785,10 +786,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HamMessenger/HamMessenger.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = D46R59592N;
 				INFOPLIST_FILE = HamMessenger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -796,12 +797,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "1.0-rc2";
 				PRODUCT_BUNDLE_IDENTIFIER = at.nbsgames.HamMessenger;
-				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = maccatalyst.at.nbsgames.HamMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = iOSHamMessenger;
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = HamMessenger;
+				PROVISIONING_PROFILE_SPECIFIER = HamMessengerRelease;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = HamMessengerMacAppStore;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

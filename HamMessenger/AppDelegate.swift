@@ -45,8 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let delegate = UIApplication.shared.delegate as! AppDelegate
     return delegate;
   }
-  func applicationWillTerminate(_ application: UIApplication) {
+  /*func applicationWillTerminate(_ application: UIApplication) {
     AppDelegate.sceneDelegate?.closeConnection()
-  }
+  }*/
 }
 

@@ -88,6 +88,7 @@ class SettingsController: UIViewController, UITextFieldDelegate {
     AppDelegate.sceneDelegate?.privateSplit?.preferredDisplayMode = .allVisible
     navigationController.topViewController?.navigationItem.leftBarButtonItem = AppDelegate.sceneDelegate!.privateSplit!.displayModeButtonItem
     navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
+    AppDelegate.sceneDelegate!.tabBarController = (AppDelegate.sceneDelegate?.window?.rootViewController as! TabBarController)
     AppDelegate.sceneDelegate!.privateSplit!.delegate = AppDelegate.sceneDelegate!
     (AppDelegate.sceneDelegate!.privateSplit!.viewControllers.last! as! UINavigationController).popViewController(animated: true)
   }
