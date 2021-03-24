@@ -8,5 +8,7 @@
 
 import Foundation
 enum NBSErrors: Error {
-  case indexOutOfBonds
+  case indexOutOfBounds
+  case hamMessageParameterTooLong
+  case invalidByteCombinations
 }

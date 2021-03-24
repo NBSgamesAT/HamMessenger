@@ -77,20 +77,7 @@ class SettingsController: UIViewController, UITextFieldDelegate {
     AppDelegate.sceneDelegate?.window?.rootViewController = controller;
     AppDelegate.sceneDelegate?.window?.makeKeyAndVisible()
     
-    AppDelegate.sceneDelegate?.privateSplit = (AppDelegate.sceneDelegate?.window?.rootViewController as! UITabBarController).viewControllers!.first! as? UISplitViewController
-    if AppDelegate.sceneDelegate!.privateSplit == nil {
-      return
-    }
-    
-    AppDelegate.sceneDelegate?.tableController = (AppDelegate.sceneDelegate!.privateSplit!.viewControllers.first as! UINavigationController).viewControllers.first as? UITableViewController
-    AppDelegate.sceneDelegate?.openConnection(tableController: AppDelegate.sceneDelegate!.tableController!);
-    guard let navigationController = AppDelegate.sceneDelegate!.privateSplit!.viewControllers.last as? UINavigationController else { return }
-    AppDelegate.sceneDelegate?.privateSplit?.preferredDisplayMode = .allVisible
-    navigationController.topViewController?.navigationItem.leftBarButtonItem = AppDelegate.sceneDelegate!.privateSplit!.displayModeButtonItem
-    navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
-    AppDelegate.sceneDelegate!.tabBarController = (AppDelegate.sceneDelegate?.window?.rootViewController as! TabBarController)
-    AppDelegate.sceneDelegate!.privateSplit!.delegate = AppDelegate.sceneDelegate!
-    (AppDelegate.sceneDelegate!.privateSplit!.viewControllers.last! as! UINavigationController).popViewController(animated: true)
+    AppDelegate.sceneDelegate?.setupVariables()
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {

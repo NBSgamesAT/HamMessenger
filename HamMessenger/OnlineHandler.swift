@@ -19,9 +19,9 @@ class OnlineHandler: TCPEventHandler {
   
   func onReceive(_ message: HamMessage){
     //print("HA")
-    if(message.contact == "CQ" && message.payloadString.split(separator: "\t").count == 5){
+    if(message.contact == "CQ" && message.payload.split(separator: "\t").count == 5){
       //print("HA")
-      let info = message.payloadString.split(separator: "\t");
+      let info = message.payload.split(separator: "\t");
       if(info[4] == "CLOSE"){
         let call = OnlineTableViewController.peopleFound.filter({ (call) -> Bool in
           return call.callSign == message.source
@@ -65,9 +65,13 @@ class OnlineHandler: TCPEventHandler {
     }
     else if(message.payloadType != PayloadTypes.PC_PRIVATE_CALL.rawValue){
       
-      var payload = message.payloadString;
+      var payload = message.payload;
       if(message.contact == "CQ"){
-        let info = message.payloadString.split(separator: "\t");
+        let info = payload.split(separator: "\t");
+        if info.count != 6{
+          print(payload)
+          return
+        }
         payload = String(info[5]);
       }
       MessageTableViewController.messages.append(ReceivedMessage(callSign: message.source, time: Date(), label: payload, payloadType: PayloadTypes.getTypeById(id: message.payloadType), contact: message.contact
@@ -84,7 +88,7 @@ class OnlineHandler: TCPEventHandler {
   
   func addMessageLogic(message: HamMessage, callsign: String){
     if message.contact == "'" + callsign {
-      let priv = PrivateMessage(callsign: message.source, message: message.payloadString, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: true)
+      let priv = PrivateMessage(callsign: message.source, message: message.payload, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: true)
       priv.databaseId = AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
       
       if (SceneDelegate.privateMessageView != nil && SceneDelegate.privateMessageView!.currentSelectedCall == message.source) && isPrivateMessageControllerVisible() {
@@ -99,7 +103,7 @@ class OnlineHandler: TCPEventHandler {
     else if message.source == callsign {
       var actualContact = message.contact
       actualContact.remove(at: actualContact.startIndex)
-      let priv = PrivateMessage(callsign: actualContact, message: message.payloadString, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: false)
+      let priv = PrivateMessage(callsign: actualContact, message: message.payload, timestamp: Int64(NSDate().timeIntervalSince1970), isReceived: false)
       priv.databaseId = AppDelegate.getAppDelegate().idb?.privateMessage.saveMessage(message: priv)
       if(SceneDelegate.privateMessageView != nil && SceneDelegate.privateMessageView!.currentSelectedCall == actualContact){
         addPrivateMessageToView(privateMessage: priv)
@@ -134,31 +138,40 @@ class OnlineHandler: TCPEventHandler {
     }
   }
   
+  func onConnectionRefused(address: String, port: Int32) {
+    DispatchQueue.main.async {
+      self.tableController.tableNavItem.title = "Connection Refused"
+    }
+  }
+  
   func onConnectionClosed() {
     DispatchQueue.main.async {
       self.tableController.tableNavItem.title = "No Connection"
     }
   }
-  
+  var firstConnect = true
   func onConnectionLost() {
     DispatchQueue.main.async {
-      self.tableController.tableNavItem.title = "Connection Lost"
+      self.tableController.tableNavItem.title = "Connection Lost "
     }
-    Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (time) in
-      SceneDelegate.con = nil
-      SceneDelegate.con = AppDelegate.sceneDelegate?.createTCPController()
-      SceneDelegate.con?.activateListener()
-    })
+    if firstConnect {
+      firstConnect = false
+      Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (time) in
+        SceneDelegate.con = nil
+        SceneDelegate.con = AppDelegate.sceneDelegate?.createTCPController()
+        SceneDelegate.con?.tcpStartMain()
+      })
+    }
   }
   
   func messageDeliveryProblem(_ message: HamMessage) {
-    print("Message with the ID " + String(message.seqCounter) + " couldn't be delivered")
+    print("Message with ID: " + String(message.seqCounter) + " could not be sent")
   }
   
-  func onOnlineNoticeSent() {
+  func removeInactivePeople() {
     for call in OnlineTableViewController.peopleFound {
       if call.isOnline {
-        if call.lastOnlineMessage + 118 < Date().timeIntervalSince1970 {
+        if call.lastOnlineMessage + 117 < Date().timeIntervalSince1970 {
           call.name = ""
           call.isOnline = false
           call.location = ""
@@ -179,6 +192,26 @@ class OnlineHandler: TCPEventHandler {
       }
     }
     return false;
+  }
+  
+  func generateOnlineMessage() -> HamMessage {
+    
+    let payload = HamMessageUtility.createCqLoginString(name: ProtocolSettings.getName(), location: ProtocolSettings.getLocation(), ip: ProtocolSettings.getIP(), qthLocator: ProtocolSettings.getLocator())
+    
+    let message = try? HamMessage(source: ProtocolSettings.getCall(), contact: "CQ", path: nil, payload: payload, payloadType: PayloadTypes.CQ)
+    
+    self.removeInactivePeople()
+    
+    return message!
+  }
+  
+  func generateOfflineMessage() -> HamMessage {
+    
+    let payload = HamMessageUtility.createCqLogoutString(name: ProtocolSettings.getName(), location: ProtocolSettings.getLocation(), ip: ProtocolSettings.getIP(), qthLocator: ProtocolSettings.getLocator())
+    
+    let message = try? HamMessage(source: ProtocolSettings.getCall(), contact: "CQ", path: nil, payload: payload, payloadType: PayloadTypes.CQ)
+    
+    return message!
   }
   
   

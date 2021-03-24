@@ -57,12 +57,15 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   }
   
   func updateTabBar(){
-    if MessageTableViewController.unread != 0{
-      tabBar.badgeValue = String(MessageTableViewController.unread)
+    DispatchQueue.main.async {
+      if MessageTableViewController.unread != 0{
+        self.tabBar.badgeValue = String(MessageTableViewController.unread)
+      }
+      else{
+        self.tabBar.badgeValue = nil
+      }
     }
-    else{
-      tabBar.badgeValue = nil
-    }
+    
   }
   
   public func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,8 +97,8 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   
   @IBAction func SendCQ(_ sender: Any) {
     if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
-    let payload = HamMessage.createLoginString() + HamMessage.getInformationSeperator() + enteredMessage.text!;
-    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "CQ", payloadType: 0x00, payload: payload);
+    let payload = HamMessageUtility.createCqLoginString(name: ProtocolSettings.getName(), location: ProtocolSettings.getLocation(), ip: ProtocolSettings.getIP(), qthLocator: ProtocolSettings.getLocator()) + HamMessageUtility.cqSeperator + enteredMessage.text!
+    let message = try! HamMessage(source: ProtocolSettings.getCall(), contact: "CQ", path: nil, payload: payload, payloadType: PayloadTypes.CQ)
     SceneDelegate.con?.sendMessage(message);
     enteredMessage.text = "";
     self.textViewDidChange(enteredMessage)
@@ -103,7 +106,7 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   
   @IBAction func sendBC(_ sender: Any) {
     if(enteredMessage.text == "" || enteredMessage.text == nil) {return};
-    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: 0x06, payload: enteredMessage.text!);
+    let message = try! HamMessage(source: ProtocolSettings.getCall(), contact: "ALL", path: nil, payload: enteredMessage.text!, payloadType: PayloadTypes.BC_BROADCAST)
     SceneDelegate.con?.sendMessage(message);
     enteredMessage.text = "";
     self.textViewDidChange(enteredMessage)
@@ -111,7 +114,7 @@ class MessageTableViewController: UIViewController, UITableViewDelegate, UITable
   
   @IBAction func sendEM(_ sender: Any){
     if enteredMessage.text == "" || enteredMessage.text == nil {return}
-    let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "ALL", payloadType: PayloadTypes.EM_EMERGENCY.rawValue, payload: enteredMessage.text!)
+    let message = try! HamMessage(source: ProtocolSettings.getCall(), contact: "ALL", path: nil, payload: enteredMessage.text!, payloadType: PayloadTypes.EM_EMERGENCY)
     SceneDelegate.con?.sendMessage(message);
     enteredMessage.text = ""
     self.textViewDidChange(enteredMessage)

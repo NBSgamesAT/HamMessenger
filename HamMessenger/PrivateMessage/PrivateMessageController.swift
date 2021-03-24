@@ -107,10 +107,13 @@ public class PrivateMessageController: UIViewController, UITableViewDataSource, 
   
   @IBAction func onMessageSendPressed(_ sender: Any) {
     if messageEnterView.text != "" {
-      let message = HamMessage(call: ProtocolSettings.getCall(), contactType: 0x01, contact: "'" + currentSelectedCall!, payloadType: PayloadTypes.PC_PRIVATE_CALL.rawValue, payload: messageEnterView.text!);
-      SceneDelegate.con?.sendMessage(message);
-      messageEnterView.text = ""
-      self.textViewDidChange(messageEnterView)
+      let message = try? HamMessage(source: ProtocolSettings.getCall(), contact: "'" + currentSelectedCall!, path: nil, payload: messageEnterView.text!, payloadType: PayloadTypes.PC_PRIVATE_CALL)
+      
+      if message != nil {
+        SceneDelegate.con?.sendMessage(message!);
+        messageEnterView.text = ""
+        self.textViewDidChange(messageEnterView)
+      }
     }
   }
   
