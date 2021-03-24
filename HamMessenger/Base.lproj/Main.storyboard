@@ -195,7 +195,7 @@
         <!--Credits-->
         <scene sceneID="HmK-RV-Pjk">
             <objects>
-                <viewController id="rR9-Za-DbS" sceneMemberID="viewController">
+                <viewController id="rR9-Za-DbS" customClass="CreditsController" customModule="HamMessenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fW0-bY-Sh5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,9 +214,7 @@ ANDROID Client Kurt OE1KBC
 
 Special thanks to ÖVSV for letting me create a version for Apple Devices
 
-Other Information:
-Version: 1.0-rc1
-Build Version: 8</string>
+Other Information:</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -232,6 +230,9 @@ Build Version: 8</string>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Credits" image="keyboard" catalog="system" id="Ni8-sR-y9A"/>
+                    <connections>
+                        <outlet property="normalLabel" destination="ZeZ-g7-9y6" id="aad-o4-5F6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGa-iy-5gC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

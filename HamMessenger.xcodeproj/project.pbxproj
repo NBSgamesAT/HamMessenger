@@ -35,6 +35,7 @@
 		8B989E6225DBCA1D003CEA1A /* HamMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B989E6125DBCA1D003CEA1A /* HamMessage.swift */; };
 		8BDF37C8250A6CAD00B4556D /* TCPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF37C7250A6CAD00B4556D /* TCPController.swift */; };
 		8BDF37CA250A6D8000B4556D /* ProtocolReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF37C9250A6D8000B4556D /* ProtocolReader.swift */; };
+		8BE0A34E260B9014007A6F74 /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0A34D260B9014007A6F74 /* CreditsController.swift */; };
 		8BE8892824531BAF00DA8029 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8BE8891F24531BAE00DA8029 /* Settings.bundle */; };
 		8BE8892E24531BAF00DA8029 /* OnlineHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8892524531BAE00DA8029 /* OnlineHandler.swift */; };
 		8BE8893424531C6600DA8029 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8893124531C6600DA8029 /* MessageTableViewCell.swift */; };
@@ -105,6 +106,7 @@
 		8B989E6125DBCA1D003CEA1A /* HamMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HamMessage.swift; path = HamMessenger/Protocol/HamMessage.swift; sourceTree = SOURCE_ROOT; };
 		8BDF37C7250A6CAD00B4556D /* TCPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPController.swift; sourceTree = "<group>"; };
 		8BDF37C9250A6D8000B4556D /* ProtocolReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolReader.swift; sourceTree = "<group>"; };
+		8BE0A34D260B9014007A6F74 /* CreditsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		8BE8891F24531BAE00DA8029 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8BE8892524531BAE00DA8029 /* OnlineHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineHandler.swift; sourceTree = "<group>"; };
 		8BE8893124531C6600DA8029 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		8BD2D81A260B645700E6ED3F /* CreditsSection */ = {
 			isa = PBXGroup;
 			children = (
+				8BE0A34D260B9014007A6F74 /* CreditsController.swift */,
 			);
 			path = CreditsSection;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				8B53469D24531D6900BAC69D /* PrivateMessageTableViewCellOwn.swift in Sources */,
 				8BE8893C24531CC400DA8029 /* OnlineTableViewCellOffline.swift in Sources */,
 				8B53469F24531D6900BAC69D /* PrivateMessageController.swift in Sources */,
+				8BE0A34E260B9014007A6F74 /* CreditsController.swift in Sources */,
 				8BE8893F24531CC400DA8029 /* OnlineTableViewController.swift in Sources */,
 				8B989E6225DBCA1D003CEA1A /* HamMessage.swift in Sources */,
 				8BDF37C8250A6CAD00B4556D /* TCPController.swift in Sources */,
